@@ -1,0 +1,636 @@
+{
+    "第一章 原理": [
+        {
+            "title": "课程内容介绍",
+            "link": "https://edu.51cto.com/lesson/976563.html",
+            "crawl": true
+        },
+        {
+            "title": "原理",
+            "link": "https://edu.51cto.com/lesson/976561.html",
+            "crawl": true
+        },
+        {
+            "title": "karmada背景",
+            "link": "https://edu.51cto.com/lesson/976562.html",
+            "crawl": true
+        },
+        {
+            "title": "架构",
+            "link": "https://edu.51cto.com/lesson/976560.html",
+            "crawl": true
+        },
+        {
+            "title": "概念图",
+            "link": "https://edu.51cto.com/lesson/976559.html",
+            "crawl": true
+        },
+        {
+            "title": "关键特性",
+            "link": "https://edu.51cto.com/lesson/976558.html",
+            "crawl": true
+        },
+        {
+            "title": "helm部署-01",
+            "link": "https://edu.51cto.com/lesson/976557.html",
+            "crawl": true
+        },
+        {
+            "title": "helm部署-02",
+            "link": "https://edu.51cto.com/lesson/976556.html",
+            "crawl": true
+        },
+        {
+            "title": "helm部署-03",
+            "link": "https://edu.51cto.com/lesson/976555.html",
+            "crawl": true
+        },
+        {
+            "title": "karmadactl部署",
+            "link": "https://edu.51cto.com/lesson/976554.html",
+            "crawl": true
+        },
+        {
+            "title": "源码安装",
+            "link": "https://edu.51cto.com/lesson/976553.html",
+            "crawl": true
+        },
+        {
+            "title": "crd介绍",
+            "link": "https://edu.51cto.com/lesson/976552.html",
+            "crawl": true
+        },
+        {
+            "title": "控制器",
+            "link": "https://edu.51cto.com/lesson/976551.html",
+            "crawl": true
+        },
+        {
+            "title": "调度原理",
+            "link": "https://edu.51cto.com/lesson/976550.html",
+            "crawl": true
+        },
+        {
+            "title": "资源解析",
+            "link": "https://edu.51cto.com/lesson/976549.html",
+            "crawl": true
+        },
+        {
+            "title": "多云问题",
+            "link": "https://edu.51cto.com/lesson/976548.html",
+            "crawl": true
+        },
+        {
+            "title": "案例1,2",
+            "link": "https://edu.51cto.com/lesson/976547.html",
+            "crawl": true
+        },
+        {
+            "title": "案例3,4",
+            "link": "https://edu.51cto.com/lesson/976546.html",
+            "crawl": true
+        },
+        {
+            "title": "大规模测试",
+            "link": "https://edu.51cto.com/lesson/976545.html",
+            "crawl": true
+        }
+    ],
+    "第二章 cluster资源": [
+        {
+            "title": "cluster资源详解",
+            "link": "https://edu.51cto.com/lesson/976544.html",
+            "crawl": true
+        }
+    ],
+    "第三章 work资源": [
+        {
+            "title": "work资源详解",
+            "link": "https://edu.51cto.com/lesson/976543.html",
+            "crawl": true
+        }
+    ],
+    "第四章 overridePolicy资源": [
+        {
+            "title": "overridePolicy详解-01",
+            "link": "https://edu.51cto.com/lesson/976542.html",
+            "crawl": true
+        },
+        {
+            "title": "overridePolicy资源详解-02",
+            "link": "https://edu.51cto.com/lesson/976541.html",
+            "crawl": true
+        },
+        {
+            "title": "overridePolicy资源详解-03",
+            "link": "https://edu.51cto.com/lesson/976540.html",
+            "crawl": true
+        },
+        {
+            "title": "overridePolicy资源详解-04",
+            "link": "https://edu.51cto.com/lesson/976539.html",
+            "crawl": true
+        },
+        {
+            "title": "overridePolicy资源详解-05",
+            "link": "https://edu.51cto.com/lesson/976538.html",
+            "crawl": true
+        }
+    ],
+    "第五章 ClusterOverridePolicy资源": [
+        {
+            "title": "clusterOverridePolicy资源详解",
+            "link": "https://edu.51cto.com/lesson/976537.html",
+            "crawl": true
+        }
+    ],
+    "第六章 propagationPolicy资源": [
+        {
+            "title": "propagationPolicy资源详解-01",
+            "link": "https://edu.51cto.com/lesson/976536.html",
+            "crawl": true
+        },
+        {
+            "title": "propagationPolicy资源详解-02",
+            "link": "https://edu.51cto.com/lesson/976535.html",
+            "crawl": true
+        },
+        {
+            "title": "propagationPolicy资源详解-03",
+            "link": "https://edu.51cto.com/lesson/976534.html",
+            "crawl": true
+        },
+        {
+            "title": "propagationPolicy资源详解-04",
+            "link": "https://edu.51cto.com/lesson/976533.html",
+            "crawl": true
+        },
+        {
+            "title": "propagationPolicy资源详解-05",
+            "link": "https://edu.51cto.com/lesson/976532.html",
+            "crawl": true
+        }
+    ],
+    "第七章 clusterPropagationPolicy资源": [
+        {
+            "title": "clusterPropagationPolicy资源详解",
+            "link": "https://edu.51cto.com/lesson/976531.html",
+            "crawl": true
+        }
+    ],
+    "第八章 resourceBinding资源": [
+        {
+            "title": "resourceBinding资源详解-01",
+            "link": "https://edu.51cto.com/lesson/976530.html",
+            "crawl": true
+        },
+        {
+            "title": "resourceBinding资源详解-02",
+            "link": "https://edu.51cto.com/lesson/976529.html",
+            "crawl": true
+        }
+    ],
+    "第九章 clusterResourceBinding资源": [
+        {
+            "title": "clusterResourceBinding资源详解",
+            "link": "https://edu.51cto.com/lesson/976528.html",
+            "crawl": true
+        }
+    ],
+    "第十章 fedratedResourceQuota资源": [
+        {
+            "title": "fedratedResourceQuota资源详解",
+            "link": "https://edu.51cto.com/lesson/976527.html",
+            "crawl": true
+        }
+    ],
+    "第十一章 propagateDependencies": [
+        {
+            "title": "propagateDependencies详解",
+            "link": "https://edu.51cto.com/lesson/976526.html",
+            "crawl": true
+        }
+    ],
+    "第十二章 propagateCrd": [
+        {
+            "title": "propagateCrd",
+            "link": "https://edu.51cto.com/lesson/976525.html",
+            "crawl": true
+        }
+    ],
+    "第十三章 服务发现和dns": [
+        {
+            "title": "cilium-cluster-mesh介绍",
+            "link": "https://edu.51cto.com/lesson/976524.html",
+            "crawl": true
+        },
+        {
+            "title": "cilium-cluster-mesh安装",
+            "link": "https://edu.51cto.com/lesson/976523.html",
+            "crawl": true
+        },
+        {
+            "title": "cilium-cluster-mesh安装-02",
+            "link": "https://edu.51cto.com/lesson/976522.html",
+            "crawl": true
+        },
+        {
+            "title": "案例1",
+            "link": "https://edu.51cto.com/lesson/976521.html",
+            "crawl": true
+        },
+        {
+            "title": "案例2",
+            "link": "https://edu.51cto.com/lesson/976520.html",
+            "crawl": true
+        }
+    ],
+    "第十四章 serviceexport资源": [
+        {
+            "title": "serviceExport详解",
+            "link": "https://edu.51cto.com/lesson/976519.html",
+            "crawl": true
+        }
+    ],
+    "第十五章 serviceImport资源": [
+        {
+            "title": "serviceImport资源详解",
+            "link": "https://edu.51cto.com/lesson/976518.html",
+            "crawl": true
+        }
+    ],
+    "第十六章 multiclusteringress": [
+        {
+            "title": "multiclusteringress详解",
+            "link": "https://edu.51cto.com/lesson/976517.html",
+            "crawl": true
+        }
+    ],
+    "第十七章 deschedule": [
+        {
+            "title": "deschedule",
+            "link": "https://edu.51cto.com/lesson/976516.html",
+            "crawl": true
+        }
+    ],
+    "第十八章 多集群服务治理": [
+        {
+            "title": "多集群服务治理概述",
+            "link": "https://edu.51cto.com/lesson/976515.html",
+            "crawl": true
+        },
+        {
+            "title": "案例1",
+            "link": "https://edu.51cto.com/lesson/976514.html",
+            "crawl": true
+        },
+        {
+            "title": "案例2",
+            "link": "https://edu.51cto.com/lesson/976513.html",
+            "crawl": true
+        }
+    ],
+    "第十九章 基于集群资源模型调度": [
+        {
+            "title": "基于集群资源模型调度",
+            "link": "https://edu.51cto.com/lesson/976512.html",
+            "crawl": true
+        }
+    ],
+    "第二十章 failover": [
+        {
+            "title": "failover概述",
+            "link": "https://edu.51cto.com/lesson/976511.html",
+            "crawl": true
+        },
+        {
+            "title": "failover案例",
+            "link": "https://edu.51cto.com/lesson/976510.html",
+            "crawl": true
+        }
+    ],
+    "第二十一章 karmada-search": [
+        {
+            "title": "karmada-search",
+            "link": "https://edu.51cto.com/lesson/976509.html",
+            "crawl": true
+        }
+    ],
+    "第二十二章 与argocd集成": [
+        {
+            "title": "argocd概述",
+            "link": "https://edu.51cto.com/lesson/976508.html",
+            "crawl": true
+        },
+        {
+            "title": "案例",
+            "link": "https://edu.51cto.com/lesson/976507.html",
+            "crawl": true
+        }
+    ],
+    "第二十三章 与fluxcd集成": [
+        {
+            "title": "fluxcd概述",
+            "link": "https://edu.51cto.com/lesson/976506.html",
+            "crawl": true
+        },
+        {
+            "title": "fluxcd部署",
+            "link": "https://edu.51cto.com/lesson/976505.html",
+            "crawl": true
+        },
+        {
+            "title": "案例1",
+            "link": "https://edu.51cto.com/lesson/976504.html",
+            "crawl": true
+        },
+        {
+            "title": "案例2,3",
+            "link": "https://edu.51cto.com/lesson/976503.html",
+            "crawl": true
+        }
+    ],
+    "第二十四章 与kubevela集成": [
+        {
+            "title": "kubevela概述",
+            "link": "https://edu.51cto.com/lesson/976502.html",
+            "crawl": true
+        },
+        {
+            "title": "kubevela安装",
+            "link": "https://edu.51cto.com/lesson/976501.html",
+            "crawl": true
+        },
+        {
+            "title": "kubevela案例",
+            "link": "https://edu.51cto.com/lesson/976500.html",
+            "crawl": true
+        }
+    ],
+    "第二十五章 与openkruise集成": [
+        {
+            "title": "openkruise概述",
+            "link": "https://edu.51cto.com/lesson/976499.html",
+            "crawl": true
+        },
+        {
+            "title": "openkruise安装",
+            "link": "https://edu.51cto.com/lesson/976498.html",
+            "crawl": true
+        },
+        {
+            "title": "openkruise案例",
+            "link": "https://edu.51cto.com/lesson/976497.html",
+            "crawl": true
+        }
+    ],
+    "第二十六章 资源解析器": [
+        {
+            "title": "资源解析器概述",
+            "link": "https://edu.51cto.com/lesson/976496.html",
+            "crawl": true
+        },
+        {
+            "title": "资源解析器案例",
+            "link": "https://edu.51cto.com/lesson/976495.html",
+            "crawl": true
+        }
+    ],
+    "第二十七章 与gatekeeper集成": [
+        {
+            "title": "gatekeeper概述",
+            "link": "https://edu.51cto.com/lesson/976494.html",
+            "crawl": true
+        },
+        {
+            "title": "gatekeeper案例",
+            "link": "https://edu.51cto.com/lesson/976474.html",
+            "crawl": true
+        }
+    ],
+    "第二十八章 与kyverno集成": [
+        {
+            "title": "kyverno概述",
+            "link": "https://edu.51cto.com/lesson/976493.html",
+            "crawl": true
+        },
+        {
+            "title": "kyverno案例",
+            "link": "https://edu.51cto.com/lesson/976492.html",
+            "crawl": true
+        }
+    ],
+    "第二十九章 与argo-workflow集成": [
+        {
+            "title": "argo-workflow概述",
+            "link": "https://edu.51cto.com/lesson/976491.html",
+            "crawl": true
+        },
+        {
+            "title": "argo-workflow安装案例",
+            "link": "https://edu.51cto.com/lesson/976490.html",
+            "crawl": true
+        }
+    ],
+    "第三十章 备份": [
+        {
+            "title": "velero安装-01",
+            "link": "https://edu.51cto.com/lesson/976489.html",
+            "crawl": true
+        },
+        {
+            "title": "velero安装-02",
+            "link": "https://edu.51cto.com/lesson/976488.html",
+            "crawl": true
+        },
+        {
+            "title": "velero案例",
+            "link": "https://edu.51cto.com/lesson/976487.html",
+            "crawl": true
+        }
+    ],
+    "第三十一章 配置控制器": [
+        {
+            "title": "配置控制器",
+            "link": "https://edu.51cto.com/lesson/976486.html",
+            "crawl": true
+        }
+    ],
+    "第三十二章 命令行": [
+        {
+            "title": "命令行详解-01",
+            "link": "https://edu.51cto.com/lesson/976485.html",
+            "crawl": true
+        },
+        {
+            "title": "命令行详解-02",
+            "link": "https://edu.51cto.com/lesson/976484.html",
+            "crawl": true
+        }
+    ],
+    "第三十三章 日志监控": [
+        {
+            "title": "日志收集",
+            "link": "https://edu.51cto.com/lesson/976483.html",
+            "crawl": true
+        },
+        {
+            "title": "监控-01",
+            "link": "https://edu.51cto.com/lesson/976482.html",
+            "crawl": true
+        },
+        {
+            "title": "监控-02",
+            "link": "https://edu.51cto.com/lesson/976481.html",
+            "crawl": true
+        }
+    ],
+    "第三十四章 升级": [
+        {
+            "title": "1.4到1.5",
+            "link": "https://edu.51cto.com/lesson/976480.html",
+            "crawl": true
+        },
+        {
+            "title": "验证安装查找问题",
+            "link": "https://edu.51cto.com/lesson/976479.html",
+            "crawl": true
+        },
+        {
+            "title": "1.4到1.6",
+            "link": "https://edu.51cto.com/lesson/976478.html",
+            "crawl": true
+        },
+        {
+            "title": "1.7到1.8",
+            "link": "https://edu.51cto.com/lesson/976477.html",
+            "crawl": true
+        }
+    ],
+    "第三十五章 与rook集成": [
+        {
+            "title": "rook安装与cephfs",
+            "link": "https://edu.51cto.com/lesson/976476.html",
+            "crawl": true
+        },
+        {
+            "title": "cephobjectstore-csi-s3",
+            "link": "https://edu.51cto.com/lesson/976475.html",
+            "crawl": true
+        },
+        {
+            "title": "cephobjectstore-cosi",
+            "link": "https://edu.51cto.com/lesson/976473.html",
+            "crawl": true
+        },
+        {
+            "title": "rbd",
+            "link": "https://edu.51cto.com/lesson/976472.html",
+            "crawl": true
+        }
+    ],
+    "第三十六章 与minio集成": [
+        {
+            "title": "minio多集群复制",
+            "link": "https://edu.51cto.com/lesson/976471.html",
+            "crawl": true
+        }
+    ],
+    "第三十七章 与kubeedge集成": [
+        {
+            "title": "kubeedge概述",
+            "link": "https://edu.51cto.com/lesson/976470.html",
+            "crawl": true
+        },
+        {
+            "title": "kubeedge安装",
+            "link": "https://edu.51cto.com/lesson/976469.html",
+            "crawl": true
+        },
+        {
+            "title": "案例",
+            "link": "https://edu.51cto.com/lesson/976468.html",
+            "crawl": true
+        }
+    ],
+    "第三十八章 与knative集成": [
+        {
+            "title": "knative概述",
+            "link": "https://edu.51cto.com/lesson/976467.html",
+            "crawl": true
+        },
+        {
+            "title": "knative安装",
+            "link": "https://edu.51cto.com/lesson/976466.html",
+            "crawl": true
+        },
+        {
+            "title": "knative案例",
+            "link": "https://edu.51cto.com/lesson/976465.html",
+            "crawl": true
+        }
+    ],
+    "第三十九章 1.5新功能": [
+        {
+            "title": "1.5新功能-01",
+            "link": "https://edu.51cto.com/lesson/976464.html",
+            "crawl": true
+        },
+        {
+            "title": "1.5新功能-02",
+            "link": "https://edu.51cto.com/lesson/976463.html",
+            "crawl": true
+        },
+        {
+            "title": "1.5新功能-03",
+            "link": "https://edu.51cto.com/lesson/976462.html",
+            "crawl": true
+        }
+    ],
+    "第四十章 1.6新功能": [
+        {
+            "title": "新功能概述",
+            "link": "https://edu.51cto.com/lesson/976461.html",
+            "crawl": true
+        },
+        {
+            "title": "应用故障迁移",
+            "link": "https://edu.51cto.com/lesson/976460.html",
+            "crawl": true
+        }
+    ],
+    "第四十一章 statefulset": [
+        {
+            "title": "准备工作",
+            "link": "https://edu.51cto.com/lesson/976459.html",
+            "crawl": true
+        },
+        {
+            "title": "案例",
+            "link": "https://edu.51cto.com/lesson/976458.html",
+            "crawl": true
+        }
+    ],
+    "第四十二章 灾备": [
+        {
+            "title": "灾备概述",
+            "link": "https://edu.51cto.com/lesson/976457.html",
+            "crawl": true
+        },
+        {
+            "title": "karmada host灾备",
+            "link": "https://edu.51cto.com/lesson/976456.html",
+            "crawl": true
+        },
+        {
+            "title": "member集群灾备",
+            "link": "https://edu.51cto.com/lesson/976455.html",
+            "crawl": true
+        },
+        {
+            "title": "minio灾备",
+            "link": "https://edu.51cto.com/lesson/976454.html",
+            "crawl": true
+        }
+    ]
+}

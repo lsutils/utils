@@ -1,0 +1,6 @@
+pyautogui==0.9.54
+requests
+pycryptodome==3.20.0
+loguru
+selenium==4.18.1
+python-slugify

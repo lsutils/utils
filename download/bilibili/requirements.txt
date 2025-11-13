@@ -1,0 +1,6 @@
+bilix
+selenium==4.18.1
+python-slugify
+socksio
+httpx-socks
+slugify

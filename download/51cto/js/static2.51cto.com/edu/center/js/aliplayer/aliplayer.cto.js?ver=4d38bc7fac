@@ -1,0 +1,879 @@
+/**
+  * @author: 刘原
+  * @name: 阿里云播放器
+  * @time: 2020-10-19
+  *
+**/
+
+
+if (typeof (jQuery) == 'undefined') {
+    document.write("<script src='https://static1.51cto.com/edu/center/js/jquery.min.js'></script>")
+}
+function getQueryVariable (variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
+}
+function aliPlayerStream(data) {
+    if (typeof (data) == 'undefined' || !typeof (data.link) == 'undefined') {
+        console.log('阿里播放器初始化失败');
+        return false
+    }
+    if (!isUseFlash()) {
+        this.init(data)
+    } else {
+        var htmlstr = '<div class="jumpbox"><div class="jump-title">您的浏览器版本过低，存在安全风险，请更换浏览器重试</div><div class="jump-tj">推荐使用</div><div class="imgbox"><a href="https://www.google.cn/chrome/" target="_blank"><img src="https://static1.51cto.com/edu/center/js/aliplayer/img/chrome.png"/></a></div></div><div class="jump-name"><a href="https://www.google.cn/chrome/" target="_blank">Chrome浏览器</div></a></div></div>';
+        $("#HTTP_ROOT").after(htmlstr);
+    }
+}
+aliPlayerStream.prototype = {
+    constructor: aliPlayerStream,
+    init: function (data) {
+        // console.log("init-data", data);
+        this.boxid = 'HTTP_ROOT';
+        this.person_num = data.person_num ? data.person_num : 0;
+        this.username = data.username ? data.username : '';
+        this.userid = data.userid ? data.userid : '';
+        this.lid = data.lesson_id ? data.lesson_id : '';
+        this.playerid = data.playerid ? data.playerid : 'cto';
+        this.ApiVersion = data.ApiVersion;
+        this.isDev = data.isDev;
+        this.callback = data.callback;
+        this.currentTime = data.currentTime;
+        this.centerUrl = data && data.CENTER_URL ? data.CENTER_URL : '';
+        this.activity_url = data.CENTER_URL ? data.CENTER_URL + 'activity/member-activity' : '';
+        this.error_url = data.CENTER_URL ? data.CENTER_URL + 'player/log/error-v2' : '';
+        this.reportSwitch = data.reportSwitch
+        this.is_try = data.is_try ? 1 : 0
+        this.timestr = data.timestr;
+        this.random = data.random;
+        this.pausecallback = data.pausecallback;//暂停事件回调
+        this.playcallback = data.playcallback;//重新播放回调
+        this.id = data.id
+        this.autoplay = data.autoplay ? true : false;
+        this.isPdu = data.isPdu || false;
+        this.logType = data.logType || 'course';
+        // 兼容URL播放
+        this.isSourcePlay = data.isSourcePlay || false;
+        this.source = data.source;
+        this.clickNextBtnCallback = data.clickNextBtnCallback || null;
+        this.clickPrevBtnCallback = data.clickPrevBtnCallback || null;
+        this.isShowFeedback = data.isShowFeedback || false; // 是否需要反馈
+        this.feedbackFaEle = data.feedbackFaEle || ''; // 反馈父容器
+        if (this.userid && this.isShowFeedback && this.feedbackFaEle) {
+            this.setFeedback()
+        }
+        if (this.isSourcePlay) {
+            this.getVideo();
+        } else if (data.CENTER_URL && data.type && data.lesson_id && data.id && data.sign) {
+            var videodata = {
+                center_url: data.CENTER_URL + 'player/play/vod-play-auth',
+                data: {
+                    type: data.type,
+                    lesson_id: data.lesson_id,
+                    id: data.id,
+                    sign: data.sign,
+                    lesson_type: 'course',
+                    is_try: this.is_try
+                }
+            }
+            // 加密升级，是否具有ApiVersion字段后台采用的加密方式不同；需结合新sdk(2.9.23)使用
+            if (data.ApiVersion) {
+                videodata.data.ApiVersion = data.ApiVersion;
+            }
+            window.videodata=videodata;
+            this.getVideo(videodata)
+        }
+    },
+    getVideo: function (data) {
+        var _this = this;
+        var cto_video_definition = sessionStorage.getItem("cto_video_definition");
+        var cto_video_desc = sessionStorage.getItem("cto_video_desc");
+        if (_this.isSourcePlay) {
+            //url的方式播放阿里播放器
+            var createdobj = {
+                defaultDefinition: cto_video_definition || 'SD',
+                defaultDesc: cto_video_desc || '高清',
+                htime: 0,
+                reportLogUrl: this.centerUrl + 'player/log/time?type=' + _this.logType
+            }
+            this.createdVideo(createdobj);
+        } else {
+            _this.getVideoConfig(data).then((result)=> {
+                var cto_video_definition = localStorage.getItem("cto_video_definition");
+                var cto_video_desc = localStorage.getItem("cto_video_desc");
+                var isend = false;
+                if (result.status) {
+                    var htime = 0
+                    if (result.data.info.htime) {
+                        htime = result.data.info.htime
+                    }
+                    if (!!_this.callback) {
+                        isend = false;
+                    } else {
+                        isend = result.data.info.nexturl ? true : false
+                    }
+
+                    let prevUrl = result.data.info.prevurl
+                    let next_Url = result.data.info.nexturl
+                    if (getQueryVariable('source') === 'PDU') {
+                        if (prevUrl) {
+                            if (prevUrl.includes('?')) {
+                                prevUrl = prevUrl + '&source='+getQueryVariable('source')+'&course_id='+getQueryVariable('course_id')+'&activityId='+getQueryVariable('activityId')
+                            } else {
+                                prevUrl = prevUrl + '?source='+getQueryVariable('source')+'&course_id='+getQueryVariable('course_id')+'&activityId='+getQueryVariable('activityId')
+                            }
+
+                        }
+                        if (next_Url) {
+                            if (next_Url.includes('?')) {
+                                next_Url = next_Url + '&source='+getQueryVariable('source')+'&course_id='+getQueryVariable('course_id')+'&activityId='+getQueryVariable('activityId')
+                            } else {
+                                next_Url = next_Url + '?source='+getQueryVariable('source')+'&course_id='+getQueryVariable('course_id')+'&activityId='+getQueryVariable('activityId')
+                            }
+                        }
+                    }
+                    var createdobj = {
+
+                        vodVideoId: result.data.info.vodVideoId,
+                        format: result.data.info.format,
+                        encryptType: result.data.info.encryptType,
+                        playAuth: result.data.info.playAuth,
+
+                        prevUrl: prevUrl,
+                        next_Url: next_Url,
+                        reportLogUrl: result.data.info.reportLogUrl,
+                        htime: htime,
+                        defaultDefinition: cto_video_definition || 'LD',
+                        defaultDesc: cto_video_desc || '标清',
+                        isend: isend
+                    }
+                    window.createdobj=createdobj;
+                    console.log(createdobj);
+                    if(_this.isPdu){
+                        createdobj.reportLogUrl = result.data.info.reportLogUrl+"&play_from=pmp"
+                    }
+                    _this.createdVideo(createdobj)
+                }
+            })
+        }
+    },
+    getVideoConfig: function (data) {
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                type: "get",
+                url: data.center_url,
+                data: data.data,
+                dataType: 'json',
+                async: false,
+                success: function(result) {
+                    resolve(result)
+                }
+            })
+        })
+    },
+    createdVideo: function (config) {
+        // 记录开始初始化播放器时间
+        localStorage.setItem('cto_video_createdVideo', new Date().getTime());
+        // console.log('cto_video_createdVideo:', new Date().getTime());
+        // console.log('config', config);
+        var that = this;
+        $("#" + this.boxid).after('<div id="ctoplayerbox' + this.playerid + '" class="pause"></div>');
+
+        var playerConfig = {
+            id: "ctoplayerbox" + this.playerid,
+            width: "100%",
+            height: "100%",
+            autoplay: that.autoplay,
+            vid: config.vodVideoId,
+            format: config.format,
+            encryptType: config.encryptType,
+            playauth: config.playAuth,
+            diagnosisButtonVisible: false,
+            defaultDefinition: config.defaultDefinition,
+            maxBufferSize: 100,
+            maxBufferLength: 100,
+        };
+        // 针对hls流卡顿
+        if (config.format === 'hls' || config.format === 'm3u8') {
+            playerConfig.liveSyncDurationCount = 2;
+            console.log('hls liveSyncDurationCount 2');
+        }
+        // URL播放
+        if (this.isSourcePlay) {
+            playerConfig = {
+                id: "ctoplayerbox" + this.playerid,
+                width: "100%",
+                height: "100%",
+                source: that.source,
+                autoplay: that.autoplay,
+                diagnosisButtonVisible: false,
+                defaultDefinition: config.defaultDefinition,
+                maxBufferSize: 100,
+                maxBufferLength: 100,
+            };
+        }
+        // 组件配置
+        playerConfig.components = [
+            //记忆播放组件
+            {
+                name: 'MemoryPlayComponent',
+                type: AliPlayerComponent.MemoryPlayComponent,
+                args: [that.autoplay, 0, 0, config.htime]
+            },
+            // //免费试看
+            // {
+            //     name: 'PreviewVodComponent',
+            //     type: AliPlayerComponent.PreviewVodComponent,
+            //     args: [10, '<div>test</div>', `<a href="https://www.aliyun.com/product/vod" class="vip-join">开通会员</a> 观看完整视频`]
+            // },
+            //跑马灯
+            // {
+            //     name: 'BulletScreenComponent',
+            //     type: AliPlayerComponent.BulletScreenComponent,
+            //     args: [this.username ? this.username + '，' + this.person_num + '人和你一起学习' : '' + this.person_num + '人和你一起学习', { fontSize: '16px', color: '#2f3a63' }, 'random']
+            // },
+            //分辨率
+
+            {
+                name: 'QualityComponent',
+                type: AliPlayerComponent.QualityComponent,
+                args: [this.getQuality, config.defaultDefinition, config.defaultDesc]
+            },
+            //切换下个视频
+            {
+                name: 'PlayerNextComponent',
+                type: AliPlayerComponent.PlayerNextComponent,
+                args: [config.next_Url, this.clickNextBtn()]
+            },
+            //切换上个视频
+            {
+                name: 'PlayPrevComponent',
+                type: AliPlayerComponent.PlayPrevComponent,
+                args: [config.prevUrl,this.clickPrevBtn()]
+            },
+            //实时上传组件
+            {
+                name: 'ReportingComponent',
+                type: AliPlayerComponent.ReportingComponent,
+                args: [{
+                    "timestr": this.timestr,
+                    "_lid": this.lid,
+                    "user_id": this.userid,
+                    "reportLogUrl": config.reportLogUrl,
+                    "random": this.random,
+                    "open": this.reportSwitch
+                }]
+            },
+            //倍速播放
+            {
+                name: 'RateComponent',
+                type: AliPlayerComponent.RateComponent
+            },
+            //倒计时进入下一节
+            {
+                name: 'CountdownComponent',
+                type: AliPlayerComponent.CountdownComponent,
+                args: [config.isend, 15]
+            },
+            //卡顿报错上报
+            {
+                name: 'ErrorReportComponent',
+                type: AliPlayerComponent.ErrorReportComponent,
+                args: [{
+                    "timestr": this.timestr,
+                    "_lid": this.lid,
+                    "user_id": this.userid,
+                    "error_url": this.error_url,
+                    "random": this.random,
+                    "open": true,
+                    "video_id": this.id,
+                    "version": '1.2'
+                }]
+            }
+        ];
+        // URL播放去除打点上报组件
+        // if (this.isSourcePlay) {
+        //     playerConfig.components.splice(5, 1);
+        // }
+        // 皮肤配置
+        playerConfig.skinLayout = [
+            {
+                "name": "controlBar",
+                "align": "blabs",
+                "x": 0,
+                "y": 0,
+                "children": [
+                    { name: "progress", align: "blabs", x: 0, y: 44 },//进度条
+                    { name: "playButton", align: "tl", x: 15, y: 15 },//暂停-开始播放
+                    { name: "timeDisplay", align: "tl", x: 50, y: 7 },//播放时间
+                    { name: "fullScreenButton", align: "tr", x: 15, y: 12 },//全屏
+                    { name: "volume", align: "tr", x: 25, y: 10 },//音量
+                    { name: "snapshot", align: "tr", x: 25, y: 9 }//截图
+                ]
+            },
+            {
+                "name": "bigPlayButton",
+                "align": "blabs",
+                "x": 30,
+                "y": 100
+            },
+            { name: "H5Loading", align: "cc" },
+            // { name: "errorDisplay", align: "tlabs", x: 0, y: 0 },
+            { name: "infoDisplay" },
+            { name: "thumbnail" },
+        ];
+        // 加密版本
+        if (that.ApiVersion) {
+            playerConfig.ApiVersion = that.ApiVersion;
+        }
+        // 断点是为了防止调试，私有加密保护的一种手段；开发模式屏蔽debugger；
+        if (!that.isDev) {
+            Aliplayer.__unable2Anti9Debugger13Key = 'error';
+        }
+        // 接入视频质量监控
+        playerConfig.license = {
+            domain: "edu.51cto.com",
+            key: "Oov5Cahe7BVc0g20t4b35fa7bc8414f969609650f64859570"
+        }
+        var curPlayer = null;
+        this.player = new Aliplayer(playerConfig, function (self) {
+            /*
+             首次通过replayByVidAndPlayAuth切换视频会重新执行一遍该回调函数
+             这种情况会使下面的事件绑定重复绑定（会执行两遍）
+            */
+           if (curPlayer && curPlayer === self) {
+               return;
+            }
+            curPlayer = that.player
+            var player = self;
+            if (that.currentTime) {
+                setTimeout(function () {
+                    that.currentTime(self.getCurrentTime())
+                }, 1000)
+            }
+            // 点击播放大按钮
+            document.querySelector('.prism-big-play-btn').addEventListener("click", function() {
+                // 记录点击播放时间
+                localStorage.setItem('cto_video_clickPlay', new Date().getTime());
+                // console.log('cto_video_clickPlay:', new Date().getTime());
+            })
+            // 点击播放小按钮
+            document.querySelector('.prism-play-btn').addEventListener("click", function() {
+                // 记录点击播放时间
+                localStorage.setItem('cto_video_clickPlay', new Date().getTime());
+                // console.log('cto_video_clickPlay:', new Date().getTime());
+            })
+            //空格暂停播放
+            $("body").keyup(function (e) {
+                var r = '';
+                if ('textarea' === (r = e.target.nodeName.toLocaleLowerCase()) || 'input' === r) return !1;
+                if (!!player) {
+                    var playStatus = player.getStatus()
+                    var currentTime = player.getCurrentTime();
+                    switch (e.keyCode) {
+                        case 32:
+                            if (playStatus == 'playing') {
+                                player.pause();
+                                $('.prism-big-play-btn').removeClass('playing').addClass('pause').show();
+                            } else {
+                                // 记录点击播放时间
+                                localStorage.setItem('cto_video_clickPlay', new Date().getTime());
+                                // console.log('cto_video_clickPlay:', new Date().getTime());
+                                player.play()
+                                $('.prism-big-play-btn').removeClass('pause').addClass('playing').hide();
+                            }
+                            break;
+                        case 37:
+                            if (playStatus == 'playing') {
+                                player.seek(currentTime - 5);
+                            }
+                            break;
+                        case 39:
+                            if (playStatus == 'playing') {
+                                player.seek(currentTime - 0 + 5);
+                            }
+                            break;
+                        default: ;
+                    }
+                }
+            });
+
+            let clickTimeId;
+
+            $('#ctoplayerbox' + that.playerid + ' video').dblclick(function (e) {
+                // 取消上次延时未执行的方法
+                clearTimeout(clickTimeId);
+                document.querySelector('.prism-fullscreen-btn').click();
+            })
+
+            //点击暂停播放
+            $('#ctoplayerbox' + that.playerid + ' video').click(function (e) {
+                 // 取消上次延时未执行的方法
+                 clearTimeout(clickTimeId);
+                 //执行延时
+                 clickTimeId = setTimeout(function () {
+                     //此处为单击事件要执行的代码
+                     e.stopPropagation();
+                     e.preventDefault();
+                     if (!!player) {
+                         var playStatus = player.getStatus()
+                         if (playStatus == 'playing') {
+                             player.pause();
+                             $('.prism-big-play-btn').removeClass('playing').addClass('pause').show();
+                         } else {
+                            // 记录点击播放时间
+                            localStorage.setItem('cto_video_clickPlay', new Date().getTime());
+                            // console.log('cto_video_clickPlay:', new Date().getTime());
+                            player.play();
+                            $('.prism-big-play-btn').removeClass('pause').addClass('playing').hide();
+                         }
+                     }
+                 }, 400);
+            });
+            //点击暂停播放
+            $('#ctoplayerbox' + that.playerid + ' .prism-cover').click(function (e) {
+                // 取消上次延时未执行的方法
+                clearTimeout(clickTimeId);
+                //执行延时
+                clickTimeId = setTimeout(function () {
+                    //此处为单击事件要执行的代码
+                    e.stopPropagation();
+                    e.preventDefault();
+                    if (!!player) {
+                        var playStatus = player.getStatus()
+                        if (playStatus == 'playing') {
+                            player.pause();
+                            $('.prism-big-play-btn').removeClass('playing').addClass('pause').show();
+                        } else {
+                            // 记录点击播放时间
+                            localStorage.setItem('cto_video_clickPlay', new Date().getTime());
+                            // console.log('cto_video_clickPlay:', new Date().getTime());
+                            player.play();
+                            $('.prism-big-play-btn').removeClass('pause').addClass('playing').hide();
+                        }
+                    }
+                }, 400);
+            });
+            var oldVolume = 0;
+            $('.short-horizontal').click(function (e) {
+                e.stopPropagation()
+                e.preventDefault()
+                if (!!player) {
+                    var newVolume = player.getVolume();
+                    if (newVolume == 0) {
+                        player.setVolume(oldVolume);
+                    } else {
+                        oldVolume = newVolume;
+                        player.setVolume(0);
+                    }
+                }
+            })
+            $('.long-horizontal').click(function (e) {
+                e.stopPropagation()
+                e.preventDefault()
+                if (!!player) {
+                    var newVolume = player.getVolume();
+                    if (newVolume == 0) {
+                        player.setVolume(oldVolume);
+                    } else {
+                        oldVolume = newVolume;
+                        player.setVolume(0);
+                    }
+                }
+            })
+            self.on('ready', function (e) {
+                that.ready(e, self)
+            })
+            self.on('play', function (params) {
+                that.play(params, self)
+            })
+            self.on('pause',  function (params) {
+                that.pause(params, self)
+            })
+            self.on('playing', that.playing)
+            self.on('timeupdate', function (timeupdate) {
+                that.timeupdate(self, timeupdate)
+            })
+            self.on('onM3u8Retry', that.onM3u8Retry)
+            self.on('ended', function () {
+                that.end(config)
+            })
+            self.on('error', that.error)
+            self.on('snapshoted', function (data) {
+                that.snapshoted(data)
+            }) //截图
+            self.on('sourceloaded', function (params) {
+                that.sourceloaded(self, params);
+            })
+            self.on('waiting', function (params) {
+                that.waiting(self, params);
+            })
+        });
+    },
+    ready: function (e, player) {
+        if(player.getDuration() - player.getCurrentTime() < 2) {
+            player.seek(0);
+            return
+        }
+        // console.log('51ready');
+    },
+
+    play: function (params, player) {
+        if (!!this.playcallback) {
+            this.playcallback()
+        }
+    },
+    pause: function () {
+        if (!!this.pausecallback) {
+            this.pausecallback()
+        }
+    },
+    playing: function () {
+        // console.log('51playing');
+    },
+    end: function (config) {
+        if (!!this.callback) {
+            sessionStorage.setItem('currentPlayerId','#ctoplayerbox' + this.playerid)
+            /* 如果设置了自动播放，则通过replayByVidAndPlayAuth切换下一个视频 */
+            if (sessionStorage.getItem("autoLesson") == '1') {
+                this.callback(this.noJumpChangeVideoSource(this));
+            } else {
+                this.callback('#ctoplayerbox' + this.playerid)
+            }
+        } else if (config.next_Url) {
+            window.location.href = config.next_Url
+        }
+    },
+    // 不用跳转页面切换视频源
+    noJumpChangeVideoSource: function(that) {
+        return function changeVideo(params) {
+            var videodata = {
+                center_url: params.centerUrl + 'player/play/vod-play-auth',
+                data: {
+                    type: params.type,
+                    lesson_id: params.lesson_id,
+                    id: params.id,
+                    sign: params.sign,
+                    lesson_type: 'course',
+                }
+            }
+            that.getVideoConfig(videodata).then((result)=> {
+                if (result.status) {
+                    // 切换视频源
+                    that.player.replayByVidAndPlayAuth(result.data.info.vodVideoId,result.data.info.playAuth);
+                    // 更新上一节下一节按钮
+                    let prevUrl = result.data.info.prevurl
+                    let nextUrl = result.data.info.nexturl
+                    if ($('.player-olympic-player-prev').length > 0) {
+                        $('.player-olympic-player-prev').remove()
+                    }
+                    if ($('.player-olympic-player-next').length > 0) {
+                        $('.player-olympic-player-next').remove()
+                    }
+                    for (const item of that.player._lifeCycleManager.components) {
+                        if (item.name == 'PlayerNextComponent') {
+                            item.obj.clickHandle = nextUrl;
+                            item.obj.createEl($('body'))
+                        }
+                        if (item.name == 'PlayPrevComponent') {
+                            item.obj.clickHandle = prevUrl;
+                            item.obj.createEl($('body'))
+                        }
+                        if (item.name == 'ReportingComponent') {
+                            item.obj.params._lid = result.data.info.lessonId;
+                            item.obj.params.timestr = new Date().getTime();
+                            item.obj.params.random = Math.random();
+                            item.obj.accumulation = 0
+
+                        }
+
+                    }
+                }
+            })
+
+        }
+
+    },
+    clickNextBtn: function() {
+        const that = this
+        return function(url) {
+            if (that.clickNextBtnCallback) {
+                that.clickNextBtnCallback(that.noJumpChangeVideoSource(that))
+            } else {
+                window.location.href = url;
+            }
+        }
+    },
+    clickPrevBtn: function() {
+        const that = this
+        return function(url) {
+            if (that.clickPrevBtnCallback) {
+                that.clickPrevBtnCallback(that.noJumpChangeVideoSource(that))
+            } else {
+                window.location.href = url;
+            }
+        }
+    },
+    onM3u8Retry: function () {
+        // console.log('51onM3u8Retry');
+    },
+    timeupdate: function (e, timeupdate) {
+        if (e.getCurrentTime() > 300) {
+            if (!this.userid) {
+                $('#ctoplayerbox' + this.playerid).empty().append('<div class="nologinbox"><h2>免费试看已结束，现在成为注册用户立送月会员</h2><h3>3000+课程免费看</h3><div class="nbtn"><a href="' + this.activity_url + '">立即注册</a></div><p class="newloginbox">已有账号？点击登录</p></div>')
+            }
+        }
+    },
+    error: function () {
+        // console.log('51error');
+    },
+    snapshoted: function (data) {
+        var pictureData = data.paramData.base64
+        var downloadElement = document.createElement('a')
+        downloadElement.setAttribute('href', pictureData)
+        var fileName = 'Aliplayer' + Date.now() + '.png'
+        downloadElement.setAttribute('download', fileName)
+        downloadElement.click()
+    },
+    startSeek: function () {
+        // console.log('51startSeek');
+    },
+    completeSeek: function () {
+        // console.log('51completeSeek');
+    },
+    destoryed: function () {
+        // console.log('51destoryed');
+        $('#ctoplayerbox' + this.playerid).remove();
+    },
+    getQuality: function (definition, desc) {
+        // console.log('getQuality');
+        localStorage.setItem("cto_video_definition", definition);
+        localStorage.setItem("cto_video_desc", desc);
+    },
+    waiting: function (player, parmas) {
+        // console.log('waiting');
+        // console.log(parmas);
+    },
+    next: function () {
+
+    },
+    sourceloaded: function() {},
+    setFeedback: function () {
+        if ($(`.${this.feedbackFaEle}`).length <= 0) return
+        const that = this
+        const ele = `
+            <div class="feedback-box">
+                <img src="https://s2.51cto.com/images/202401/10/29f58710a7a33eb4f4f89ae2eb6a3adf.png" alt="反馈icon"/>
+                <div class="feedback-tips">反馈</div>
+            </div>
+        `
+        $(`.${this.feedbackFaEle}`).append(ele)
+
+        const setFeedbackDialogEle = `
+            <div class="feedback-dialog">
+                <div class="feedback-dialog-title">
+                    <span class="feedback-dialog-title-content">播放器问题反馈</span>
+                    <img class="feedback-dialog-close" src="https://s2.51cto.com/images/202401/10/983ab9dc87da742897b20909914f67e1.png" alt="关闭icon" />
+                </div>
+                <div class="feedback-dialog-content">
+                    <div class="feedback-dialog-content-tabmenu">
+                    <div class="feedback-dialog-content-tabmenu-item">
+                        <input type="radio" id="scales" name="kt_type" value="1" />
+                        <label for="scales">播放卡顿</label>
+                    </div>
+                    <div class="feedback-dialog-content-tabmenu-item">
+                        <input type="radio" id="scales1" name="kt_type" value="2" />
+                        <label for="scales1">音画不同步</label>
+                    </div>
+                    <div class="feedback-dialog-content-tabmenu-item">
+                        <input type="radio" id="scales2" name="kt_type" value="3" />
+                        <label for="scales2">黑屏</label>
+                    </div>
+                    <div class="feedback-dialog-content-tabmenu-item">
+                        <input type="radio" id="scales3" name="kt_type" value="4" />
+                        <label for="scales3">其他</label>
+                    </div>
+                    </div>
+                    <input class="desc-ipt" placeholder="问题描述，限100字以内" maxlength="100"/>
+                    <div class="mobile-box">
+                    <span>联系方式</span>
+                    <input class="mobile-ipt" placeholder="留下QQ/邮箱，便于进一步解决问题" maxlength="50"/>
+                    </div>
+                    <div class="footer-box">
+                    <div class="confirm-btn">确定</div>
+                    <div class="netspeed"></div>
+                    </div>
+                </div>
+            </div>
+        `
+        let netSpeed = ''
+        $(`.${this.feedbackFaEle}`).append(setFeedbackDialogEle)
+        $('.feedback-box').click(function() {
+            $('.feedback-dialog').show()
+            that.getLocalNetSpeed().then((res)=> {
+                netSpeed = (res / 1024).toFixed(2)
+                $('.feedback-dialog .netspeed').text(`当前网速：${netSpeed}MB/s`)
+            });
+        })
+        $('.feedback-dialog-close').click(function() {
+            resetFeedDialog()
+        })
+        $(".feedback-dialog input[name='kt_type']").on('change', function() {
+            if ($(this).val() == 4) {
+                $('.feedback-dialog .desc-ipt').show()
+            } else {
+                $('.feedback-dialog .desc-ipt').hide()
+            }
+        })
+        $('.feedback-dialog .confirm-btn').on('click', function() {
+            const data = {
+                kt_type: $(".feedback-dialog input[name='kt_type']:checked").val(),
+                user_contact: $('.feedback-dialog .mobile-ipt').val(),
+                kt_description: $('.feedback-dialog .desc-ipt').val(),
+                down_link: netSpeed || '0.01',
+                refer: location.href
+            }
+            if (!data.kt_type) {
+                new AutoBox({
+                    content: "请选择问题类型",
+                    mask: "#000",
+                    autoClose: 2,
+                    img: 'error'
+                })
+                return
+            }
+            if (data.kt_type == 4 && !data.kt_description) {
+                new AutoBox({
+                    content: "请填写问题描述",
+                    mask: "#000",
+                    autoClose: 2,
+                    img: 'error'
+                })
+                return
+            }
+            if (!data.user_contact) {
+                new AutoBox({
+                    content: "请填写您的联系方式",
+                    mask: "#000",
+                    autoClose: 2,
+                    img: 'error'
+                })
+                return
+            }
+            // QQ号的正则表达式
+            const qqRegex = /^[1-9][0-9]{4,}$/;
+            // 邮箱的正则表达式
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!qqRegex.test(data.user_contact) && !emailRegex.test(data.user_contact)) {
+            new AutoBox({
+                content: "请输入有效的QQ号或邮箱号",
+                mask: "#000",
+                autoClose: 2,
+                img: 'error'
+            })
+            return
+            }
+            $.ajax({
+            url: _centerURL + 'player/index/feedback',
+            type: 'post',
+            data,
+            dataType: 'json',
+            success: function(res) {
+                if (res.status == 0) {
+                new AutoBox({
+                    content: res.msg || '反馈成功',
+                    mask: "#000",
+                    autoClose: 2,
+                })
+                resetFeedDialog()
+                } else {
+                new AutoBox({
+                    content: res.msg || '反馈失败',
+                    mask: "#000",
+                    autoClose: 2,
+                    img: 'error'
+                })
+                }
+            }
+            })
+        })
+        function resetFeedDialog () {
+            $('.feedback-dialog').hide()
+            $('.feedback-dialog .mobile-ipt').val('')
+            $('.feedback-dialog .desc-ipt').val('')
+            $(".feedback-dialog input[name='kt_type']").prop("checked", false);
+            $('.feedback-dialog .netspeed').text('')
+            $('.feedback-dialog .desc-ipt').hide()
+        }
+        $(`.${this.feedbackFaEle}`).hover(function() {
+            $('.feedback-box').show()
+        }, function() {
+            $('.feedback-box').hide()
+        })
+
+    },
+    /**
+     * 获取本地网络状态
+     * @returns 网速值'kb/s'
+     */
+    getLocalNetSpeed: function() {
+        return new Promise((resolve, reject) => {
+            // 测试图片文件大小单位KB
+            const url = 'https://s2.51cto.com/edu/edu_center/themes/theme_two/theme_two_36.png?rnd=' + Math.random();
+            const imgSize = 610;
+
+            // 10s 超时结束
+            setTimeout(() => {
+                resolve(0);
+            }, 10000);
+
+            this.getSpeedWithImg(url, imgSize).catch(() => 0).then((speed)=> {
+                resolve(speed);
+            });
+        });
+
+    },
+    // 图片绝对地址，图片大小，X kb， 返回网速为 XX kb/s
+    getSpeedWithImg: function(imgUrl, fileSize) {
+        return new Promise((resolve, reject) => {
+        let start = null;
+        let end = null;
+        let img = new Image();
+        start = Date.now();
+        img.onload = function (e) {
+            end = Date.now();
+            const timeRange = end - start;
+            const speed = fileSize / timeRange * 1000
+            resolve(Math.floor(speed) || 0);
+        }
+        img.src = imgUrl;
+        }).catch(err => { throw err });
+    }
+    }
+function isUseFlash() {
+    var userAgent = navigator.userAgent;
+    var isWin = (navigator.platform == "Win32") || (navigator.platform == "Win64") || (navigator.platform == "Windows");
+    if (isWin) {
+        var isWin2000 = userAgent.indexOf("Windows NT 5.0") > -1 || userAgent.indexOf("Windows 2000") > -1;
+        var isWinxp = userAgent.indexOf("Windows NT 5.1") > -1 || userAgent.indexOf("Windows XP") > -1;
+        var isWin2003 = userAgent.indexOf("Windows NT 5.2") > -1 || userAgent.indexOf("Windows 2003") > -1;
+        var isWinVista = userAgent.indexOf("Windows NT 6.0") > -1 || userAgent.indexOf("Windows Vista") > -1;
+        var isWin7 = userAgent.indexOf("Windows NT 6.1") > -1 || userAgent.indexOf("Windows 7") > -1;
+        var isWin8 = userAgent.indexOf("Windows NT 6.2") > -1 || userAgent.indexOf("Windows 8") > -1;
+        var isWin8_1 = userAgent.indexOf("Windows NT 6.3") > -1 || userAgent.indexOf("Windows 8.1") > -1;
+        var isWin10 = userAgent.indexOf("Windows NT 10") > -1 || userAgent.indexOf("Windows 10") > -1;
+
+        if (isWin2000 || isWinxp || isWin2003 || isWinVista || isWin7 || isWin8) {
+            var isIE11 = userAgent.indexOf('Trident') > -1 && (userAgent.indexOf("rv:11.0") > -1 || userAgent.indexOf("msie") > -1);
+            if (isIE11) {
+                return true;
+            }
+        }
+    }
+    return false;
+}

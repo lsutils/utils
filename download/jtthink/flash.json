@@ -1,0 +1,838 @@
+{
+    "web程序员角度ubuntu自修速学课程": [
+        {
+            "link": "https://www.jtthink.com/course/play/588",
+            "title": "第1讲:从程序员角度认识ubuntu、安装和基本操作"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/589",
+            "title": "第2讲:从程序员角度学习:IP地址获取、新建文件、apt-get使用"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/590",
+            "title": "第3讲:可执行程序是什么鬼？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/591",
+            "title": "第4讲:安装flash player、编译安装PHP、写个简单PHP页面"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/595",
+            "title": "第5讲:速装JDK、写一个简单java程序、安装webstorm"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/597",
+            "title": "第6讲:速学环境变量、安装NodeJS、速学NodeJS测试程序"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/598",
+            "title": "第7讲:手工编译安装mysql5.7.x,排坑"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/600",
+            "title": "第8讲:编译安装Memcached并测试客户端连接"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/602",
+            "title": "第9讲:特别课:程序员的儿童节之不忘初心"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/603",
+            "title": "第10讲:编译安装PHP7下面的memcached扩展"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/606",
+            "title": "第11讲:哪里不会点哪里:手工编译安装apache"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/608",
+            "title": "第12讲:在ubuntu16中手工把PHP7和apache2.4\"勾结\""
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/613",
+            "title": "第13讲:chrome安装、phpstorm配置开发PHP初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/618",
+            "title": "第14讲:apache2.4多站点速配、PhpStorm结合apache启动、安装xdebug"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/619",
+            "title": "第15讲:利用xdebug结合PhpStorm调试PHP程序"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/621",
+            "title": "第16讲:安装PHP的PDO mysql扩展"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/625",
+            "title": "第17讲:ubuntu下速装sublime3、配合PHP运行"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/626",
+            "title": "第18讲:PHP依赖管理工具:Composer学习(1)安装"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/630",
+            "title": "第19讲:Composer学习(2):自动加载功能"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/631",
+            "title": "第20讲:Composer学习(3):超简单的实现ORM框架的依赖加载"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/632",
+            "title": "第21讲:[补充课时]ubuntu中git的快速领悟"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/635",
+            "title": "第22讲:[补充课时]在github中创建自己的项目"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/636",
+            "title": "第23讲:Composer学习(4):在官方镜像源上传自己的组件，并自我欣赏"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/638",
+            "title": "第24讲:ubuntu下Nginx的安装和简单使用"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/648",
+            "title": "第25讲:Nginx结合PHP-FPM和PHP勾结的速配方法"
+        }
+    ],
+    "git实干速学：工具就是为我们服务的": [
+        {
+            "link": "https://www.jtthink.com/course/play/331",
+            "title": "第1讲:快速热身:几行命令速度理解git"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/332",
+            "title": "第2讲:又快有好的学会和GitHub进行关联并提交代码"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/333",
+            "title": "第3讲:如何在GitHub上建立分支版本"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/336",
+            "title": "第4讲:负责任的处理好版本冲突"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/337",
+            "title": "第5讲:切换到SSH方式连接github和克隆项目操作"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/339",
+            "title": "第6讲:在centos中yum安装Git并升级到最新版"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/344",
+            "title": "第7讲:Centos做主机windows做客户机进行Git交互"
+        }
+    ],
+    "实战级正则表达式一点通": [
+        {
+            "link": "https://www.jtthink.com/course/play/68",
+            "title": "第1讲:开张课：让一切变得简单"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/69",
+            "title": "第2讲:正则中头疼的大小写"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/70",
+            "title": "第3讲:今天你懂中文了吗？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/71",
+            "title": "第4讲:为啥我老看到^和$这两个符号？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/72",
+            "title": "第5讲:有奖课时:掌握正则精髓之小括号"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/73",
+            "title": "第6讲:掌握正则精髓之 中括号"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/74",
+            "title": "第7讲:掌握正则精髓之大括号"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/75",
+            "title": "第8讲:[提高篇]解开小括号的\"真面目\""
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/76",
+            "title": "第9讲:令人迷惑的“贪婪”"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/77",
+            "title": "第10讲:简述php中的正则递归用法"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/78",
+            "title": "第11讲:说一说javascript中的trim功能 5分钟"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/79",
+            "title": "第12讲:正则一个日期来提高自己的水平先"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/80",
+            "title": "第13讲:正则一个日期来提高自己的水平先（二):月份和日期部分"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/81",
+            "title": "第14讲:正则一个日期来提高自己的水平先（三):闰年处理"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/82",
+            "title": "第15讲:实战之新闻图片提取办法"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/83",
+            "title": "第16讲:过滤html注入标记"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/84",
+            "title": "第17讲:抓取一个51cto推荐博文(一):抓去博文列表(PHP)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/85",
+            "title": "第18讲:写一个用户注册规则验证（JS版)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/86",
+            "title": "第19讲:抓取一个51cto推荐博文(二):抓取博文详情（PHP版)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/87",
+            "title": "第20讲:按分类抓取一个网站的新闻列表，包括分页（java版)"
+        }
+    ],
+    "数据挖掘前传之pandas速学基础篇": [
+        {
+            "link": "https://www.jtthink.com/course/play/1315",
+            "title": "第1讲:开张课、Series入门理解、简单取数、排序"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1316",
+            "title": "第2讲:Series学习(2):从csv文件读取的各种姿势、商品销量计算练习"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1317",
+            "title": "第3讲:DataFrame入门:取列数据、求和、loc函数"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1318",
+            "title": "第4讲:DataFrame入门:增加列、统计销售额、apply函数的应用"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1322",
+            "title": "第5讲:DataFrame入门(4):排序、按销量计算商品排名"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1330",
+            "title": "第6讲:DataFrame入门(5):合并数据(join)、合并用户信息和积分表"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1343",
+            "title": "第7讲:DataFrame入门(6):修改列名、合并用户积分数据(merge)、 重置索引"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1352",
+            "title": "第8讲:DataFrame入门(7): 行数据合并(concat)、球员数据分组、去重"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1360",
+            "title": "第9讲:DataFrame入门(8): 多重索引取数据的各种姿势、slice、IndexSlice"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1370",
+            "title": "第10讲:日期处理学习(1):生成日期索引、\"伪造\"点击量报表"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1389",
+            "title": "第11讲:日期处理学习(2):读取apache原始日志、转换时间格式"
+        }
+    ],
+    "老司机学python之flask套路学习": [
+        {
+            "link": "https://www.jtthink.com/course/play/1255",
+            "title": "第4讲:docker配置samba共享:windows开发,在linux中运行(无密码模式)"
+        }
+    ],
+    "docker运行套路实战-Java篇(1)": [
+        {
+            "link": "https://www.jtthink.com/course/play/1239",
+            "title": "第1讲:基于alpine 制作jdk8镜像(Oracle官方JDK，非OpenJDK)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1240",
+            "title": "第2讲:基于alpine 制作tomcat镜像(1):基本运行练习"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1244",
+            "title": "第3讲:基于alpine制作tomcat镜像(2):逼格实现动态参数配置网站根目录"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1252",
+            "title": "第4讲:spring boot运行套路(1):maven打包、在docker中运行"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1258",
+            "title": "第5讲:spring boot运行套路(2):打包并在tomcat容器中运行"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1265",
+            "title": "第6讲:maven利用tomcat的manager远程部署war"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1272",
+            "title": "第7讲:利用compose编排容器、nginx负载spring boot服务(单机)、远程部署"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1280",
+            "title": "第8讲:docker+nginx实现灰度更新(1):简单ip分发"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1288",
+            "title": "第9讲:docker+nginx补充知识点:添加lua模块支持、nginx调用lua响应"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1294",
+            "title": "第10讲:docker+nginx补充知识点: 集成lua-mysql模块、nginx响应时调用数据库"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1299",
+            "title": "第11讲:docker+nginx补充知识点: 集成lua-redis模块、nginx响应时输出缓存内容"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1305",
+            "title": "第12讲:灰度发布入门(2):利用lua_redis基于IP区分进行分流"
+        }
+    ],
+    "python web实战基础教学第一波": [
+        {
+            "link": "https://www.jtthink.com/course/play/9",
+            "title": "第1讲:开张篇:python为啥是万金油？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/10",
+            "title": "第2讲:不要拒绝立马学个数组好吗？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/11",
+            "title": "第3讲:进入web环境学习一:搭建开发环境"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/56",
+            "title": "第4讲:快速搭建django环境"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/57",
+            "title": "第5讲:python+django加载静态网页模板"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/110",
+            "title": "第8讲:默默的在实战中学习到了条件判断"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/118",
+            "title": "第9讲:表单初步:做一个然并卵的表单"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/119",
+            "title": "第10讲:怎么限制用户只能输入纯数字"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/144",
+            "title": "第11讲:写程序时抓狂的发现竟然0>1,这是为神马?"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/146",
+            "title": "第12讲:用post方式提交表单，就是任性"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/190",
+            "title": "第13讲:实战前热身:在大肥猪身上学div+css"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/191",
+            "title": "第14讲:如何在python中填充一个下拉框"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/192",
+            "title": "第15讲:让我们开始有封装的感觉"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/197",
+            "title": "第16讲:利用cookie保存用户登录信息初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/198",
+            "title": "第17讲:趣说python中的面向对象:奥巴马篇"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/199",
+            "title": "第18讲:进一步封装:首页和登录页分离"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/200",
+            "title": "第19讲:如何实现用户注销功能"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/201",
+            "title": "第20讲:不想丑陋之实现动态url"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/214",
+            "title": "第21讲:不想丑陋之动态加载模块初级篇"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/217",
+            "title": "第22讲:国中国:自己建立一个简单好用的mvc机制(一)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/218",
+            "title": "第23讲:当用户瞎输网址导致错误加载模块肿么办？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/222",
+            "title": "第24讲:利用新架构整合我们的首页和登录页"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/251",
+            "title": "第25讲:django+mysql的配置案例"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/252",
+            "title": "第26讲:django写代码操作mysql(一）粗俗的方法"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/255",
+            "title": "第27讲:在mysql实战中我们发现了元组和位置参数"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/256",
+            "title": "第28讲:实现数据库级用户登录，学会类继承"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/258",
+            "title": "第29讲:简易用户注册:如何新增数据并返回自增ID"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/260",
+            "title": "第30讲:[附加课]python+memcached配置和简单代码测试"
+        }
+    ],
+    "程序员的学习方法": [
+        {
+            "link": "https://www.jtthink.com/course/play/913",
+            "title": "第1讲:扯一扯程序员的学习方法"
+        }
+    ],
+    "Android混合实战开发基础恶补篇": [
+        {
+            "link": "https://www.jtthink.com/course/play/885",
+            "title": "第1讲:课前准备、观影要求"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/886",
+            "title": "第2讲:IDEA配置Android SDK、创建第一个项目"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/887",
+            "title": "第3讲:安装和配置模拟器Genymotion，并启动"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/888",
+            "title": "第4讲:IDEA+GenyMotion启动我们第一个Android项目"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/890",
+            "title": "第5讲:原生基础速学:布局、R.java、添加按钮"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/894",
+            "title": "第6讲:原生基础速学: 组件的ID、事件监听器、 按钮点击效果"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/895",
+            "title": "第7讲:原生基础速学: 设置启动界面、界面间跳转、intent初步接触"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/897",
+            "title": "第8讲:原生基础速学: 页面间数据交互、点按钮浏览网页、打电话、权限设置"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/901",
+            "title": "第9讲:原生基础速学:用配置的方式启动(隐式)、Category、第一个启动的界面"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/903",
+            "title": "第10讲:原生基础速学:intent打开外部程序、setClassName和 ComponentName 区别"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/904",
+            "title": "第11讲:[附加课]电脑和GenyMotion共享文件、安装部分APK软件"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/908",
+            "title": "第12讲:[附加课] GenyMotion里安装微信的方法"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/909",
+            "title": "第13讲:使用uri的方式打开应用、为什么要设置Action"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/917",
+            "title": "第14讲:打开外部txt文件关联我们的app来打开、mimeType"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/918",
+            "title": "第15讲:打开外部txt文件关联我们的app来打开、并读取txt内容"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/922",
+            "title": "第16讲:在APP中加载网页的套路(一):外壳的产生"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/923",
+            "title": "第17讲:混合APP开发的套路(二):加载app中的html"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/925",
+            "title": "第18讲:混合APP开发的套路(三): android和javascript初步交互"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/930",
+            "title": "第19讲:混合APP开发的套路(四):在html页面中打开项目中的Activity"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/934",
+            "title": "第20讲:混合APP开发的套路(五): Activity保存登录用户名并跳转到html中"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/937",
+            "title": "第21讲:混合APP开发的套路(六): Android调用rest api模拟登录请求"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/940",
+            "title": "第22讲:混合APP开发的套路(七): 登录后发送通知栏消息---基本文字通知"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/944",
+            "title": "第23讲:混合APP开发的套路(八): 广播学习(1)：获取系统广播(获取网络状态变化)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/953",
+            "title": "第24讲:混合APP开发的套路(九): 广播学习(2)：无脑快速集成极光推送"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/957",
+            "title": "第25讲:Cordova入门篇:(一) IDEA+Cordova运行第一个项目"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/960",
+            "title": "第26讲:vue.js、webpack、cordova、IDEA相结合"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/968",
+            "title": "第27讲:引入移动UI框架:mint-ui做个简单登录界面、结合cordova使用js调用java"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/971",
+            "title": "第28讲:手工配置gradle、js和java交互实现用户登录模拟"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/981",
+            "title": "第29讲:js和cordova插件交互进行远程API请求回调并获取回调"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/983",
+            "title": "第30讲:vue.js+mint-ui实现信息列表页、并在 android中运行"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/989",
+            "title": "第31讲:原生Activity中放入TitleBar并嵌入Cordova的webview:运行vue.js做的新闻列表页"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/993",
+            "title": "第32讲:android ToolBar速学:标题、导航图片、返回事件"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/997",
+            "title": "第33讲:android ToolBar速学:右上角弹出菜单、设置菜单图标"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1001",
+            "title": "第34讲:android ToolBar速学:利用PopupWindow弹出搜索框"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1009",
+            "title": "第35讲:SearchView的基本用法、popupwindow嵌入 SearchView的设置"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1016",
+            "title": "第36讲:做一个通用混合Activity、js调用Cordova插件在GenyMotion中拍照"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/1022",
+            "title": "第37讲:js调用Cordova插件拍照上传、选择图片上传、PHP端接收案例"
+        }
+    ],
+    "[版本已过时]前端开发那些事儿(第一波)": [
+        {
+            "link": "https://www.jtthink.com/course/play/365",
+            "title": "第1讲:开张讲:痛并快乐着的web程序员"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/382",
+            "title": "第2讲:大家好才是真的好:如何进行前后端分离"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/391",
+            "title": "第3讲:通过一个页面切换过渡效果叨叨一下如何实战角度学习技术"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/397",
+            "title": "第4讲:因为\"钱\",所以我们要有\"封装\"思维"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/401",
+            "title": "第5讲:原来创新来自于\"控制欲\""
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/404",
+            "title": "第6讲:div错位是怎么产生的？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/409",
+            "title": "第7讲:动态require外部脚本的原理其实并不神秘"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/413",
+            "title": "第8讲:怒切假腿:10分钟了解如何搞一个响应式布局"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/424",
+            "title": "第9讲:\"投机取巧\"实现网页加载进度条"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/428",
+            "title": "第10讲:第一章完结篇:web程序员应该掌握CSS到什么程度"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/432",
+            "title": "第11讲:javascript的基本数据类型:你买过火车票吗？"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/433",
+            "title": "第12讲:javascript对象的开脑理解方法(一):黄牛和车票"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/441",
+            "title": "第13讲:javascript对象的开脑理解方法(二):车票购买前后(this和prototype)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/447",
+            "title": "第14讲:开始构建自己的JS简陋小框架(一):取名和基本结构"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/457",
+            "title": "第15讲:构建自己的JS简陋小框架(二):实现简单的选择器"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/462",
+            "title": "第16讲:三句代码在我们的简陋小框架中实现$(document).ready"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/468",
+            "title": "第17讲:无下限获取元素的父元素"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/474",
+            "title": "第18讲:事件学习之像感冒一样传播的事件"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/486",
+            "title": "第19讲:导致烂代码的原因之一：事件触发的忽略"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/496",
+            "title": "第20讲:XmlHttpRequest恶补(一):正常请求和自己发出404状态"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/508",
+            "title": "第21讲:XmlHttpRequest恶补(二):跨域请求的姿势"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/514",
+            "title": "第22讲:闭一个包:其实你根本就懂闭包"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/518",
+            "title": "第23讲:JS中的作用域:阻挡天使和恶魔的结界"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/525",
+            "title": "第24讲:开房的学问：JS中的AO链"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/527",
+            "title": "第25讲:JS中的对象联姻：call方法"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/535",
+            "title": "第26讲:JS中超越现实的匿名函数"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/536",
+            "title": "第27讲:进入reactjs的世界:入门体验"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/537",
+            "title": "第28讲:利用babel来”编译”我们的脚本文件"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/557",
+            "title": "第29讲:带着场景学习:导航栏(一)reactjs简单渲染一个导航栏"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/560",
+            "title": "第30讲:WebStorm+NodeJS+Babel+ReactJS即时编译简易开发环境配置"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/562",
+            "title": "第31讲:初识ReactJS的组件化开发(一):简单封装"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/571",
+            "title": "第32讲:初识ReactJS的组件化开发(二):组件嵌套和属性的基本使用"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/575",
+            "title": "第33讲:初识ReactJS的组件化开发(三):利用ajax渲染电影列表"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/579",
+            "title": "第34讲:初识ReactJS的组件化开发(四):ajax加载电影列表时显示加载提示"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/581",
+            "title": "第35讲:初识ReactJS的组件化开发(五):ajax加载评论列表，并定时获取更新"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/582",
+            "title": "第36讲:初识ReactJS的组件化开发(六):ajax更新评论列表时的定时器处理"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/583",
+            "title": "第37讲:初识ReactJS的组件化开发(七):用表单做评论 (上):获取文本框的value"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/587",
+            "title": "第38讲:初识ReactJS的组件化开发(八):用表单做评论 :限制textarea可输入字符长度"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/594",
+            "title": "第39讲:初识ReactJS的组件化开发(九):下拉框的使用方法"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/604",
+            "title": "第40讲:入门篇：利用Babel来转化你的ES2015脚本初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/605",
+            "title": "第41讲:使用webpack+babel来\"编译\"你的JS代码(上)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/607",
+            "title": "第42讲:使用webpack+babel来\"编译\"你的JS代码(下)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/610",
+            "title": "第43讲:附加课:使用webpack来\"编译\"你的css和图片初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/612",
+            "title": "第44讲:变量的定义:让我们的代码不再\"恶心\""
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/617",
+            "title": "第45讲:ES2015中强大的\"变量\"模板功能"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/620",
+            "title": "第46讲:超自然的箭头函数学习初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/623",
+            "title": "第47讲:令人振奋的Class(上)"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/627",
+            "title": "第48讲:令人振奋的Class(下):继承和实战代码示例"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/629",
+            "title": "第49讲:延展操作符和解构的简单实际应用"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/633",
+            "title": "第50讲:[提高]ES2015中最惊艳特性之生成器函数初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/641",
+            "title": "第51讲:webpack的html插件使用和ES2015中的模块引用机制初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/647",
+            "title": "第52讲:速学Promise传递异步消息初步"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/651",
+            "title": "第53讲:“传说”未来代替Ajax的Fetch入门"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/653",
+            "title": "第54讲:[附加课]WebSocket超简单入门（PHP模拟后端）"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/655",
+            "title": "第55讲:[附加课]为什么要用PolyFill:JS中的修补匠"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/663",
+            "title": "第56讲:让webpack打包时支持ReactJS\"编译\""
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/671",
+            "title": "第57讲:借助webpack-dev-server让我们的代码热编译"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/674",
+            "title": "第58讲:React-BootStrap框架快速体验上手"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/677",
+            "title": "第59讲:Amaze UI React框架快速体验上手"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/686",
+            "title": "第60讲:Ant Design框架快速体验上手(1):导航"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/695",
+            "title": "第61讲:Ant Design框架快速体验上手(2):布局"
+        },
+        {
+            "link": "https://www.jtthink.com/course/play/715",
+            "title": "第62讲:阶段性总结课程"
+        }
+    ]
+}

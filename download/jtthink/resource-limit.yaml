@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+#      nodeSelector:
+#        kubernetes.io/hostname: k8s-master01
+      containers:
+        - name: redis
+          image: redis:6.2.6
+#          resources:
+#            limits:
+#              memory: "1.5Gi"
+#            requests:
+#              memory: "800Mi"
+  selector:
+    matchLabels:
+      app: redis
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-svc
+spec:
+  selector:
+    app: redis
+  type: NodePort
+  ports:
+    - port: 30080
+      targetPort: 6379
+      nodePort: 30000

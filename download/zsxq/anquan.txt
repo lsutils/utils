@@ -1,0 +1,12 @@
+[
+    {
+        "domain": "wx.zsxq.com",
+        "expiry": 1769824190,
+        "httpOnly": false,
+        "name": "_uab_collina",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "173526419020280804536319"
+    }
+]
