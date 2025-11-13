@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"path/filepath"
 	"strings"
 	"syscall"
 	"time"
 
 	"github.com/google/go-cmp/cmp"
+	"github.com/lsutils/utils/k8s/helper"
 	"k8s.io/apimachinery/pkg/api/meta"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -19,21 +19,13 @@ import (
 	"k8s.io/client-go/dynamic"
 	dynamicinformer "k8s.io/client-go/dynamic/dynamicinformer"
 	"k8s.io/client-go/tools/cache"
-	"k8s.io/client-go/tools/clientcmd"
-	"k8s.io/client-go/util/homedir"
 )
 
 func main() {
 	var gvrStr string
-	var kubeconfig string
 
 	flag.StringVar(&gvrStr, "gvr", "", "GroupVersionResource like 'apps/v1/deployments'")
-	if home := homedir.HomeDir(); home != "" {
-		flag.StringVar(&kubeconfig, "kubeconfig", filepath.Join(home, ".kube", "config"), "kubeconfig path")
-	} else {
-		flag.StringVar(&kubeconfig, "kubeconfig", "", "absolute path to the kubeconfig file")
-	}
-	flag.Parse()
+	config := helper.NewK8sConfig().K8sRestConfig()
 
 	if gvrStr == "" {
 		fmt.Println("Usage: --gvr group/version/resource, e.g. --gvr apps/v1/deployments")
@@ -53,10 +45,6 @@ func main() {
 	}
 
 	// Build client
-	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
-	if err != nil {
-		panic(err)
-	}
 
 	dynamicClient, err := dynamic.NewForConfig(config)
 	if err != nil {

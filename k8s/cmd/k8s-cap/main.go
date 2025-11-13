@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/lsutils/utils/k8s/helper"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/sets"
 	quotav1 "k8s.io/apiserver/pkg/quota/v1"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
 )
 
 type Rule struct {
@@ -88,7 +88,7 @@ func init() {
 func main() {
 	var details = make(map[string]PreNode)
 
-	restConfig, _ := clientcmd.BuildConfigFromFlags("", "/Users/acejilam/.kube/mas.config")
+	restConfig := helper.NewK8sConfig().K8sRestConfig()
 	client, err := kubernetes.NewForConfig(restConfig)
 	if err != nil {
 		panic(err)

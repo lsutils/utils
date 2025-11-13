@@ -6,27 +6,18 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/lsutils/utils/k8s/helper"
 	"github.com/olekukonko/tablewriter"
 	"github.com/olekukonko/tablewriter/tw"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
 )
 
 func main() {
 	containerName := flag.String("container-name", "", "container name")
 	namespace := flag.String("namespace", "", "")
-	flag.Parse()
-	if *containerName == "" && *namespace == "" {
-		flag.Usage()
-		os.Exit(1)
-	}
-	cfg, err := clientcmd.NewDefaultClientConfigLoadingRules().Load()
-	if err != nil {
-		panic(err)
-	}
-	restConfig, err := clientcmd.NewDefaultClientConfig(*cfg, &clientcmd.ConfigOverrides{}).ClientConfig()
+	restConfig := helper.NewK8sConfig().K8sRestConfig()
 
 	client, err := kubernetes.NewForConfig(restConfig)
 	if err != nil {
@@ -39,7 +30,7 @@ func main() {
 	}
 
 	for _, p := range ps.Items {
-		if *namespace != "" && p.Namespace == *namespace {
+		if p.Namespace == *namespace || *namespace == "" {
 			for _, c := range p.Status.ContainerStatuses {
 				ShaMaps[c.ImageID] = append(ShaMaps[c.ImageID], types.NamespacedName{
 					Namespace: p.GetNamespace(),

@@ -4,11 +4,13 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"net/http"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
 
+	"github.com/lsutils/utils/k8s/helper"
+	"github.com/olekukonko/tablewriter"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -16,21 +18,10 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 	quotav1 "k8s.io/apiserver/pkg/quota/v1"
 	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/klog/v2"
 )
 
-type LoggingTransport struct {
-	rt http.RoundTripper
-}
-
-func (l *LoggingTransport) RoundTrip(request *http.Request) (*http.Response, error) {
-	klog.Infoln(request.URL.String(), request.Method)
-	return l.rt.RoundTrip(request)
-}
-
 var resourcesName string
-var kubeconfig string
 var nodeContains string
 var needResourcesName string
 var needResourcesNameQuantity = make(map[string]resource.Quantity)
@@ -45,24 +36,16 @@ func parseNeedResources() {
 }
 
 func main() {
-	flag.StringVar(&kubeconfig, "kubeconfig", "/Users/acejilam/.kube/mas.config", "absolute path to the kubeconfig file")
 	flag.StringVar(&nodeContains, "node", "", "node name sub string")
 	flag.StringVar(&resourcesName, "resources", "", "resource name")
 	flag.StringVar(&needResourcesName, "need-resources", `{"cpu":"104","ephemeral-storage":"32Gi","memory":"1600Gi","nvidia.com/gpu-h100-80gb-hbm3":"8","rdma/rdma_shared_device_a":"1","rdma/rdma_shared_device_b":"1"}`, "resource name")
-	flag.Parse()
+	os.Setenv("KUBECONFIG", os.Getenv("HOME")+"/.kube/bugfix.config")
+	clientConfig := helper.NewK8sConfig().K8sRestConfig()
+
 	parseNeedResources()
 	ss := sets.NewString()
 	if strings.TrimSpace(resourcesName) != "" {
 		ss = sets.NewString(strings.Split(strings.TrimSpace(resourcesName), ",")...)
-	}
-
-	clientConfig, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
-	if err != nil {
-		klog.Fatalf("Error building kubeconfig: %s", err.Error())
-		return
-	}
-	clientConfig.WrapTransport = func(rt http.RoundTripper) http.RoundTripper {
-		return &LoggingTransport{rt: rt}
 	}
 
 	client, err := kubernetes.NewForConfig(clientConfig)
@@ -80,10 +63,8 @@ func main() {
 	nss := sets.NewString()
 
 	for _, node := range nodes.Items {
-		if nodeContains != "" {
-			if !strings.Contains(node.Name, nodeContains) {
-				continue
-			}
+		if nodeContains != "" && !strings.Contains(node.Name, nodeContains) {
+			continue
 		}
 		tt := sets.NewString()
 		for k, _ := range node.Status.Allocatable {
@@ -245,11 +226,13 @@ func main() {
 			})
 		}
 	}
-	//
-	//table = tablewriter.NewWriter(os.Stdout)
-	//table.SetHeader([]string{"Resources", "Cap", "Used", "Percent"})
-	//table.AppendBulk(data) // Add Bulk Data
-	//table.Render()
+
+	table := tablewriter.NewWriter(os.Stdout)
+	table.Header([]string{"Resources", "Cap", "Used", "Percent"})
+	for _, row := range data {
+		table.Append(row) // Add Bulk Data
+	}
+	table.Render()
 
 }
 

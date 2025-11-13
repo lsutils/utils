@@ -23,6 +23,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/lsutils/utils/k8s/helper"
 	flag "github.com/spf13/pflag"
 	"go.uber.org/zap"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
@@ -34,7 +35,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/cache"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	apiutil "sigs.k8s.io/controller-runtime/pkg/client/apiutil"
-	"sigs.k8s.io/controller-runtime/pkg/client/config"
 	"sigs.k8s.io/controller-runtime/pkg/controller"
 	"sigs.k8s.io/controller-runtime/pkg/handler"
 	logzap "sigs.k8s.io/controller-runtime/pkg/log/zap"
@@ -84,10 +84,8 @@ func main() {
 	ctrl.Log.Info("Starting...")
 
 	entryLog := log.Log.WithName("entrypoint")
-	_config := config.GetConfigOrDie()
-	_config.WrapTransport = func(rt http.RoundTripper) http.RoundTripper {
-		return &LoggingTransport{rt: rt}
-	}
+	_config := helper.NewK8sConfig().K8sRestConfig()
+
 	// Setup a Manager
 	entryLog.Info("setting up manager")
 	entryLog.V(3).Info("setting up manager3")

@@ -72,8 +72,14 @@ func (l *LoggingTransport) RoundTrip(request *http.Request) (*http.Response, err
 	return l.rt.RoundTrip(request)
 }
 
+// 	cfg, err := clientcmd.NewDefaultClientConfigLoadingRules().Load()
+//	if err != nil {
+//		panic(err)
+//	}
+//	restConfig, err := clientcmd.NewDefaultClientConfig(*cfg, &clientcmd.ConfigOverrides{}).ClientConfig()
+
 // K8sRestConfig 读取kubeconfig 配置文件
-func (this *K8sConfig) K8sRestConfig() *rest.Config {
+func (kc *K8sConfig) K8sRestConfig() *rest.Config {
 	if config != nil {
 		return config
 	}
@@ -82,12 +88,18 @@ func (this *K8sConfig) K8sRestConfig() *rest.Config {
 		return RestConfigInPod()
 	}
 	log.Println("run outside cluster")
+
+	defaultConfig := os.Getenv("KUBECONFIG")
+	if defaultConfig == "" {
+		defaultConfig = filepath.Join(homedir.HomeDir(), ".kube", "config")
+	}
 	var kubeconfig *string
 	if home := homedir.HomeDir(); home != "" {
-		kubeconfig = flag.String("kubeconfig", filepath.Join(home, ".kube", "config"), "(optional) absolute path to the kubeconfig file")
+		kubeconfig = flag.String("kubeconfig", defaultConfig, "(optional) absolute path to the kubeconfig file")
 	} else {
 		kubeconfig = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
 	}
+
 	flag.Parse()
 	var err error
 	config, err = clientcmd.BuildConfigFromFlags("", *kubeconfig)
@@ -103,8 +115,8 @@ func (this *K8sConfig) K8sRestConfig() *rest.Config {
 }
 
 // InitClient 初始化 clientSet
-func (this *K8sConfig) InitClient() *kubernetes.Clientset {
-	c, err := kubernetes.NewForConfig(this.K8sRestConfig())
+func (kc *K8sConfig) InitClient() *kubernetes.Clientset {
+	c, err := kubernetes.NewForConfig(kc.K8sRestConfig())
 
 	if err != nil {
 		log.Fatal(err)
@@ -114,8 +126,8 @@ func (this *K8sConfig) InitClient() *kubernetes.Clientset {
 }
 
 // InitDynamicClient 初始化 dynamicClient
-func (this *K8sConfig) InitDynamicClient() *dynamic.DynamicClient {
-	c, err := dynamic.NewForConfig(this.K8sRestConfig())
+func (kc *K8sConfig) InitDynamicClient() *dynamic.DynamicClient {
+	c, err := dynamic.NewForConfig(kc.K8sRestConfig())
 
 	if err != nil {
 		log.Fatal(err)
@@ -125,6 +137,6 @@ func (this *K8sConfig) InitDynamicClient() *dynamic.DynamicClient {
 }
 
 // InitDiscoveryClient 初始化 DiscoveryClient
-func (this *K8sConfig) InitDiscoveryClient() *discovery.DiscoveryClient {
-	return discovery.NewDiscoveryClient(this.InitClient().RESTClient())
+func (kc *K8sConfig) InitDiscoveryClient() *discovery.DiscoveryClient {
+	return discovery.NewDiscoveryClient(kc.InitClient().RESTClient())
 }
