@@ -39,7 +39,6 @@ func main() {
 	flag.StringVar(&nodeContains, "node", "", "node name sub string")
 	flag.StringVar(&resourcesName, "resources", "", "resource name")
 	flag.StringVar(&needResourcesName, "need-resources", `{"cpu":"104","ephemeral-storage":"32Gi","memory":"1600Gi","nvidia.com/gpu-h100-80gb-hbm3":"8","rdma/rdma_shared_device_a":"1","rdma/rdma_shared_device_b":"1"}`, "resource name")
-	os.Setenv("KUBECONFIG", os.Getenv("HOME")+"/.kube/bugfix.config")
 	clientConfig := helper.NewK8sConfig().K8sRestConfig()
 
 	parseNeedResources()
