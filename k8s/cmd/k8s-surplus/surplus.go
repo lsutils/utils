@@ -36,15 +36,16 @@ func parseNeedResources() {
 }
 
 func main() {
+	fmt.Println("寻找符合需求的节点")
 	flag.StringVar(&nodeContains, "node", "", "node name sub string")
-	flag.StringVar(&resourcesName, "resources", "", "resource name")
-	flag.StringVar(&needResourcesName, "need-resources", `{"cpu":"104","ephemeral-storage":"32Gi","memory":"1600Gi","nvidia.com/gpu-h100-80gb-hbm3":"8","rdma/rdma_shared_device_a":"1","rdma/rdma_shared_device_b":"1"}`, "resource name")
+	flag.StringVar(&resourcesName, "resources", "", "统计资源")
+	flag.StringVar(&needResourcesName, "need-resources", `{}`, "寻找符合需求的节点")
 	clientConfig := helper.NewK8sConfig().K8sRestConfig()
 
 	parseNeedResources()
-	ss := sets.NewString()
+	resourcesNameFilters := sets.NewString()
 	if strings.TrimSpace(resourcesName) != "" {
-		ss = sets.NewString(strings.Split(strings.TrimSpace(resourcesName), ",")...)
+		resourcesNameFilters = sets.NewString(strings.Split(strings.TrimSpace(resourcesName), ",")...)
 	}
 
 	client, err := kubernetes.NewForConfig(clientConfig)
@@ -59,7 +60,7 @@ func main() {
 	}
 
 	ns := map[string]corev1.Node{}
-	nss := sets.NewString()
+	nodeSet := sets.NewString()
 
 	for _, node := range nodes.Items {
 		if nodeContains != "" && !strings.Contains(node.Name, nodeContains) {
@@ -69,15 +70,16 @@ func main() {
 		for k, _ := range node.Status.Allocatable {
 			tt.Insert(string(k))
 		}
-		if ss.Intersection(tt).Len() > 0 {
+		if resourcesNameFilters.Len() > 0 && tt.HasAll(resourcesNameFilters.List()...) { // 包含
 			ns[node.Name] = node
-			nss.Insert(node.Name)
+			nodeSet.Insert(node.Name)
 		} else {
 			ns[node.Name] = node
-			nss.Insert(node.Name)
+			nodeSet.Insert(node.Name)
 		}
 	}
-	nps := map[string]corev1.ResourceList{}
+
+	nodesUsedResourceList := map[string]corev1.ResourceList{}
 	pods, err := client.CoreV1().Pods(metav1.NamespaceAll).List(context.Background(), metav1.ListOptions{
 		FieldSelector: "status.phase!=Failed,status.phase!=Succeeded",
 	})
@@ -86,7 +88,7 @@ func main() {
 		if pod.Spec.NodeName == "" {
 			continue
 		}
-		nps[pod.Spec.NodeName] = quotav1.Add(nps[pod.Spec.NodeName], GetPodRequest(&pod))
+		nodesUsedResourceList[pod.Spec.NodeName] = quotav1.Add(nodesUsedResourceList[pod.Spec.NodeName], GetPodRequest(&pod))
 	}
 
 	if err != nil {
@@ -94,7 +96,7 @@ func main() {
 		return
 	}
 	var data [][]string
-	for _, nName := range nss.List() {
+	for _, nName := range nodeSet.List() {
 		node := ns[nName]
 		nodeResCmpSet := map[string]resource.Quantity{}
 		for rn, v := range node.Status.Allocatable {
@@ -104,8 +106,8 @@ func main() {
 			if rn == "pods" || strings.Contains(string(rn), "hugepages") {
 				continue
 			}
-			used := nps[nName][rn]
-			if ss.Len() != 0 && !ss.Has(string(rn)) {
+			used := nodesUsedResourceList[nName][rn]
+			if resourcesNameFilters.Len() != 0 && !resourcesNameFilters.Has(string(rn)) {
 				continue
 			}
 			switch rn {
@@ -134,27 +136,31 @@ func main() {
 					p,
 				})
 			}
+			if len(needResourcesNameQuantity) > 0 {
+				quantity := needResourcesNameQuantity[string(rn)]
+				if !quantity.IsZero() {
+					x := v.DeepCopy()
+					x.Sub(used)
+					x.Sub(quantity)
+					nodeResCmpSet[string(rn)] = x
+				}
+			}
 
-			quantity := needResourcesNameQuantity[string(rn)]
-			if !quantity.IsZero() {
-				x := v.DeepCopy()
-				x.Sub(used)
-				x.Sub(quantity)
-				nodeResCmpSet[string(rn)] = x
-			}
 		}
-		ok := true
-		for _, v := range nodeResCmpSet {
-			if v.MilliValue() < 0 {
-				ok = false
+		if len(needResourcesNameQuantity) > 0 {
+			ok := true
+			for _, v := range nodeResCmpSet {
+				if v.MilliValue() < 0 {
+					ok = false
+				}
 			}
-		}
-		if ok {
-			fmt.Printf(nName)
-			for k, v := range nodeResCmpSet {
-				fmt.Printf(" %s: %s", k, v.String())
+			if ok {
+				fmt.Printf(nName)
+				for k, v := range nodeResCmpSet {
+					fmt.Printf(" %s: %s", k, v.String())
+				}
+				fmt.Println()
 			}
-			fmt.Println()
 		}
 	}
 
