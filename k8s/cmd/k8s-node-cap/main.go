@@ -43,8 +43,8 @@ func main() {
 	for _, node := range nodeList.Items {
 		data = append(data, []any{
 			node.Name,
-			Marshal(node.Status.Capacity),
-			Marshal(node.Status.Allocatable),
+			Marshal(node.Status.Capacity, node.Status.Capacity),
+			Marshal(node.Status.Allocatable, node.Status.Allocatable),
 			Used(node, podList),
 			Surplus(node, podList),
 		})
@@ -77,7 +77,7 @@ func Used(node corev1.Node, list *corev1.PodList) string {
 			used = quotav1.Add(used, getPodRequests(&pod))
 		}
 	}
-	return Marshal(used)
+	return Marshal(node.Status.Allocatable, used)
 }
 
 func Surplus(node corev1.Node, list *corev1.PodList) string {
@@ -90,22 +90,31 @@ func Surplus(node corev1.Node, list *corev1.PodList) string {
 			used = quotav1.Add(used, getPodRequests(&pod))
 		}
 	}
-	return Marshal(quotav1.Subtract(node.Status.Allocatable, used))
+	return Marshal(node.Status.Allocatable, quotav1.Subtract(node.Status.Allocatable, used))
 }
 
-func Marshal(obj corev1.ResourceList) string {
+func Marshal(allocatable, obj corev1.ResourceList) string {
 	delete(obj, "hugepages-1Gi")
 	delete(obj, "hugepages-2Mi")
 	delete(obj, "pods")
 	delete(obj, "ephemeral-storage")
 	var res []string
-	for k, v := range obj {
-		if resourcesNameFilters.Len() > 0 && !resourcesNameFilters.Has(k.String()) {
+	var keys []string
+	for k := range allocatable {
+		keys = append(keys, string(k))
+	}
+	sort.Strings(keys)
+
+	for _, name := range keys {
+		if resourcesNameFilters.Len() > 0 && !resourcesNameFilters.Has(name) {
 			continue
 		}
-		res = append(res, fmt.Sprintf("%s=%s", k, v.String()))
+		if v, ok := obj[corev1.ResourceName(name)]; ok {
+			res = append(res, fmt.Sprintf("%s=%s", name, v.String()))
+		} else {
+			res = append(res, "")
+		}
 	}
-	sort.Strings(res)
 	return strings.Join(res, "\n")
 }
 func getPodRequests(pod *corev1.Pod, resourceNames ...corev1.ResourceName) corev1.ResourceList {
