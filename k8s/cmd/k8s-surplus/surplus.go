@@ -11,6 +11,8 @@ import (
 
 	"github.com/lsutils/utils/k8s/helper"
 	"github.com/olekukonko/tablewriter"
+	"github.com/olekukonko/tablewriter/renderer"
+	"github.com/olekukonko/tablewriter/tw"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -164,10 +166,6 @@ func main() {
 		}
 	}
 
-	//table := tablewriter.NewWriter(os.Stdout)
-	//table.SetHeader([]string{"NodeName", "Phase", "Resources", "Cap", "Used", "Percent"})
-	//table.AppendBulk(data) // Add Bulk Data
-	//table.Render()
 	klog.Flush()
 
 	_cap := corev1.ResourceList{}
@@ -232,11 +230,14 @@ func main() {
 		}
 	}
 
-	table := tablewriter.NewWriter(os.Stdout)
+	table := tablewriter.NewTable(os.Stdout,
+		tablewriter.WithRenderer(renderer.NewBlueprint(
+			tw.Rendition{Symbols: tw.NewSymbols(tw.StyleNature)},
+		)),
+	)
+
 	table.Header([]string{"Resources", "Cap", "Used", "Percent"})
-	for _, row := range data {
-		table.Append(row) // Add Bulk Data
-	}
+	table.Bulk(data)
 	table.Render()
 
 }
