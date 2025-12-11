@@ -51,15 +51,9 @@ func main() {
 	}
 
 	table := tablewriter.NewTable(os.Stdout,
-		tablewriter.WithRenderer(renderer.NewBlueprint(tw.Rendition{
-			Settings: tw.Settings{Separators: tw.Separators{BetweenRows: tw.On}},
-		})),
-		tablewriter.WithConfig(tablewriter.Config{
-			Header: tw.CellConfig{Alignment: tw.CellAlignment{Global: tw.AlignCenter}},
-			Row: tw.CellConfig{
-				Alignment: tw.CellAlignment{Global: tw.AlignLeft},
-			},
-		}),
+		tablewriter.WithRenderer(renderer.NewBlueprint(
+			tw.Rendition{Symbols: tw.NewSymbols(tw.StyleNature)},
+		)),
 	)
 	table.Header(data[0]...)
 	table.Bulk(data[1:])

@@ -11,6 +11,8 @@ import (
 
 	"github.com/lsutils/utils/k8s/helper"
 	"github.com/olekukonko/tablewriter"
+	"github.com/olekukonko/tablewriter/renderer"
+	"github.com/olekukonko/tablewriter/tw"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/duration"
@@ -20,9 +22,9 @@ import (
 )
 
 var resourcesNameFilters = sets.NewString()
+var resourcesName = ""
 
 func main() {
-	resourcesName := ""
 	flag.StringVar(&resourcesName, "resources", "", "统计资源")
 	restConfig := helper.NewK8sConfig().K8sRestConfig()
 
@@ -44,16 +46,25 @@ func main() {
 		if pod.Status.Phase == corev1.PodSucceeded || pod.Status.Phase == corev1.PodFailed {
 			continue
 		}
-		data = append(data, []any{
-			pod.Name,
-			pod.Namespace,
-			translateTimestampSince(pod.CreationTimestamp),
-			pod.Spec.NodeName,
-			pod.Status.Phase,
-			FormatResourceList(getPodRequests(&pod)),
-		})
+		rs := FormatResourceList(getPodRequests(&pod))
+		if rs != "map[]" {
+			data = append(data, []any{
+				pod.Name,
+				pod.Namespace,
+				translateTimestampSince(pod.CreationTimestamp),
+				pod.Spec.NodeName,
+				pod.Status.Phase,
+				rs,
+			})
+		}
 	}
-	table := tablewriter.NewTable(os.Stdout)
+
+	table := tablewriter.NewTable(os.Stdout,
+		tablewriter.WithRenderer(renderer.NewBlueprint(
+			tw.Rendition{Symbols: tw.NewSymbols(tw.StyleNature)},
+		)),
+	)
+
 	table.Header(data[0]...)
 	table.Bulk(data[1:])
 	table.Render()
@@ -88,6 +99,7 @@ func FormatResourceList(rl corev1.ResourceList) string {
 	delete(rl, "pods")
 	delete(rl, "ephemeral-storage")
 	var res []string
+
 	for name, qty := range rl {
 		if resourcesNameFilters.Len() > 0 && !resourcesNameFilters.Has(string(name)) {
 			continue

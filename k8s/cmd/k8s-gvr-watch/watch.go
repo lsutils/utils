@@ -73,6 +73,7 @@ func main() {
 			switch m := t.Object["metadata"].(type) {
 			case map[string]any:
 				delete(m, "managedFields")
+				delete(m, "resourceVersion")
 			}
 			gvrCache[key] = t.DeepCopy()
 		},
@@ -84,6 +85,7 @@ func main() {
 			switch m := t.Object["metadata"].(type) {
 			case map[string]any:
 				delete(m, "managedFields")
+				delete(m, "resourceVersion")
 			}
 			diff := cmp.Diff(gvrCache[key].Object, t.Object)
 			if diff == "" {
@@ -99,6 +101,7 @@ func main() {
 			accessor, _ := meta.Accessor(obj)
 			key := fmt.Sprintf("%s/%s", accessor.GetNamespace(), accessor.GetName())
 			delete(gvrCache, key)
+			fmt.Printf("[DELETED] %s\n", key)
 		},
 	})
 	informer.Informer().Run(wait.NeverStop)

@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
 import json
 import os
 import shutil
 import ssl
 from collections import OrderedDict
+
 from slugify import slugify
 
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -26,7 +28,7 @@ run('pip3 install bilix')
 # save_path = "./data"
 # save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 # save_path = '/Users/acejilam/Desktop/bilibili视频'
-save_path = '/Volumes/Ventoy/bilibili视频'
+save_path = './bilibili视频'
 tmp_path = os.path.join(save_path, "tmp")
 mk(save_path)
 over_data = OrderedDict()
@@ -104,6 +106,7 @@ def download():
                 if link in over_data:
                     continue
                 mk(os.path.join(save_path, user, ))
+                print(title, link)
                 common(title, link, user, os.path.join(save_path, user))
     write(1)
 

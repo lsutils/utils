@@ -8,6 +8,7 @@ import (
 
 	"github.com/lsutils/utils/k8s/helper"
 	"github.com/olekukonko/tablewriter"
+	"github.com/olekukonko/tablewriter/renderer"
 	"github.com/olekukonko/tablewriter/tw"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
@@ -65,7 +66,12 @@ func main() {
 	}
 
 	var data [][]string
-	table := tablewriter.NewTable(os.Stdout, tablewriter.WithTrimSpace(tw.Off))
+	table := tablewriter.NewTable(os.Stdout,
+		tablewriter.WithTrimSpace(tw.Off),
+		tablewriter.WithRenderer(renderer.NewBlueprint(
+			tw.Rendition{Symbols: tw.NewSymbols(tw.StyleNature)},
+		)),
+	)
 	table.Configure(func(config *tablewriter.Config) {
 		config.Row.Alignment.Global = tw.AlignRight
 	})
