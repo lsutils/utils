@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+import os
+
+os.system('download-driver.py')
+os.system('pip3 install -r requirements.txt')
 import inspect
 import json
 import os.path
@@ -135,7 +139,7 @@ class Bilibili:
         self.driver.execute_script('window.scrollTo(0, document.documentElement.scrollHeight)')
         page_source = self.driver.page_source
         try:
-            page_num = int(re.findall('共 (\d+) 页', page_source)[0].split(":")[-1])
+            page_num = int(re.findall(r'共 (\d+) 页', page_source)[0].split(":")[-1])
             return page_num
         except Exception as e:
             return 1

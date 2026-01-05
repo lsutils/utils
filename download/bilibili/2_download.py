@@ -28,7 +28,7 @@ run('pip3 install bilix')
 # save_path = "./data"
 # save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 # save_path = '/Users/acejilam/Desktop/bilibili视频'
-save_path = './bilibili视频'
+save_path = '/Volumes/Tf/skip/bilibili视频2'
 tmp_path = os.path.join(save_path, "tmp")
 mk(save_path)
 over_data = OrderedDict()
@@ -112,10 +112,15 @@ def download():
 
 
 def clean():
-    for cd, dirs, files in os.walk(save_path):
-        if cd != save_path:
-            if len(files) == 0 and len(dirs) == 0:
-                shutil.rmtree(cd)
+    for _dir in os.listdir(save_path):
+        file_count = 0
+        for cd, dirs, files in os.walk(_dir):
+            file_count += len(files)
+            if cd != save_path:
+                if len(files) == 0 and len(dirs) == 0:
+                    shutil.rmtree(cd)
+        if file_count == 0:
+            shutil.rmtree(os.path.join(save_path, _dir))
 
 
 if __name__ == '__main__':

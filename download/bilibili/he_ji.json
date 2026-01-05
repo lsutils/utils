@@ -32,29 +32,37 @@
             "【Java】volatile的有序性底层实现原理": "https://www.bilibili.com/video/BV1Lc411J7wZ",
             "【Java】使用DCL实现单例模式（volatile禁止指令重排序的应用场景）": "https://www.bilibili.com/video/BV1Fv4y1J7XZ"
         },
-        "合集·Python实践教程": {
-            "【Python教程】使用python编写一个冒泡排序算法程序示例": "https://www.bilibili.com/video/BV1tL411o7rk",
-            "【Python Django教程】安装、创建及激活虚拟环境": "https://www.bilibili.com/video/BV1RL411o7FW",
-            "【Python Django4教程】安装django 4.1.4框架": "https://www.bilibili.com/video/BV1Vx4y1P7aA",
-            "【Python Django4教程】创建Django项目": "https://www.bilibili.com/video/BV1Xx4y1A7Bd",
-            "【Python Django4教程】创建应用": "https://www.bilibili.com/video/BV1G24y1x7q1",
-            "【Python Django4教程】配置应用及运行服务": "https://www.bilibili.com/video/BV1Rg4y147YR",
-            "【Python Django4教程】django连接MySQL": "https://www.bilibili.com/video/BV1mL411k7nh",
-            "【Python Django4教程】django使用html模板": "https://www.bilibili.com/video/BV1324y1x7fr",
-            "【Python Django4教程】引入css等静态资源以美化首页": "https://www.bilibili.com/video/BV1dx4y1A7k2",
-            "【Python教程】使用Python pygame写个贪吃蛇游戏": "https://www.bilibili.com/video/BV1tM4y117zx",
-            "PyWebIO：10分钟搭建一个漂亮的Python Web应用": "https://www.bilibili.com/video/BV1YZ6XYLEZm",
-            "Python Dash框架介绍及构建一个简单Dash应用": "https://www.bilibili.com/video/BV182XaYjE24",
-            "Python DashGo框架介绍及部署、使用示例": "https://www.bilibili.com/video/BV1PFXYYqE7P",
-            "Python代码示例：YOLO实现安全距离测算方法": "https://www.bilibili.com/video/BV1tHkDBbErF",
-            "C# 上位机程序调用 Python 脚本的完整代码案例": "https://www.bilibili.com/video/BV1SAkkBzEQ2",
-            "Python模块化编程详解": "https://www.bilibili.com/video/BV1EVCJBtEr8",
-            "python 代码案例：YOLO + OpenPose 实现人体姿态估计": "https://www.bilibili.com/video/BV1VBCtBVE1o",
-            "计算机视觉CV入门：让机器看懂世界": "https://www.bilibili.com/video/BV15VCmBwEzs",
-            "Python 人物动作视频行为分析完整代码案例（基于深度学习 + OpenCV）": "https://www.bilibili.com/video/BV1JvCRBFEtJ",
-            "模型训练数据集标注工具 Labelme 完整安装步骤": "https://www.bilibili.com/video/BV1FmUNBiE3t",
-            "Python Anaconda 安装及换源： 设置清华源": "https://www.bilibili.com/video/BV1XWUDBSEtx",
-            "Jython、IronPython 和 Python（CPython）之间的关系": "https://www.bilibili.com/video/BV1QCSyBvEPG"
+        "合集·Linux实战": {
+            "【Linux教程】KVM虚拟机快照管理及克隆操作": "https://www.bilibili.com/video/BV1tD4y1u7si",
+            "【Linux】epoll网络模型": "https://www.bilibili.com/video/BV1pT411n7ZL",
+            "【Linux】如何使用Java NIO中的零拷贝技术来实现文件的快速传输？": "https://www.bilibili.com/video/BV1Jh41177v1",
+            "Linux基础：iptables相关概念及基本介绍": "https://www.bilibili.com/video/BV1fz4y1n7Fe",
+            "Linux centos7升级内核到6.5.10": "https://www.bilibili.com/video/BV1d94y1G7rP",
+            "Linux IPC 命名空间": "https://www.bilibili.com/video/BV1pj411h7q9",
+            "FusionCompute创建虚拟机的三种磁盘配置模式：普通、精简和普通延迟置零": "https://www.bilibili.com/video/BV1gB1UY3ErF",
+            "FusionCompute创建虚拟机的三种磁盘配置模式：普通模式的优缺点分析": "https://www.bilibili.com/video/BV1d41UYUEq8",
+            "FusionCompute创建虚拟机的三种磁盘配置模式：精简模式的优缺点分析": "https://www.bilibili.com/video/BV1581UY2E43",
+            "Linux一键换源脚本介绍": "https://www.bilibili.com/video/BV1uomqYjEDR",
+            "mkcert安装及使用mkcert一键生成SSL证书": "https://www.bilibili.com/video/BV1bgUTYFEQb",
+            "Linux多路复用技术详解": "https://www.bilibili.com/video/BV1hSUrYhETm",
+            "linux shell脚本用法：for循环迭代文件名": "https://www.bilibili.com/video/BV18tz5YbExf",
+            "linux shell脚本用法：for循环迭代目录中的文件": "https://www.bilibili.com/video/BV1u4z5YFEQZ",
+            "Linux网络命令详解与实战": "https://www.bilibili.com/video/BV172ZNYFEuT",
+            "linux CentOS7 常见文件系统详解": "https://www.bilibili.com/video/BV1S5o7Y1Erk",
+            "存储技术深度解析：SAN存储、集中式存储、分布式存储": "https://www.bilibili.com/video/BV1qBVJzKE23",
+            "TCP/IP四层网络模型详解": "https://www.bilibili.com/video/BV1nUVEzzEDd",
+            "Linux 使用mdadm创建和管理RAID磁盘阵列": "https://www.bilibili.com/video/BV1CwGdzkEEH",
+            "linux使用openssl命令查看ssl证书有效期": "https://www.bilibili.com/video/BV1fRV8zPEGT",
+            "minio客户端工具mc设置集群别名": "https://www.bilibili.com/video/BV1DFVfzeEmu",
+            "linux ntpq -p时间同步状态排查命令详解": "https://www.bilibili.com/video/BV1XfVZzNEqE",
+            "创建一个专用于MySQL数据存储的LVM卷组": "https://www.bilibili.com/video/BV1hsJHz5EDs",
+            "Linux LVM快照的本质：不是传统意义上的备份": "https://www.bilibili.com/video/BV1izj4zbEK5",
+            "LVM 卷组移除 PV 操作示例": "https://www.bilibili.com/video/BV1R6jmzEEUe",
+            "Linux truncate 命令使用示例": "https://www.bilibili.com/video/BV1BZ3bzxEzN",
+            "Linux sz 命令安装及使用示例": "https://www.bilibili.com/video/BV1RE3izKELp",
+            "Linux nohup 命令及标准错误重定向语法2>&1详解": "https://www.bilibili.com/video/BV1hC32zfEDG",
+            "Linux zip命令 – 压缩文件": "https://www.bilibili.com/video/BV1gyu3zsEqj",
+            "Linux tcpdump网络抓包工具使用示例": "https://www.bilibili.com/video/BV1XmuPzuEZb"
         },
         "合集·ChatGPT ": {
             "LangGraph构建 SQL 数据的问答系统（一）：初始化sql数据": "https://www.bilibili.com/video/BV1vsFAeWEcQ",
@@ -120,6 +128,30 @@
             "MySQL支持哪些分区策略？": "https://www.bilibili.com/video/BV1JV4y1y7ri",
             "MySQL基础：创建表和创建索引SQL语句实操演示": "https://www.bilibili.com/video/BV16F411d7ue"
         },
+        "合集·Python实践教程": {
+            "【Python教程】使用python编写一个冒泡排序算法程序示例": "https://www.bilibili.com/video/BV1tL411o7rk",
+            "【Python Django教程】安装、创建及激活虚拟环境": "https://www.bilibili.com/video/BV1RL411o7FW",
+            "【Python Django4教程】安装django 4.1.4框架": "https://www.bilibili.com/video/BV1Vx4y1P7aA",
+            "【Python Django4教程】创建Django项目": "https://www.bilibili.com/video/BV1Xx4y1A7Bd",
+            "【Python Django4教程】创建应用": "https://www.bilibili.com/video/BV1G24y1x7q1",
+            "【Python Django4教程】配置应用及运行服务": "https://www.bilibili.com/video/BV1Rg4y147YR",
+            "【Python Django4教程】django连接MySQL": "https://www.bilibili.com/video/BV1mL411k7nh",
+            "【Python Django4教程】django使用html模板": "https://www.bilibili.com/video/BV1324y1x7fr",
+            "【Python Django4教程】引入css等静态资源以美化首页": "https://www.bilibili.com/video/BV1dx4y1A7k2",
+            "【Python教程】使用Python pygame写个贪吃蛇游戏": "https://www.bilibili.com/video/BV1tM4y117zx",
+            "PyWebIO：10分钟搭建一个漂亮的Python Web应用": "https://www.bilibili.com/video/BV1YZ6XYLEZm",
+            "Python Dash框架介绍及构建一个简单Dash应用": "https://www.bilibili.com/video/BV182XaYjE24",
+            "Python DashGo框架介绍及部署、使用示例": "https://www.bilibili.com/video/BV1PFXYYqE7P",
+            "Python代码示例：YOLO实现安全距离测算方法": "https://www.bilibili.com/video/BV1tHkDBbErF",
+            "C# 上位机程序调用 Python 脚本的完整代码案例": "https://www.bilibili.com/video/BV1SAkkBzEQ2",
+            "Python模块化编程详解": "https://www.bilibili.com/video/BV1EVCJBtEr8",
+            "python 代码案例：YOLO + OpenPose 实现人体姿态估计": "https://www.bilibili.com/video/BV1VBCtBVE1o",
+            "计算机视觉CV入门：让机器看懂世界": "https://www.bilibili.com/video/BV15VCmBwEzs",
+            "Python 人物动作视频行为分析完整代码案例（基于深度学习 + OpenCV）": "https://www.bilibili.com/video/BV1JvCRBFEtJ",
+            "模型训练数据集标注工具 Labelme 完整安装步骤": "https://www.bilibili.com/video/BV1FmUNBiE3t",
+            "Python Anaconda 安装及换源： 设置清华源": "https://www.bilibili.com/video/BV1XWUDBSEtx",
+            "Jython、IronPython 和 Python（CPython）之间的关系": "https://www.bilibili.com/video/BV1QCSyBvEPG"
+        },
         "合集·Golang教程": {
             "【Go教程】Go安装及使用protobuf": "https://www.bilibili.com/video/BV16g4y1M7Ht",
             "【Go教程】Go操作RocketMQ实现消息的发送和消费": "https://www.bilibili.com/video/BV1zg4y1M7sP",
@@ -151,38 +183,6 @@
             "关于Golang三个内存区域的形象比喻": "https://www.bilibili.com/video/BV1yc411R7jQ",
             "关于Golang GMP模型的形象比喻": "https://www.bilibili.com/video/BV17z4y1P7iG",
             "Golang的make和new的区别？": "https://www.bilibili.com/video/BV1Du4y1P7xo"
-        },
-        "合集·Linux实战": {
-            "【Linux教程】KVM虚拟机快照管理及克隆操作": "https://www.bilibili.com/video/BV1tD4y1u7si",
-            "【Linux】epoll网络模型": "https://www.bilibili.com/video/BV1pT411n7ZL",
-            "【Linux】如何使用Java NIO中的零拷贝技术来实现文件的快速传输？": "https://www.bilibili.com/video/BV1Jh41177v1",
-            "Linux基础：iptables相关概念及基本介绍": "https://www.bilibili.com/video/BV1fz4y1n7Fe",
-            "Linux centos7升级内核到6.5.10": "https://www.bilibili.com/video/BV1d94y1G7rP",
-            "Linux IPC 命名空间": "https://www.bilibili.com/video/BV1pj411h7q9",
-            "FusionCompute创建虚拟机的三种磁盘配置模式：普通、精简和普通延迟置零": "https://www.bilibili.com/video/BV1gB1UY3ErF",
-            "FusionCompute创建虚拟机的三种磁盘配置模式：普通模式的优缺点分析": "https://www.bilibili.com/video/BV1d41UYUEq8",
-            "FusionCompute创建虚拟机的三种磁盘配置模式：精简模式的优缺点分析": "https://www.bilibili.com/video/BV1581UY2E43",
-            "Linux一键换源脚本介绍": "https://www.bilibili.com/video/BV1uomqYjEDR",
-            "mkcert安装及使用mkcert一键生成SSL证书": "https://www.bilibili.com/video/BV1bgUTYFEQb",
-            "Linux多路复用技术详解": "https://www.bilibili.com/video/BV1hSUrYhETm",
-            "linux shell脚本用法：for循环迭代文件名": "https://www.bilibili.com/video/BV18tz5YbExf",
-            "linux shell脚本用法：for循环迭代目录中的文件": "https://www.bilibili.com/video/BV1u4z5YFEQZ",
-            "Linux网络命令详解与实战": "https://www.bilibili.com/video/BV172ZNYFEuT",
-            "linux CentOS7 常见文件系统详解": "https://www.bilibili.com/video/BV1S5o7Y1Erk",
-            "存储技术深度解析：SAN存储、集中式存储、分布式存储": "https://www.bilibili.com/video/BV1qBVJzKE23",
-            "TCP/IP四层网络模型详解": "https://www.bilibili.com/video/BV1nUVEzzEDd",
-            "Linux 使用mdadm创建和管理RAID磁盘阵列": "https://www.bilibili.com/video/BV1CwGdzkEEH",
-            "linux使用openssl命令查看ssl证书有效期": "https://www.bilibili.com/video/BV1fRV8zPEGT",
-            "minio客户端工具mc设置集群别名": "https://www.bilibili.com/video/BV1DFVfzeEmu",
-            "linux ntpq -p时间同步状态排查命令详解": "https://www.bilibili.com/video/BV1XfVZzNEqE",
-            "创建一个专用于MySQL数据存储的LVM卷组": "https://www.bilibili.com/video/BV1hsJHz5EDs",
-            "Linux LVM快照的本质：不是传统意义上的备份": "https://www.bilibili.com/video/BV1izj4zbEK5",
-            "LVM 卷组移除 PV 操作示例": "https://www.bilibili.com/video/BV1R6jmzEEUe",
-            "Linux truncate 命令使用示例": "https://www.bilibili.com/video/BV1BZ3bzxEzN",
-            "Linux sz 命令安装及使用示例": "https://www.bilibili.com/video/BV1RE3izKELp",
-            "Linux nohup 命令及标准错误重定向语法2>&1详解": "https://www.bilibili.com/video/BV1hC32zfEDG",
-            "Linux zip命令 – 压缩文件": "https://www.bilibili.com/video/BV1gyu3zsEqj",
-            "Linux tcpdump网络抓包工具使用示例": "https://www.bilibili.com/video/BV1XmuPzuEZb"
         },
         "合集·Docker实践": {
             "【Docker Swarm教程】docker swarm使用docker-compose.yml文件部署服务": "https://www.bilibili.com/video/BV1iT411o7rJ",
@@ -701,7 +701,13 @@
     },
     "张朝阳讲编程": {
         "合集·python GUI": {
-            "python画个太阳神": "https://www.bilibili.com/video/BV1JrUZBnEJS"
+            "python海龟库 图形化编程": "https://www.bilibili.com/video/BV1JE2YBGEh1",
+            "python花瓣绘制": "https://www.bilibili.com/video/BV1Mc2YBREFR",
+            "python画个太阳神": "https://www.bilibili.com/video/BV1JrUZBnEJS",
+            "用Python制作带颜色的时钟": "https://www.bilibili.com/video/BV1pvUZBsE5g",
+            "python时钟绘制--Tkinter入门教程": "https://www.bilibili.com/video/BV1HvUZBsEmp",
+            "python贪吃蛇完整教程（附源码）": "https://www.bilibili.com/video/BV14P2YBXEuX",
+            "Draw Flower using Turtle in Python": "https://www.bilibili.com/video/BV11VmCBJEZV"
         },
         "合集·go error": {
             "go的面向error编程才是最合理的": "https://www.bilibili.com/video/BV1U2pTzCESg",
@@ -733,82 +739,117 @@
             "OpenKruise双周周会-20250626": "https://www.bilibili.com/video/BV1LqTczaEep"
         }
     },
-    "GOLANG-ROADMAP": {
-        "合集·Go系统课": {
-            "【最新go入门教程】02-为什么要使用go": "https://www.bilibili.com/video/BV1gc411N7kD",
-            "【最新go入门教程】03-环境变量配置": "https://www.bilibili.com/video/BV1PM4y1q7Tb",
-            "【最新go入门教程】04-入门案例": "https://www.bilibili.com/video/BV1Fa4y1g76M",
-            "【最新go入门教程】05-变量声明-标准格式": "https://www.bilibili.com/video/BV1xX4y1C7fp",
-            "【最新go入门教程】06-变量声明-不指明类型": "https://www.bilibili.com/video/BV1vh4y1t7B7",
-            "【最新go入门教程】07-变量声明-其他格式": "https://www.bilibili.com/video/BV1Lo4y1G7NH",
-            "【最新go入门教程】08-变量初始化": "https://www.bilibili.com/video/BV1eh411w7TZ",
-            "【最新go入门教程】09-demo-变量交换": "https://www.bilibili.com/video/BV1o24y1K7pD",
-            "【最新go入门教程】10-匿名变量": "https://www.bilibili.com/video/BV1as4y1M7Cr",
-            "【最新go入门教程】11-作用域": "https://www.bilibili.com/video/BV1Wh4y1t7Uu",
-            "【最新go入门教程】12-整型": "https://www.bilibili.com/video/BV1Jk4y1s7EM",
-            "【最新go入门教程】13-浮点型": "https://www.bilibili.com/video/BV1Gc411N7QZ",
-            "【最新go入门教程】14-布尔型": "https://www.bilibili.com/video/BV1Vh411F7y7",
-            "【最新go入门教程】15-字符类型": "https://www.bilibili.com/video/BV1yT411x7wh",
-            "【最新go入门教程】16-字符串类型": "https://www.bilibili.com/video/BV1zg4y1F7mr",
-            "【最新go入门教程】17-字符串应用-1": "https://www.bilibili.com/video/BV1cz4y1b7zm",
-            "【最新go入门教程】18-字符串应用-2": "https://www.bilibili.com/video/BV1ns4y1z7HB",
-            "【最新go入门教程】19-类型转换": "https://www.bilibili.com/video/BV1vh411w7ba",
-            "【最新go入门教程】20-小练习": "https://www.bilibili.com/video/BV1nz4y1b7N1",
-            "【最新Go入门教程】21-常量": "https://www.bilibili.com/video/BV1Wo4y1K7vN",
-            "【最新Go入门教程】22-指针-1": "https://www.bilibili.com/video/BV1wV4y167a6",
-            "【最新Go入门教程】23-指针-2": "https://www.bilibili.com/video/BV1vh4y1t7nS",
-            "【最新Go入门教程】24-变量的生命周期": "https://www.bilibili.com/video/BV1tg4y1F7N8",
-            "【最新Go入门教程】25-类型别名": "https://www.bilibili.com/video/BV1tu411x7fu",
-            "【最新Go入门教程】26-注释": "https://www.bilibili.com/video/BV1B24y1P71A",
-            "【最新Go入门教程】27-关键字和标识符": "https://www.bilibili.com/video/BV1Ys4y1M7ZY",
-            "【最新Go入门教程】28-运算符优先级": "https://www.bilibili.com/video/BV1oa4y1u7QP",
-            "【最新Go入门教程】29-字符串与其他数据类型的转换": "https://www.bilibili.com/video/BV1as4y1M7Jd",
-            "【最新Go入门教程】30-练习：开发一个小游戏": "https://www.bilibili.com/video/BV1Wu411x7FF",
-            "【最新Go入门教程】31-数组": "https://www.bilibili.com/video/BV1cs4y1u73n"
+    "我是傅傅猪": {
+        "合集·ai-infra秋招和职业规划": {
+            "ai infra购课平台上线了～": "https://www.bilibili.com/video/BV13kvKzrEa9",
+            "8月13日-学员会议-从零开始的AI Infra学习规划": "https://www.bilibili.com/video/BV1WSYyzYEiY",
+            "一次对ai-infra新学员的规划课": "https://www.bilibili.com/video/BV1TuYqzmEhh",
+            "AI Infra 2025年秋招经验分享": "https://www.bilibili.com/video/BV17tEvzdE4x",
+            "大模型推理加速-AI Infra的简历应该怎么写？": "https://www.bilibili.com/video/BV1S6EyzBEZX",
+            "AI Infra 2025年暑期实习经验分享": "https://www.bilibili.com/video/BV1pCL6zgEhw",
+            "AI Infra秋招项目-用CUDA写一个支持qwen3的大模型推理框架": "https://www.bilibili.com/video/BV1jvNnzmEik",
+            "如何写一份合格的AI-Infra岗位秋招简历": "https://www.bilibili.com/video/BV1iEpgz8EUE",
+            "Ai-Infra面试实录—大模型推理框架开发实习岗位": "https://www.bilibili.com/video/BV1VAUKBxEFT",
+            "从零开始学Ai-Infra—冲击26年秋招SSP": "https://www.bilibili.com/video/BV1gw2WBAE6t",
+            "AI-Infra规划课—2025年秋招没有offer，怎么准备春招？": "https://www.bilibili.com/video/BV1Ynm9BsEYm",
+            "AI-Infra规划课—怎么学习算子开发？": "https://www.bilibili.com/video/BV1wXmqBbE8U",
+            "AI-Infra规划课—怎么关联实习和目标岗位？": "https://www.bilibili.com/video/BV1uiqzBQEd5",
+            "AI-Infra规划课—选实习offer": "https://www.bilibili.com/video/BV13rB4B9ETN",
+            "AI-Infra规划课—怎么学习大模型推理框架": "https://www.bilibili.com/video/BV1QBv6BHEGZ",
+            "AI-Infra规划课—acm经历对ai-infra有帮助吗？": "https://www.bilibili.com/video/BV1QLiwB2Emj"
         },
-        "合集·Go语言面试题精讲": {
-            "【Go面试】Go程序的基本结构？": "https://www.bilibili.com/video/BV1J3411L7HW",
-            "【Go面试】Go有哪些关键字？": "https://www.bilibili.com/video/BV1SF411E79N",
-            "【Go面试】Go有哪些数据类型？": "https://www.bilibili.com/video/BV1SS4y1r7Qj",
-            "【Go面试】Go方法与函数的区别？": "https://www.bilibili.com/video/BV1uY411G7FQ",
-            "【Go面试】Go方法值接收者和指针接收者的区别？": "https://www.bilibili.com/video/BV1b44y1n73H",
-            "【Go面试】Go函数返回局部变量的指针是否安全？": "https://www.bilibili.com/video/BV1Hr4y1z7o3",
-            "【Go面试】Go函数参数传递到底是值传递还是引用传递？": "https://www.bilibili.com/video/BV1fY411G7HW",
-            "【Go面试】Go defer关键字的实现原理？": "https://www.bilibili.com/video/BV1a34y1k7vi",
-            "【Go面试】Go内置函数make和new的区别？": "https://www.bilibili.com/video/BV1PP4y1g7Yd",
-            "【Go面试】Go slice的底层实现原理？": "https://www.bilibili.com/video/BV1JT4y1S7at",
-            "【Go面试】Go array和slice的一个区别？": "https://www.bilibili.com/video/BV1bU4y1f7ej",
-            "【Go面试】Go slice深拷贝和浅拷贝": "https://www.bilibili.com/video/BV1b341157bf",
-            "【Go面试】Go slice扩容机制？": "https://www.bilibili.com/video/BV1JP4y1g7kw",
-            "【Go面试】Go slice为什么不是线程安全的？": "https://www.bilibili.com/video/BV1DL411N7km",
-            "【Go面试】Go map的底层实现原理？": "https://www.bilibili.com/video/BV1Wa411b7x3",
-            "【Go面试】Go map遍历为什么是无序的？": "https://www.bilibili.com/video/BV1CF41147KL",
-            "【Go面试】Go map为什么是非线程安全的？": "https://www.bilibili.com/video/BV1TZ4y167B7",
-            "【Go面试】Go map如何查找？": "https://www.bilibili.com/video/BV1Xr4y1B7Pu",
-            "【Go面试】Go map冲突的解决方式？": "https://www.bilibili.com/video/BV1YS4y1D7pM",
-            "【Go面试】Go map的负载因子为什么是6.5？": "https://www.bilibili.com/video/BV1uP4y1u7cS",
-            "【Go面试】Go map如何扩容？": "https://www.bilibili.com/video/BV1hS4y1D7Zs",
-            "【Go面试】Go map和sync.Map谁的性能好，为什么？": "https://www.bilibili.com/video/BV1UT4y1v773",
-            "【Go面试】Go channel的底层实现原理？": "https://www.bilibili.com/video/BV1N44y1N7Cs",
-            "【Go面试】Go channel有什么特点？": "https://www.bilibili.com/video/BV1NR4y1c7df",
-            "【Go面试】Go channel有无缓冲的区别？": "https://www.bilibili.com/video/BV1br4y1q71d",
-            "【Go面试】Go channel为什么是线程安全的？": "https://www.bilibili.com/video/BV1Pa411b7CL",
-            "【Go面试】Go channel如何控制goroutine并发执行顺序": "https://www.bilibili.com/video/BV1gu411B73Y",
-            "【Go面试】Go channel共享内存有什么优劣势？": "https://www.bilibili.com/video/BV16T4y1i7wS",
-            "【Go面试】Go channel发送和接收什么情况下会发生死锁？": "https://www.bilibili.com/video/BV1aq4y1Y7Jv",
-            "【Go面试】Go 互斥锁的实现原理？": "https://www.bilibili.com/video/BV1BT4y1e7W7"
+        "合集·vLLM大模型推理框架": {
+            "vLLM大模型推理框架-分块显存管理": "https://www.bilibili.com/video/BV1WFnzzEEGD",
+            "vLLM大模型推理框架-kv cache的初始化流程": "https://www.bilibili.com/video/BV1hYHKz6EtE",
+            "vLLM大模型推理框架-请求和显存块的映射": "https://www.bilibili.com/video/BV1BY4VzHE4Z",
+            "vLLM源码全流程分析—vLLM引擎架构与流式推理": "https://www.bilibili.com/video/BV14zsozJE5B",
+            "vLLM源码全流程分析—vLLM Worker和Executor组件的协作": "https://www.bilibili.com/video/BV1db1LBmEpL"
         },
-        "合集·Go面试分享": {
-            "【模拟Go面试】模拟3年20K-30KGo岗位基础面": "https://www.bilibili.com/video/BV1tF41147cK"
+        "合集·自制深度学习推理框架-第二次录制": {
+            "从零自制深度学习推理框架：第一讲 项目预览和环境配置": "https://www.bilibili.com/video/BV13UaczHEwf",
+            "从零自制深度学习推理框架：第二讲 张量(Tensor)的设计与实现": "https://www.bilibili.com/video/BV1hUaczHE4e",
+            "从零自制深度学习推理框架：第三讲 计算图的定义": "https://www.bilibili.com/video/BV1mdacz2EHq",
+            "从零自制深度学习推理框架：第四讲 构建计算图关系和执行顺序": "https://www.bilibili.com/video/BV1DUacznEmu",
+            "从零自制深度学习推理框架：第五讲 KuiperInfer中的算⼦和注册⼯⼚": "https://www.bilibili.com/video/BV1DUacznEL7",
+            "从零自制深度学习推理框架：第六讲 卷积和池化算子的实现": "https://www.bilibili.com/video/BV1DUacznEsS",
+            "从零自制深度学习推理框架：第七讲 表达式层中词法分析和语法分析以及算子的实现": "https://www.bilibili.com/video/BV1DUacznEbX",
+            "从零自制深度学习推理框架：第八讲 动手支持Resnet网络的推理": "https://www.bilibili.com/video/BV1hUaczHEV6",
+            "从零自制深度学习推理框架：第九讲 自制一个支持yolov5的推理框架": "https://www.bilibili.com/video/BV1hUaczHE4i"
         },
-        "合集·Go分享": {
-            "【Go分享】2022年最新Go开发行业前景分析": "https://www.bilibili.com/video/BV1sr4y1z7yM",
-            "【Go分享】Go工作领域分析+哪些公司招聘GO": "https://www.bilibili.com/video/BV1Ur4y1z7oE",
-            "【Go分享】2022年最新Go开发学习晋升路线之初级:10K-15K知识点总结": "https://www.bilibili.com/video/BV1Du411X7fT",
-            "【Go分享】2022年最新Go开发学习晋升路线之高级:15K-25K知识点总结": "https://www.bilibili.com/video/BV1VY411G7WD",
-            "【Go分享】2022年最新Go开发学习晋升路线之资深:25K-40K知识点总结": "https://www.bilibili.com/video/BV1du411D7ut",
-            "【Go分享】2022年最新Go开发学习晋升路线之专家:40K以上知识点总结": "https://www.bilibili.com/video/BV14Y411G7dZ",
-            "【Go分享】Gopher高端offer收割社群服务介绍": "https://www.bilibili.com/video/BV1aa41187SV"
+        "合集·面向AI-Infra的Cuda零基础入门课": {
+            "AI-Infra必备Cuda入门课程-Transpose优化和Bank冲突处理": "https://www.bilibili.com/video/BV1wtbjzgEBB",
+            "AI-Infra必备Cuda入门课程-Matmul优化初步": "https://www.bilibili.com/video/BV1ZithzTE5x",
+            "AI-Infra必备Cuda入门课程-Softmax的实现与优化": "https://www.bilibili.com/video/BV11Q8DzyE21",
+            "AI-Infra必备Cuda入门课程-Reduce算子的实现": "https://www.bilibili.com/video/BV13baszpESw"
+        },
+        "合集·Triton自制大模型推理框架": {
+            "Triton自制多模态大模型推理框架-用Triton写FlashAttention": "https://www.bilibili.com/video/BV1j59tY1EFt",
+            "Triton自制多模态大模型推理框架-用Triton写出高性能的matmul": "https://www.bilibili.com/video/BV1SfAmeUECV",
+            "Triton自制多模态大模型推理框架-Triton介绍和逐级编译流程": "https://www.bilibili.com/video/BV1HCAMe4E5Y",
+            "限时试看-使用OpenAI Triton实现Softmax算子": "https://www.bilibili.com/video/BV1KKZBYiEDj",
+            "Triton自制大模型推理框架—大模型推理优化综述": "https://www.bilibili.com/video/BV11oRWYWEmW",
+            "AI Infra入门-使用OpenAI Triton实现Reduce算子": "https://www.bilibili.com/video/BV1kaRzYdEsr",
+            "零基础入门ai infra的救星，自制深度学习推理框架出书了": "https://www.bilibili.com/video/BV1MAZBYBELQ",
+            "AI Infra秋招项目-OpenAI Triton自制深度学习推理框架发布了": "https://www.bilibili.com/video/BV17QNhz2ESk",
+            "秋招巅峰项目：OpenAI Triton自制多模态推理框架，FlashAttention原理与实战": "https://www.bilibili.com/video/BV1Jy3wznESs"
+        },
+        "合集·Cuda自制大模型推理框架，支持LLama3/Qwen3": {
+            "Cuda从零学-秋招转行拿高薪-从零自制大模型推理框架": "https://www.bilibili.com/video/BV1hT421Y7mi",
+            "自制大模型推理框架-使用Nsight compute对Cuda算子调优": "https://www.bilibili.com/video/BV1WS411w7g7",
+            "秋招项目-从零自制大模型推理框架-张量类的设计": "https://www.bilibili.com/video/BV1dH4y1F735",
+            "秋招项目-从零自制大模型推理框架-算子类的设计": "https://www.bilibili.com/video/BV18y411q71J",
+            "试看马上删-从零自制大模型推理框架，内存和显存资源是怎么被管理的。": "https://www.bilibili.com/video/BV1is421T7Vq",
+            "从零自制大模型推理框架，一个靠谱的C++程序员是怎么练成的。": "https://www.bilibili.com/video/BV1ji421e7MN",
+            "自制Cuda大模型推理框架-讲解一个从零手写的Qwen2.5推理": "https://www.bilibili.com/video/BV1q2mTYrEqM",
+            "秋招看过来！自制大模型推理框架项目-sofmax算子的cuda实现": "https://www.bilibili.com/video/BV1vZsyeuEz1",
+            "秋招看过来！自制大模型推理框架项目-动手实现LLama模型中的多头注意力机制": "https://www.bilibili.com/video/BV17d4fe9Ep6",
+            "秋招看过来！自制大模型推理框架-怎么用Cuda实现LLama模型中的MLP层": "https://www.bilibili.com/video/BV1uRnRe7EFQ",
+            "自制大模型推理框架-KVCache动手实现-原理篇": "https://www.bilibili.com/video/BV1GmpZeiEB7",
+            "秋招好项目-《动手自制大模型推理框架》-算子的创建和权重的载入": "https://www.bilibili.com/video/BV1bRveeoEPW",
+            "秋招、转行必备-动手自制大模型推理框架-CUDA显存管理": "https://www.bilibili.com/video/BV142421Z7r3",
+            "自制大模型推理框架-Cuda算子再优化和NVCompute分析性能": "https://www.bilibili.com/video/BV1Qx4y1t7jF",
+            "自制大模型推理框架-支持大模型int8分组量化": "https://www.bilibili.com/video/BV1RM4m117Bj",
+            "自制Cuda大模型推理框架-算子类的实现": "https://www.bilibili.com/video/BV1jXDTYEEEP",
+            "自制Cuda大模型推理框架-张量的实现和显存的管理": "https://www.bilibili.com/video/BV1hsU7Y8EhP",
+            "自制Cuda大模型推理框架-RMSNorm的Cuda实现": "https://www.bilibili.com/video/BV198znYnE7X",
+            "《自制深度学习推理框架》gemv算子的量化实现": "https://www.bilibili.com/video/BV1FK6aYhEhB",
+            "《自制深度学习推理框架》新书预告！从理论到实践，打造你的AI推理引擎": "https://www.bilibili.com/video/BV1ZPkhYfEt2",
+            "自制Cuda大模型推理框架-int8量化的实现": "https://www.bilibili.com/video/BV1HdqJYoEj6",
+            "秋招巅峰项目：手写工业级LLM推理系统-CUDA加速Qwen-3全流程实现": "https://www.bilibili.com/video/BV1zzNmzfEnF"
+        },
+        "合集·人民邮电出版社图书《自制深度学习推理框架》配套视频": {
+            "《自制深度学习推理框架》配套视频-第一章环境的安装": "https://www.bilibili.com/video/BV1oycGesEpj",
+            "《自制深度学习推理框架》-第二章张量的设计": "https://www.bilibili.com/video/BV1T7wNe9EpK",
+            "《自制深度学习推理框架》-第三章-计算图的设计": "https://www.bilibili.com/video/BV1sPfhYmEmx",
+            "《自制深度学习推理框架》-第四章-构建计算图": "https://www.bilibili.com/video/BV1HKAYefEoQ",
+            "《自制深度学习推理框架》-第5章算子注册器的实现": "https://www.bilibili.com/video/BV1w6RaYMEWh"
+        },
+        "合集·自制深度学习推理框架-第一次录制": {
+            "从KuiperInfer出发谈一些工程开发经验": "https://www.bilibili.com/video/BV1Ga4y1V7gF",
+            "自制深度学习推理框架-最终章-用自制的推理框架支持Yolov5模型的推理": "https://www.bilibili.com/video/BV1xs4y1J7t2",
+            "自制深度学习推理框架-第13课-用我们自制的推理框架完成ResNet网络的推理和图片的分类": "https://www.bilibili.com/video/BV1jD4y1M772",
+            "自制深度学习推理框架-第十二节-算子的执行流程": "https://www.bilibili.com/video/BV1wY411C7Kv",
+            "自制深度学习推理框架-第十一节-再探Tensor类，构建计算图的图关系以及对算子的输入输出预分配": "https://www.bilibili.com/video/BV1M54y1K7AG",
+            "自制深度学习推理框架-第10节-卷积算子的实现和im2col加速计算的原理": "https://www.bilibili.com/video/BV1F841137Ct",
+            "自制深度学习推理框架-对计算图知识的补充": "https://www.bilibili.com/video/BV18d4y1H7Tf",
+            "自制深度学习推理框架-第8.2节-计算图中的表达式下": "https://www.bilibili.com/video/BV1cT411f7pJ",
+            "自制深度学习推理框架-第8.1节-计算图中的表达式上": "https://www.bilibili.com/video/BV1HY4y1Z7S3",
+            "自制深度学习推理框架-第七课-构建自己的计算图": "https://www.bilibili.com/video/BV1VW4y1V7vp",
+            "Milestone里程碑，记录我们的自制框架KuiperInfer完美支持Yolov5n推理的一刻": "https://www.bilibili.com/video/BV1t24y1i7cu",
+            "自制深度学习推理框架-第六课-MaxPooling算子的实现": "https://www.bilibili.com/video/BV1m3411S7yy",
+            "自制深度学习推理框架-第五课-起飞！框架中的算子注册机制": "https://www.bilibili.com/video/BV1Q24y1m7jR",
+            "自制深度学习推理框架-起飞！实现我们的第一个算子Relu-第四课": "https://www.bilibili.com/video/BV1bG4y1J7sQ",
+            "自制深度学习推理框架-从CSV文件初始化Tensor张量-第三课": "https://www.bilibili.com/video/BV1Pg411J7V5",
+            "自制深度学习推理框架-张量类Tensor的实现-第二课": "https://www.bilibili.com/video/BV1Ed4y1v7Gb",
+            "自制深度学习推理框架-前言-第一课": "https://www.bilibili.com/video/BV1HV4y1A7H8"
+        }
+    },
+    "育儿之路教育规划": {
+        "合集·英语启蒙动画观看规划": {
+            "2-3岁英语启蒙动画观看规划": "https://www.bilibili.com/video/BV1ZQmYBkEfG",
+            "3-5岁英语动画观看规划": "https://www.bilibili.com/video/BV1AymYBEEsL",
+            "5-8岁英语动画观看规划": "https://www.bilibili.com/video/BV1PkmYBSEut",
+            "8-12岁英语启蒙动画观看规划": "https://www.bilibili.com/video/BV1AkmYBSEhS"
         }
     },
     "KubeEdge": {
@@ -909,6 +950,22 @@
         }
     },
     "美团技术团队": {
+        "合集·美团大模型评测": {
+            "下一代多模态大模型能力演进的度量分析-凤娇-美团": "https://www.bilibili.com/video/BV1sUBPBSEDQ",
+            "Agent时代下的代码评测范式革新-耀明-美团": "https://www.bilibili.com/video/BV1YBBKBNE3x",
+            "AMemGym：从交互式记忆评测到持续学习-栋宇-美团": "https://www.bilibili.com/video/BV1i8BKB6EUt"
+        },
+        "合集·美团无人机2025": {
+            "美团无人机低空航网正式发布": "https://www.bilibili.com/video/BV1X4BpB2E7r",
+            "美团智能接驳机场 M-Port 3 正式发布": "https://www.bilibili.com/video/BV1VxBpBEEWM",
+            "美团无人机云枢 M-DaaS 3 正式发布": "https://www.bilibili.com/video/BV19xBpB7Ecj",
+            "美团第四代无人机长程版 M-Drone 4L 正式发布": "https://www.bilibili.com/video/BV138BpB1EVb"
+        },
+        "合集·美团技术沙龙87期": {
+            "1-Rust MultiPlatform - Native跨端实践（Mike）": "https://www.bilibili.com/video/BV1eoqdBGEJe",
+            "2-鸿蒙RNOH性能优化实践-洲洋": "https://www.bilibili.com/video/BV15oqdBGExB",
+            "3-美团App工程化实践方案—Meat（登科）": "https://www.bilibili.com/video/BV1eoqdBGE1Y"
+        },
         "合集·美团论文分享会：NeurIPS 2025": {
             "1-视频《降噪旋转器：通过重要性聚集提升大语言模型对剪枝的鲁棒性》Tianteng Gu": "https://www.bilibili.com/video/BV1XDUYBTEjr",
             "2-视频《Glance2Gaze：从全局扫视到聚焦凝视的高效视觉语言模型》Juan Chen": "https://www.bilibili.com/video/BV1GDUYBMEqA",
@@ -990,7 +1047,8 @@
     },
     "ThinkInAI社区": {
         "合集·智能体实战营": {
-            "智能体实战营第一期：AI写作助理": "https://www.bilibili.com/video/BV1ycSiBwE7D"
+            "智能体实战营第一期：AI写作助理": "https://www.bilibili.com/video/BV1ycSiBwE7D",
+            "ThinkInAI & MemVerge 智能体实战营第二期：AI 健康助理": "https://www.bilibili.com/video/BV1SAqaBcEUY"
         },
         "合集·Gopher China 2023": {
             "#LetsGoTalk - Go圈大佬带你狂飙 Gopher China 2023": "https://www.bilibili.com/video/BV1UM4y1275B",
@@ -1049,10 +1107,24 @@
         }
     },
     "字节跳动开源": {
-        "合集·ABCoder-合集": {
-            "abcoder演示-1": "https://www.bilibili.com/video/BV1Ur8jzWEnf",
-            "ABCoder演示-2": "https://www.bilibili.com/video/BV1my8jzHEHi",
-            "ABCoder演示-3": "https://www.bilibili.com/video/BV1Qv8jztEDY"
+        "合集·GlutenCon 2025": {
+            "Bolt：面向多引擎的生产级异构加速库 - Frank Hu 字节跳动": "https://www.bilibili.com/video/BV1xhqgBYEnt",
+            "Apache Gluten 在 IBM 的现状和发展 - Ethan Zhang IBM": "https://www.bilibili.com/video/BV1yYqgBcESH",
+            "Apache Gluten社区的现在和未来 - 陈韦廷 微软": "https://www.bilibili.com/video/BV11hqgBaEPg",
+            "Apache Gluten在字节跳动的落地实践 - 杨嘉义 字节跳动": "https://www.bilibili.com/video/BV11hqgBaEJf",
+            "GPU 加速在 Gluten 中的应用 - 靳成成 IBM": "https://www.bilibili.com/video/BV128qgBAETe",
+            "华为鲲鹏与 Bolt 基于 Arm 架构合作的规划与进展 - 冯骁 华为": "https://www.bilibili.com/video/BV1bgqVByEhY",
+            "Gluten 在腾讯云上的规模化推广与挑战 - 栾学东 腾讯": "https://www.bilibili.com/video/BV1bgqVBCENt",
+            "Gluten 在 BIGO 的开发和应用 - 张志彪 BIGO": "https://www.bilibili.com/video/BV1MgqVByEx1",
+            "Apache Gluten 中的内存管理机制 - 张宏泽 IBM": "https://www.bilibili.com/video/BV1tgqVBCEzs",
+            "小红书 Native Engine 技术进展及生产实践 - 魏秀利 小红书": "https://www.bilibili.com/video/BV1MgqVByEqd",
+            "小米利用 Gluten 和 Velox 加速 Spark 的工程实践 - 梁咏元 小米": "https://www.bilibili.com/video/BV1rCqGBwE1n",
+            "Spark 增量计算在京东的探索与实践 - 吴国晓 京东": "https://www.bilibili.com/video/BV1wCqGBAEcT"
+        },
+        "合集·快速掌握 ABCoder 的使用方法": {
+            "ABCoder：基于深度理解的 AI 编程应用框架": "https://www.bilibili.com/video/BV1Ur8jzWEnf",
+            "ABCoder demo": "https://www.bilibili.com/video/BV1my8jzHEHi",
+            "ABCoder 的应用实践：使用 ABCoder 支持 SEW-Bench": "https://www.bilibili.com/video/BV1Qv8jztEDY"
         },
         "合集·开源合规精选培训课": {
             "开源合规精选培训课程-1-知识产权": "https://www.bilibili.com/video/BV1wKNWzNE6R",
@@ -1062,13 +1134,11 @@
             "开源合规精选培训课程-5-开源软件许可证合规": "https://www.bilibili.com/video/BV19ygczqEfR",
             "开源合规精选培训课程-6-公司的开源合规": "https://www.bilibili.com/video/BV1Es8Tz5Em9"
         },
-        "合集·CloudWeGo直播系列第一期": {
-            "CSDN-第一期直播-part1：DeerFlow": "https://www.bilibili.com/video/BV1oigHzeEPN",
-            "CSDN-第一期直播-part2：后端AI coding的探讨": "https://www.bilibili.com/video/BV1LzgHzaEcD",
-            "CSDN-第一期直播-part3：EINO-DeerGO的实现": "https://www.bilibili.com/video/BV1iBgHzAEPT"
-        },
-        "合集·CloudWeGo系列直播": {
-            "写后端也能很Vibe？用Eino框架从0到1搭建AI应用": "https://www.bilibili.com/video/BV1mqutzPE8U"
+        "合集·从 0 到 1 打造你的 AI 应用｜CloudWeGo系列分享": {
+            "写后端也能很Vibe？用Eino框架从0到1搭建AI应用": "https://www.bilibili.com/video/BV1mqutzPE8U",
+            "从 0 到 1 打造你的 AI 应用（一）：听听 DeerFlow 的作者怎么说": "https://www.bilibili.com/video/BV1oigHzeEPN",
+            "从 0 到 1 打造你的 AI 应用（二）：后端 AI coding 的探讨": "https://www.bilibili.com/video/BV1LzgHzaEcD",
+            "从 0 到 1 打造你的 AI 应用（三）：EINO-DeerGO 的实现": "https://www.bilibili.com/video/BV1iBgHzAEPT"
         },
         "合集·2025春火山引擎FORCE大会": {
             "VeRL 灵活高效的大型语言模型强化学习框架——FORCE大会直播回放": "https://www.bilibili.com/video/BV18dMezHEYM",
@@ -1076,7 +1146,7 @@
             "DeerFlow —— 基于 LangStack 的 DeepResearch-FORCE大会直播回放": "https://www.bilibili.com/video/BV1boMezDEqe",
             "ABCoder：编程场景下的 LLM 增强探索": "https://www.bilibili.com/video/BV1YmMezoE2r"
         },
-        "合集·CloudWeGo深圳站Meetup演讲": {
+        "合集·云原生 × AI 时代的微服务架构与技术实践｜CloudWeGo深圳站": {
             "编排优先——Go 语言开发 AI 智能体的设计与实现-沈桐": "https://www.bilibili.com/video/BV1CLZJY2Em2",
             "智谱清言从单体到微服务架构的转型之路-肖文彬": "https://www.bilibili.com/video/BV1CLZJY2EnP",
             "CloudWeGo AI+微服务体系下的可观测性实践-钱世俊": "https://www.bilibili.com/video/BV1ALZJYmEzg",
@@ -1818,6 +1888,28 @@
         }
     },
     "北漂-郑先生": {
+        "合集·Kubernetes源码": {
+            "坚持阅读kubernetes源码收益50000": "https://www.bilibili.com/video/BV13L411q77k",
+            "kubernetes源码刨析专题-scheduler": "https://www.bilibili.com/video/BV1V24y1G7Ak",
+            "kubernetes源码刨析专题 - Leader election (上）": "https://www.bilibili.com/video/BV1FX4y1m7xS",
+            "kubernetes源码刨析专题-Leader Election 源码 (中）": "https://www.bilibili.com/video/BV1pz4y187HJ",
+            "kubernetes源码刨析专题-工具包Wait和Retry": "https://www.bilibili.com/video/BV16k4y1j7ZV",
+            "kubernetes源码刨析-workqueue sample 上": "https://www.bilibili.com/video/BV1Yo4y1G7oe",
+            "5月份7次直播总结和靠blibili收益5911元历程": "https://www.bilibili.com/video/BV1wk4y1H77Z",
+            "K8s源码刨析-PodGC纠正和Debug调试": "https://www.bilibili.com/video/BV1Ko4y1N7qy",
+            "kubenetes源码刨析-控制器生产者模型架构图": "https://www.bilibili.com/video/BV1EW4y1R7vG",
+            "kubernetes源码刨析专题-控制器理论和生产者模型": "https://www.bilibili.com/video/BV1m8411f7Dc",
+            "kubernetes源码刨析直播课，我们开始啦！": "https://www.bilibili.com/video/BV1pm4y1b7AZ",
+            "K8s源码刨析-Deployment控制器架构图": "https://www.bilibili.com/video/BV1bW4y1X7ar",
+            "K8s中删除Pod时各组件是如何工作的": "https://www.bilibili.com/video/BV1js4y1F78G",
+            "容器存储插件CSI ( 上 ）": "https://www.bilibili.com/video/BV1VV411G7U6",
+            "容器存储插件CSI ( 中 )": "https://www.bilibili.com/video/BV1LX4y1J79p",
+            "容器存储插件CSI ( 下 ）": "https://www.bilibili.com/video/BV12x4y1X7JT",
+            "K8s删除Deployment，你知道的可能是错的": "https://www.bilibili.com/video/BV1ZP41147fn",
+            "K8s垃圾回收-我的干货来了": "https://www.bilibili.com/video/BV1Ah4y1k7aM",
+            "K8s Informer一次彻底搞明白": "https://www.bilibili.com/video/BV1ZV411g78o",
+            "Informer 第一课 为什么 InformerFactory 能节约50%的资源": "https://www.bilibili.com/video/BV1wN4y1o7EQ"
+        },
         "合集·我的生活⛱️": {
             "大理洱海第六站-洱海之最": "https://www.bilibili.com/video/BV1bh4y167er",
             "大理洱海第五站-稻田骑马": "https://www.bilibili.com/video/BV1394y1a7om",
@@ -1833,27 +1925,6 @@
             "王江文，跑路了！": "https://www.bilibili.com/video/BV1kx4y1f7Dm",
             "南山寺 南海观音": "https://www.bilibili.com/video/BV17pk8YZEQL"
         },
-        "合集·Kubernetes源码": {
-            "坚持阅读kubernetes源码收益50000": "https://www.bilibili.com/video/BV13L411q77k",
-            "kubernetes源码刨析专题-scheduler": "https://www.bilibili.com/video/BV1V24y1G7Ak",
-            "kubernetes源码刨析专题 - Leader election (上）": "https://www.bilibili.com/video/BV1FX4y1m7xS",
-            "kubernetes源码刨析专题-Leader Election 源码 (中）": "https://www.bilibili.com/video/BV1pz4y187HJ",
-            "kubernetes源码刨析专题-工具包Wait和Retry": "https://www.bilibili.com/video/BV16k4y1j7ZV",
-            "kubernetes源码刨析-workqueue sample 上": "https://www.bilibili.com/video/BV1Yo4y1G7oe",
-            "5月份7次直播总结和靠blibili收益5911元历程": "https://www.bilibili.com/video/BV1wk4y1H77Z",
-            "K8s源码刨析-PodGC纠正和Debug调试": "https://www.bilibili.com/video/BV1Ko4y1N7qy",
-            "kubenetes源码刨析-控制器生产者模型架构图": "https://www.bilibili.com/video/BV1is4y1e7cK",
-            "kubernetes源码刨析直播课，我们开始啦！": "https://www.bilibili.com/video/BV1pm4y1b7AZ",
-            "K8s源码刨析-Deployment控制器架构图": "https://www.bilibili.com/video/BV1bW4y1X7ar",
-            "K8s中删除Pod时各组件是如何工作的": "https://www.bilibili.com/video/BV1js4y1F78G",
-            "容器存储插件CSI ( 上 ）": "https://www.bilibili.com/video/BV1VV411G7U6",
-            "容器存储插件CSI ( 中 )": "https://www.bilibili.com/video/BV1LX4y1J79p",
-            "容器存储插件CSI ( 下 ）": "https://www.bilibili.com/video/BV12x4y1X7JT",
-            "K8s删除Deployment，你知道的可能是错的": "https://www.bilibili.com/video/BV1ZP41147fn",
-            "K8s垃圾回收-我的干货来了": "https://www.bilibili.com/video/BV1Ah4y1k7aM",
-            "K8s Informer一次彻底搞明白": "https://www.bilibili.com/video/BV1ZV411g78o",
-            "Informer 第一课 为什么 InformerFactory 能节约50%的资源": "https://www.bilibili.com/video/BV1wN4y1o7EQ"
-        },
         "合集·apache-airflow 视频教程": {
             "apache-airflow 任务调度系统 - 开发环境-快速部署的2种方式": "https://www.bilibili.com/video/BV1gy4y1M7Bt",
             "02-3 airflow调度器的工作原理-案例分析": "https://www.bilibili.com/video/BV1Bg411M7dp",
@@ -1861,7 +1932,7 @@
             "Airflow 国内全套视频系列教程": "https://www.bilibili.com/video/BV1VL411n7QN"
         }
     },
-    "炼狱腾蛇": {
+    "宅男头哥爱撸铁": {
         "合集·讲给孩子的云原生故事": {
             "CNCF网站上的隐藏梗,很多大佬都没发现": "https://www.bilibili.com/video/BV1XW4y127zF",
             "给孩子们讲解kubernetes的绘本": "https://www.bilibili.com/video/BV17a411n7G1"
@@ -2014,6 +2085,12 @@
     },
     "好奇猫学院": {},
     "CIT云原生": {
+        "合集·python基础教程": {
+            "01、初识python": "https://www.bilibili.com/video/BV19VmKBREJ4",
+            "02、安装python环境 【windows】": "https://www.bilibili.com/video/BV1r6mKBTEKZ",
+            "03、安装python环境【mac】": "https://www.bilibili.com/video/BV16BmKBqECC",
+            "06、数据类型": "https://www.bilibili.com/video/BV1nfmNBNEzD"
+        },
         "合集·设计模式【go语言】": {
             "golang设计模式01-缓存代理": "https://www.bilibili.com/video/BV1FL41127od",
             "golang设计模式02-链式调用": "https://www.bilibili.com/video/BV1DX4y1D7Dw",
@@ -2714,7 +2791,15 @@
             "golang把内存按对象大小分成了多少个等级你清楚吗？": "https://www.bilibili.com/video/BV1wFU5B8EjC",
             "golang是如何优化堆内存的分配": "https://www.bilibili.com/video/BV1mvUzBkEFg",
             "golang32位操作系统如何优化堆内存地址分配": "https://www.bilibili.com/video/BV16FUZBEEZw",
-            "golang堆内存两级索引映射机制": "https://www.bilibili.com/video/BV1SyUfBTEm5"
+            "golang堆内存两级索引映射机制": "https://www.bilibili.com/video/BV1SyUfBTEm5",
+            "golang 堆内存块元数据都记录了哪些内容": "https://www.bilibili.com/video/BV1ux2sBvEei",
+            "golang内存分配器的工作流程是怎样的": "https://www.bilibili.com/video/BV19amjBHEG3",
+            "golang span内存页的封装与对象的分片": "https://www.bilibili.com/video/BV1a7mQBUEHj",
+            "深入 Go 内存分配：golang 底层mspan中是如何通过allocCache 加速allocBits的扫描的~（allocCache 工作原理 ）": "https://www.bilibili.com/video/BV1aEqhBwEio",
+            "Golang 底层源码：mspan中allocBits与gcmarkBits如何完成状态的轮转与内存的复用": "https://www.bilibili.com/video/BV1h1qpBrEEE",
+            "Golang 底层源码：golang底层gc是如何标记span的回收阶段状态的？": "https://www.bilibili.com/video/BV12xq6B7E2f",
+            "Golang 底层源码：golang底层如何将除法运算转换成乘法加位移，乘法逆元了解一下~": "https://www.bilibili.com/video/BV1KeBTBoE2X",
+            "Golang 底层源码：Golang堆内存的比例式清扫（垃圾回收机制）": "https://www.bilibili.com/video/BV1DWvaBfEyN"
         },
         "合集·大厂Go面经系列": {
             "百度Go二面：golang GMP模型 Work Stealing偷多少？": "https://www.bilibili.com/video/BV1d3pEeoENy",
@@ -3684,7 +3769,207 @@
             "sealer是一个什么样的项目？为什么选择开源？": "https://www.bilibili.com/video/BV1h54y1o7GE"
         }
     },
-    "运维学徒": {},
+    "AI老马啊": {
+        "合集·强化学习技术探索": {
+            "强化学习｜技术路线 Roadmap 介绍": "https://www.bilibili.com/video/BV1hJCfBdEiT",
+            "强化学习｜策略梯度算法介绍": "https://www.bilibili.com/video/BV1JrUWBpE4p",
+            "强化学习｜近端策略优化PPO": "https://www.bilibili.com/video/BV1VHSVBJEZz",
+            "强化学习｜广义相对策略优化 GRPO 介绍": "https://www.bilibili.com/video/BV1532pBTEfy",
+            "强化学习｜直接偏好优化DPO介绍": "https://www.bilibili.com/video/BV1ohqRBgEeK",
+            "强化学习｜GRPO GSPO SAPO 技术演进": "https://www.bilibili.com/video/BV1zZBoBWEtj",
+            "强化学习｜训练框架 verl 介绍": "https://www.bilibili.com/video/BV1ECvzBFEFJ"
+        },
+        "合集·大模型推理技术研究": {
+            "大模型推理｜PD分离架构介绍": "https://www.bilibili.com/video/BV1D827BUEDX",
+            "大模型推理-KV cache高效推理必备技术": "https://www.bilibili.com/video/BV1k2L9zyEt7",
+            "vLLM推理框架｜持续批处理 continuous batch 介绍": "https://www.bilibili.com/video/BV1gEVdzRETm",
+            "vLLM推理框架｜内存分页榨干GPU，让KV缓存不在爆仓！": "https://www.bilibili.com/video/BV11g77znEqw",
+            "显卡突围的“量化魔法”｜由数值精度到量化策略介绍": "https://www.bilibili.com/video/BV1eCTZz9EhR",
+            "量化优化别瞎搞！Roofline 助你分析量化收益": "https://www.bilibili.com/video/BV1XPNCzTEG3",
+            "大模型高效推理｜投机解码原理介绍": "https://www.bilibili.com/video/BV1jUu9zXEZu",
+            "SGLang高效推理｜KV 缓存复用 Radix Attention 原理介绍": "https://www.bilibili.com/video/BV18Tb2zKEA1",
+            "给LLM开挂！SGLang 中结构化输出策略介绍": "https://www.bilibili.com/video/BV1kahgzFEXZ"
+        },
+        "合集·大模型训练技术": {
+            "大模型训练｜ZeRO三阶段显存\"压榨\"指南": "https://www.bilibili.com/video/BV1GuHzzKErA",
+            "大模型异构训练｜ZeRO-offload技术：你的CPU内存不该\"躺平\"！": "https://www.bilibili.com/video/BV15YWFzPEbR",
+            "数据并行｜显存“减负”，从DDP到FSDP进阶": "https://www.bilibili.com/video/BV13cn4zFEQ1",
+            "流水线并行｜GPipe & PipeDream 让流水线告别卡顿 “纵享丝滑”": "https://www.bilibili.com/video/BV1HLnozwEAW",
+            "张量并行“拆家”指南，算力和通信的平衡": "https://www.bilibili.com/video/BV1ae4Tz4EhJ",
+            "大模型训练｜LoRA高效参数微调技术": "https://www.bilibili.com/video/BV1xQWpzJEVK",
+            "大模型混合专家系统介绍": "https://www.bilibili.com/video/BV1xnyBBbExk",
+            "大模型｜DeepSeek MoE 混合专家系统介绍": "https://www.bilibili.com/video/BV1efkRBSENh"
+        },
+        "合集·大模型基础知识": {
+            "Encoder/Decoder混战｜以GPT为代表的Decoder-Only架构凭啥C位出道？": "https://www.bilibili.com/video/BV1sCYkzfEG7",
+            "大模型的 “智慧骨架”，LLaMA架构介绍。": "https://www.bilibili.com/video/BV1RuYozEEty",
+            "LLaMA架构模型参数量和计算量估算": "https://www.bilibili.com/video/BV1frhYzHE1g",
+            "大模型训练显存占用分析，谁是内存杀手？": "https://www.bilibili.com/video/BV1x6aizCEvf"
+        },
+        "合集·深度求索而知道！": {
+            "本地部署DeepSeek大模型：ollama+chatbox 一站式解决！": "https://www.bilibili.com/video/BV1C7ADe5EpT",
+            "Deepseek-R1 训练过程，两步四阶段，一图搞定！": "https://www.bilibili.com/video/BV1i4PneSEPG",
+            "利用DeepSeek生产微调数据的三点思考！": "https://www.bilibili.com/video/BV1AhRtYZEuT",
+            "GPU矩阵分块｜让大矩阵运算速度起飞": "https://www.bilibili.com/video/BV116TwzEEkc"
+        },
+        "合集·大模型相关技术研究": {
+            "显卡基础知识｜英伟达算力开挂的GPU！": "https://www.bilibili.com/video/BV1q877zqEFR",
+            "大模型训练-英伟达Nvidia GPU互联架构全景图": "https://www.bilibili.com/video/BV1KwZiYhEDh",
+            "大模型-混合专家系统MoE介绍": "https://www.bilibili.com/video/BV1xidbYTE44"
+        }
+    },
+    "荒野全栈AI": {
+        "合集·AI MaaS（模型层）": {
+            "MoE模型推理软硬件协同优化实践：多GPU专家并行EP": "https://www.bilibili.com/video/BV1dgBDBwEmY",
+            "众妙之门：MoE模型探微": "https://www.bilibili.com/video/BV1D7BUBUE7n",
+            "扩散模型核心架构解析：从U-Net到Diffusion Transformer": "https://www.bilibili.com/video/BV1Y8mtBpEUi",
+            "DeepSeek Math V2模型论文精讲": "https://www.bilibili.com/video/BV1ZeSqBtEmo",
+            "李飞飞团队：最新世界模型人人都可在线体验！": "https://www.bilibili.com/video/BV1ACCkBKER5",
+            "可视化跨模态Transformer：让AI理解你的图片和文字": "https://www.bilibili.com/video/BV15H1FBMEH8",
+            "Claude Skill 理论与实战": "https://www.bilibili.com/video/BV1swyDBFEJ6",
+            "带你10分钟可视化完整体验DeepSeek-OCR的3类超能力": "https://www.bilibili.com/video/BV1qjsozNEws",
+            "为什么华为昇腾芯片跑不了DeepSeek-OCR？": "https://www.bilibili.com/video/BV17dsozBEq5",
+            "Nature论文精讲：超薄镜头成像的神经纳米光学": "https://www.bilibili.com/video/BV1FmsFzmEK8",
+            "bilibili新开源模型index-ttx2体验与原理": "https://www.bilibili.com/video/BV1UVWbzzEmT",
+            "AGI前沿：“世界模型” 到底是什么？": "https://www.bilibili.com/video/BV173Wxz5Ejf",
+            "10分钟AI文本生成图片实时演示+原理精讲": "https://www.bilibili.com/video/BV1krWxz9EVw",
+            "3招教会你：如何无损扩充LLM上下文窗口到1M": "https://www.bilibili.com/video/BV1884AzCETL",
+            "为什么LLM的上下文窗口难以超过128K": "https://www.bilibili.com/video/BV18gxXz2EH9",
+            "手把手教你如何1分钟快速发布上线一个MCP Server": "https://www.bilibili.com/video/BV1CCnXzxEW9",
+            "LangSmith平台实战详解 II：线程、数据库、实验和自动化，全体系大揭秘！": "https://www.bilibili.com/video/BV19jWAzrEFk",
+            "LangSmith平台实战详解：追踪，线程，LLM和人工评估体系大揭秘！": "https://www.bilibili.com/video/BV1Tipdz1EoJ",
+            "40分钟DeepSeek OCR论文原理、逻辑与贡献精讲": "https://www.bilibili.com/video/BV1trxczeEYU",
+            "解析OpenAI新开源OSS模型，并准备agent性能增强的微调数据集": "https://www.bilibili.com/video/BV1bWeyz5Ept",
+            "通过详细解析cursor的系统提示词，带你了解function calling和MCP在agent中的详细原理和不同模型的agent能力实战": "https://www.bilibili.com/video/BV1X9eJz2ELw",
+            "MCPprincinple_STDIO": "https://www.bilibili.com/video/BV17hNRzEEeS",
+            "Gemini 3 Pro吊打 Claude 4.5 Opus？看懂 Benchmark 里的‘水分’与真相": "https://www.bilibili.com/video/BV1cNveBDEA7",
+            "AI生成的图片并不是P掉Logo就“干净”了，小心红线！": "https://www.bilibili.com/video/BV1o4i5BoECB",
+            "论文详解：DeepSeek新年第一刀，砍向了AI“祖师爷”ResNet！": "https://www.bilibili.com/video/BV1ypvZBxETL",
+            "显存不够？算力被砍？DeepSeek 用“MLA+DSA”把 Transformer 的桌子掀了！": "https://www.bilibili.com/video/BV1bcivBKEjy",
+            "Moe多GPU专家并行：DeepSeek为什么启动快但生成慢？": "https://www.bilibili.com/video/BV1qJiHB1EbX"
+        },
+        "合集·AI IaaS（基础设施层）": {
+            "SoC芯纪元：解密苹果M系列和A系列芯片": "https://www.bilibili.com/video/BV1RkBYBjEiR",
+            "台积电2.5D, 3D, 3.5D先进封装技术：InFo, CoWoS, SoIC": "https://www.bilibili.com/video/BV17eB9BVEbw",
+            "美对华芯片封锁政策全流程解析，审视地缘政治下的“合规”芯片": "https://www.bilibili.com/video/BV1cUqUBvErg",
+            "如何理解nvidia-smi命令的结果": "https://www.bilibili.com/video/BV17iqfBWEwf",
+            "详解PCIe和SXM版显卡的区别": "https://www.bilibili.com/video/BV1dEBFB9E12",
+            "5分钟解释H100的第二代transformer引擎和MIG技术": "https://www.bilibili.com/video/BV1HPmcBxEgz",
+            "V100和H100的GPU的架构拆解详解": "https://www.bilibili.com/video/BV1WcmcBtEFg",
+            "如何对GPU图形渲染效果进行编程": "https://www.bilibili.com/video/BV1acmFBzErC",
+            "GPU服务器如何安装所需软件和驱动 (Nvidia)": "https://www.bilibili.com/video/BV1eQ23BgEgY",
+            "CUDA核心？张量核心！": "https://www.bilibili.com/video/BV1Cq2iBdEAk",
+            "AI工作站科普：DGX，HGX，工作站，服务器，机柜，模块": "https://www.bilibili.com/video/BV1LQ2sBmEQa",
+            "TPU和CPU和GPU的架构差异": "https://www.bilibili.com/video/BV1riUZB9E2A",
+            "跟着Gemini 3 Pro学，AI工厂的“血管”：IB 和 以太网 传输协议": "https://www.bilibili.com/video/BV1iSyHBeEpx",
+            "40分钟详细解读英伟达NVL 72:单块芯片如何一步步组装成为AI工厂": "https://www.bilibili.com/video/BV1cAC7B4EGh",
+            "GTC大会：NVIDIA硬件家族4代同框一篇讲完": "https://www.bilibili.com/video/BV1ddyZBKEnR",
+            "企业级AI落地部署IaaS层有什么？是怎么相互合作的？": "https://www.bilibili.com/video/BV1ACnXz4Eex",
+            "区块链，比特币和挖矿是什么？为什么要用GPU?": "https://www.bilibili.com/video/BV1EfmqBsEsq",
+            "自购GPU受骗经历：GPU和PCB板": "https://www.bilibili.com/video/BV1zGmZBjE26",
+            "为什么AI主要是矩阵运算，又是怎么影响GPU设计的": "https://www.bilibili.com/video/BV1inqtBAEDE",
+            "马斯克：5年内数据中心应该上宇宙中！": "https://www.bilibili.com/video/BV1L6U9BvEDF",
+            "英伟达四面楚歌200亿美元“收购”groq：LPU是什么？值得吗？": "https://www.bilibili.com/video/BV1q8B6BBENr",
+            "H200获批对华出售：背后美中NV的三方逻辑思考": "https://www.bilibili.com/video/BV15RBzBYEYZ",
+            "后摩尔定律时代：英特尔18A能否吊打台积电N2？": "https://www.bilibili.com/video/BV1odiJB3EHT"
+        },
+        "合集·中国移动企业科创合集": {
+            "谁说国企不搞硬科技？中国移动“BASIC6”科创规划这回动真格了！": "https://www.bilibili.com/video/BV1eSi3BLENP",
+            "告别“烟囱式”建设：BOMS域与四共平台如何重塑移动IT？": "https://www.bilibili.com/video/BV1YSi3BLEdU"
+        },
+        "合集·前沿AI大厂发展史": {
+            "一小时万字详解英伟达发展史：科技巨头与皮衣教父的30年发展传奇": "https://www.bilibili.com/video/BV1uiqzBQEgp",
+            "万字详解GPU发展史：从3D图形显示器到通用计算加速器": "https://www.bilibili.com/video/BV1dFBGBsEyb",
+            "40分钟英伟达GTC大会解读，揭开市值5万亿帝国的背后的秘密": "https://www.bilibili.com/video/BV1hdy9BSEvD",
+            "旷野的斗士：AMD 50年的沉沦与逆袭": "https://www.bilibili.com/video/BV1nnvkBkE2b",
+            "硅海霸业：英特尔与AMD的57年沉浮史": "https://www.bilibili.com/video/BV1m7vxBzEe2"
+        },
+        "合集·AI PaaS（平台层）": {
+            "模型量化、AI算力到底是什么？一个视频带你用案例直观感受": "https://www.bilibili.com/video/BV1bQqmBCE6P",
+            "详解PD分离，以及Vllm和SGLang怎么优化它": "https://www.bilibili.com/video/BV1UJS8BREGo",
+            "k8s：手把手带你在docker中用它跑llm（ii）": "https://www.bilibili.com/video/BV1KRScBuEcb",
+            "k8s概念介绍：从定位到功能（i)": "https://www.bilibili.com/video/BV15qScBDENc",
+            "人工智能算法发展编年史详解：符号AI，统计学AI，深度学习AI": "https://www.bilibili.com/video/BV1NaUNB2Eoz",
+            "Anthropic:MCP和Claude Skills应趋于同质化": "https://www.bilibili.com/video/BV1BokfBqEgK",
+            "所有AI框架的模型都可以在华为芯片上跑？": "https://www.bilibili.com/video/BV1EL1oBBEue",
+            "一个视频带你厘清AI框架(PyTorch)、计算框架(CUDA)和底层硬件(A100)的关系": "https://www.bilibili.com/video/BV1EL1oBBELR",
+            "从阿里云全产品线，一级级解释企业AI落地4层架构": "https://www.bilibili.com/video/BV1buHxzZEtv",
+            "企业级AI应用的4层架构详解：PaaS层的承上启下的逻辑详解": "https://www.bilibili.com/video/BV1cLnozwEcm",
+            "本地部署模型有无GPU加速的区别？CUDA护城河的作用理解。四种GPU加速策略详解": "https://www.bilibili.com/video/BV182HZzXER9",
+            "从0到1用15分钟手把手带你手写一个带有“超级计算器”功能的“MCP服务器Server，然后发布给所有人使用": "https://www.bilibili.com/video/BV1QqtBzUE9q"
+        },
+        "合集·AI AaaS（应用层）": {
+            "Langchain_RAG_Streamlit": "https://www.bilibili.com/video/BV18UM8z6EW5",
+            "Langchain_Agent_Functioncalling_Streamlit": "https://www.bilibili.com/video/BV1DKM8zuEsb",
+            "喂饭教学DeepResearch原理": "https://www.bilibili.com/video/BV1YvgBzuEwL",
+            "10分钟带你轻松打造多Agent模式(实战篇）": "https://www.bilibili.com/video/BV1HP8Yz9Eau",
+            "10分钟带你轻松打造多Agent模式(原理篇）": "https://www.bilibili.com/video/BV1HP8Yz9EFW",
+            "Agentic RAG 代码原理 + 实战教学，让你从此告别传统RAG": "https://www.bilibili.com/video/BV1C3hwzrEfk",
+            "10分钟带你实现利用LangGraph打造Graph RAG 代理Agent，实测效果远超标准RAG！用Supervised 代理Agent实现多Agent系统": "https://www.bilibili.com/video/BV1WX8zzLEoS",
+            "利用“MinerU”和“Langgraph”9分钟完整实现PDF的RAG流程的Agent": "https://www.bilibili.com/video/BV1x5h7zREdj",
+            "智能意图识别 + 多模态PDF的RAG 实战项目演练": "https://www.bilibili.com/video/BV149hKzbESV",
+            "手把手教学一步步打开Langgraph项目的前后端": "https://www.bilibili.com/video/BV1G4huzyEZ2",
+            "使用LangGraph接入8款MCP，拥有超50款工具，并用StreamLit构建前端页面的“实战演示+底层原理”教学": "https://www.bilibili.com/video/BV1g7t5zLEjS",
+            "LangGraph三种多智能体架构的原理与实战": "https://www.bilibili.com/video/BV1nPtXzBEix",
+            "MinerU：PDF处理神器的Pipeline和VLM两种模式大揭秘": "https://www.bilibili.com/video/BV1p8e6z9EEN",
+            "通过实际案例拆解Light RAG，构建可视化知识图谱，解析Graph RAG的运行原理和关键概念（一）": "https://www.bilibili.com/video/BV1bSaGzJEdv",
+            "通过实际案例拆解Light RAG知识库和提示词库并实战尝试6种检索策略（二）": "https://www.bilibili.com/video/BV1t9aGz2E7j",
+            "Manus实战加原理：一个视频带你了解AI Agent 如何一步步控制浏览器完成任务": "https://www.bilibili.com/video/BV1SdY3zJE9A",
+            "LangGraph怎么处理多并发请求详解": "https://www.bilibili.com/video/BV16dJDz1EBn",
+            "10分钟教会你利用LangGraph和MinerU API搭建一个简单的PDF翻译Agent": "https://www.bilibili.com/video/BV1qux4zHEnB",
+            "10分钟揭秘cursor和tavily的网络搜索工具web_search：居然有3次LLM处理？": "https://www.bilibili.com/video/BV1kL4uz7E81",
+            "详解LangChain最新发布“企业智能体应用调查”": "https://www.bilibili.com/video/BV1gkqCBPEa4",
+            "带你用LLMref感受AI SEO时代": "https://www.bilibili.com/video/BV1vh4uzTExQ",
+            "“LangGraph + LangSmith + LangGraph Radio + Agent UI” 十分钟轻松打造拥有数十个工具的智能体Agent": "https://www.bilibili.com/video/BV1wUuzzxE6g",
+            "赛博斗蛐蛐：AI炒虚拟货币！？": "https://www.bilibili.com/video/BV12EySBbExA"
+        },
+        "合集·科技前沿知识分享": {
+            "科技前沿科普第一期：AI数字孪生工厂": "https://www.bilibili.com/video/BV1n8kUBLEYR",
+            "每周AI技术前沿分享第二期（上）：AI+6G（基础原理篇）": "https://www.bilibili.com/video/BV1hwCDBKE2Q",
+            "每周AI技术前沿分享第二期（下）：AI+6G（应用原理篇）": "https://www.bilibili.com/video/BV1yeCSBsEDD",
+            "技术前沿分享第三期：量子计算与纠错": "https://www.bilibili.com/video/BV1d3m9BhEz5"
+        },
+        "合集·个人学术视频合集": {
+            "3D Points Designer": "https://www.bilibili.com/video/BV1pgGtzYEZx",
+            "主程序-1*": "https://www.bilibili.com/video/BV1rBJJzoEnS",
+            "主程序-3": "https://www.bilibili.com/video/BV1CGJ8zsEwX",
+            "主程序-4": "https://www.bilibili.com/video/BV1AGJ8zxEym",
+            "运行前CC准备工作": "https://www.bilibili.com/video/BV1CGJ8zsEKe",
+            "主程序-1": "https://www.bilibili.com/video/BV1CGJ8zsETY",
+            "3D坐标转化器": "https://www.bilibili.com/video/BV1kVJ8z9EVV",
+            "主程序-2": "https://www.bilibili.com/video/BV1WGJ8zxE5T",
+            "CC曲线转换": "https://www.bilibili.com/video/BV1wVJ8zRED1",
+            "高度曲线转换": "https://www.bilibili.com/video/BV1wVJ8zREQk",
+            "形状识别": "https://www.bilibili.com/video/BV1wVJ8zRED9",
+            "方向opc演示_副本": "https://www.bilibili.com/video/BV1FEEGzeExD",
+            "混元模型": "https://www.bilibili.com/video/BV1FEEGzeEvm",
+            "客服在线模式": "https://www.bilibili.com/video/BV1FEEGzeE4T",
+            "爬虫系统": "https://www.bilibili.com/video/BV1nEEGzeE77",
+            "cc3获取_副本": "https://www.bilibili.com/video/BV1FnEGzAELu",
+            "客服离线模式": "https://www.bilibili.com/video/BV1JEEGzeERa",
+            "手写数字预测": "https://www.bilibili.com/video/BV1FEEGzeEVE",
+            "透镜制造_菲涅尔透镜_副本": "https://www.bilibili.com/video/BV1FEEGzeEsR",
+            "透镜制造_自定义公式输入_副本": "https://www.bilibili.com/video/BV1FEEGzeE87",
+            "微信朋友圈": "https://www.bilibili.com/video/BV1FEEGzeEX4",
+            "正向光刻_副本": "https://www.bilibili.com/video/BV1FEEGzeE8q",
+            "ai方法分析": "https://www.bilibili.com/video/BV1FEEGzeELp",
+            "ai曲线分析": "https://www.bilibili.com/video/BV1nEEGzeEjp",
+            "APP 大模型": "https://www.bilibili.com/video/BV1nEEGzeETq",
+            "Running demo": "https://www.bilibili.com/video/BV1ZJRQYpEB8",
+            "api_testing": "https://www.bilibili.com/video/BV1kQRQYhEL7",
+            "DEMO_LONG": "https://www.bilibili.com/video/BV1rRRQYbEjT",
+            "Dynamic_long": "https://www.bilibili.com/video/BV1DvRQYGEvi",
+            "Staitic": "https://www.bilibili.com/video/BV1DvRQYGE8S"
+        }
+    },
+    "运维学徒": {
+        "合集·2310班教学视频集": {
+            "01-linux脚本基础": "https://www.bilibili.com/video/BV1Br421c7NG"
+        },
+        "合集·01-Linux基础-思维导图": {
+            "Linux基础-01-Linux简介（课程介绍）": "https://www.bilibili.com/video/BV1744y1K7XW"
+        }
+    },
     "云原生社区": {
         "合集·新闻论坛": {
             "Istio 1.26 发布：增强 Gateway API 支持，拥抱 Kubernetes 未来 —— 同时告别 1.23 版本": "https://www.bilibili.com/video/BV1Nd5GzeEbR"
@@ -3839,6 +4124,21 @@
     "账号已注销": {},
     "阳明云原生": {},
     "Second_State": {
+        "合集·EchoKit：30天完全掌握语音AI Agent": {
+            "Day3 with EchoKit简单几步从源代码构建AI服务": "https://www.bilibili.com/video/BV1fqqbBgErN",
+            "Day2 with EchoKit 用Docker运行你的开源本地语音AI Agent": "https://www.bilibili.com/video/BV1wKm2BQEGT",
+            "Day 1 with EchoKit 让自己的AI Agent说话": "https://www.bilibili.com/video/BV1aMmmBuECw",
+            "Day4 with EchoKit 轻松定制AI盒子开机画面": "https://www.bilibili.com/video/BV12iq5ByE2u",
+            "Day5 with EchoKit 为你的AI打造专属音色！": "https://www.bilibili.com/video/BV1SPqpBzEvU",
+            "Day6 with EchoKit 最快Groq芯片加速AI盒子": "https://www.bilibili.com/video/BV1maqZBTEDv",
+            "Day7 with EchoKit将语音识别切换为Whisper": "https://www.bilibili.com/video/BV1dGBEB6EmL",
+            "Day 8 with EchoKit:将语音转文本切为本地Whisper！": "https://www.bilibili.com/video/BV1GqB7BvEDg",
+            "Day9 with EchoKit：三步搞定！让你的语音 AI 助手拥有 GPT-5.1 的智能！": "https://www.bilibili.com/video/BV15LvaBKEu9",
+            "Day10 with EchoKit: 将LLM 服务切换为OpenRouter": "https://www.bilibili.com/video/BV1DgiuBPE1u",
+            "Day11 with EchoKit: 将LLM 服务切换为Groq": "https://www.bilibili.com/video/BV14NivBYETh",
+            "Day12 with EchoKit切换到Grok4自带联网搜索": "https://www.bilibili.com/video/BV1D2iEB8EQA",
+            "Day13 with EchoKit本地运行大模型，不怕Cloudflare宕机": "https://www.bilibili.com/video/BV1SNitBJEAQ"
+        },
         "合集·WasmEdge社区月会": {
             "WasmEdge Community月会 #29 Llama+Lima +WASI-NN RPC demo, 用YOLO, Docker在GPU上跑大模型": "https://www.bilibili.com/video/BV1cZ421v7Ga",
             "WasmEdge 社区月会 #30 新版更新 LLM RAG app 开源之夏实习机会": "https://www.bilibili.com/video/BV1LU411d7TS",
@@ -3866,11 +4166,13 @@
             "AI工程师世界大会：Rust是AGI的语言": "https://www.bilibili.com/video/BV1rTutz9ECM",
             "Rust是通用人工智能的语言-KubeCon+AI_Dev China 24联合主席MileyFu": "https://www.bilibili.com/video/BV1eeSgByE74"
         },
-        "合集·EchoKit": {
+        "合集·开源大会演讲EchoKit-全开源语音AI助手": {
             "Echo Kit 你的第一台易拼装AI对话硬件 后端全开源 可定制客隆声音": "https://www.bilibili.com/video/BV12t3ezHEJn",
             "用Docker在笔记本上跑开源AI Agent，高度定制化，告别云延迟 Docker Captain 分享": "https://www.bilibili.com/video/BV17aU7BNEJ8",
             "【KubeCon分享】边缘上的开源：硬件、固件和AI技术栈，Rust写的开源AI语音助手框架完全解析": "https://www.bilibili.com/video/BV12pUYB4ETQ",
-            "使用 Rust 编排实时多模态 AI Agent -韩国开源峰会 Miley Fu, Second State 配音版和字幕版": "https://www.bilibili.com/video/BV1Y4UCBeEYL",
+            "使用 Rust 编排实时多模态 AI Agent -韩国开源峰会 Miley Fu, Second State 配音版和字幕版": "https://www.bilibili.com/video/BV1Y4UCBeEYL"
+        },
+        "合集·EchoKit清华Opencamp Rust嵌入式开发": {
             "EchoKit Rust开发环境预装": "https://www.bilibili.com/video/BV1EZt1zEEV5",
             "ESP32 RUST SDK 介绍": "https://www.bilibili.com/video/BV1mxttzjEr1",
             "如何组装 Echokit 与刷固件| Rust Embeded OpenCamp 训练营": "https://www.bilibili.com/video/BV1ExaHzoECk",
