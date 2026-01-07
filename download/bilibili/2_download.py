@@ -62,7 +62,10 @@ def common(_title, _href, _user, save_path):
         # if _href in re_data:
     if not over_data.get(_href, False):
         # cmd = f"bilix get_series -fb chrome -vc 3 -d {os.path.join(save_path, _user)} --cookie '/Users/acejilam/Desktop/utils/bilibili/www.bilibili.com_cookies.txt' '{_href}' \necho $?> ./r.txt"
-        cmd = f"bilix -fb chrome get_series -d {save_path} '{_href}' \necho $?> ./r.txt"
+        cmd = f"""
+rm r.txt
+bilix -fb chrome get_series -d {save_path} '{_href}' \necho $?> ./r.txt
+"""
         with open('./cmd.sh', 'w', encoding='utf8') as f:
             f.write(cmd)
         run("bash cmd.sh")
