@@ -27,8 +27,8 @@ run('pip3 install bilix')
 
 # save_path = "./data"
 # save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
-# save_path = '/Users/acejilam/Desktop/bilibili视频'
-save_path = '/Volumes/Tf/skip/bilibili视频2'
+save_path = '/Users/acejilam/Desktop/bilibili视频'
+# save_path = '/Volumes/Tf/skip/bilibili视频2'
 tmp_path = os.path.join(save_path, "tmp")
 mk(save_path)
 over_data = OrderedDict()
@@ -62,8 +62,7 @@ def common(_title, _href, _user, save_path):
         # if _href in re_data:
     if not over_data.get(_href, False):
         # cmd = f"bilix get_series -fb chrome -vc 3 -d {os.path.join(save_path, _user)} --cookie '/Users/acejilam/Desktop/utils/bilibili/www.bilibili.com_cookies.txt' '{_href}' \necho $?> ./r.txt"
-        cmd = f"""
-rm r.txt
+        cmd = f"""rm -rf r.txt
 bilix -fb chrome get_series -d {save_path} '{_href}' \necho $?> ./r.txt
 """
         with open('./cmd.sh', 'w', encoding='utf8') as f:
