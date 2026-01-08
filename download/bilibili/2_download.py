@@ -51,29 +51,41 @@ def write(r):
             f.write(json.dumps(over_data, ensure_ascii=False, indent=4))
 
 
-def common(_title, _href, _user, save_path):
+def not_download(all_links, over_links):
+    count = 0
+    for _link in all_links.values():
+        if _link.strip('/') not in over_links:
+            count += 1
+    return count
+
+
+def common(_title, _href, _user, _save_path, need_download):
     global all_count
-    print(f'user:{_user:>30} {all_count:>4}/{len(videos[_user]):<4}  {_href}')
-    all_count += 1
     if _fileter(_title):
         over_data[_href] = True
         write(1)
         return
-        # if _href in re_data:
     if not over_data.get(_href, False):
-        # cmd = f"bilix get_series -fb chrome -vc 3 -d {os.path.join(save_path, _user)} --cookie '/Users/acejilam/Desktop/utils/bilibili/www.bilibili.com_cookies.txt' '{_href}' \necho $?> ./r.txt"
-        cmd = f"""rm -rf r.txt
-bilix -fb chrome get_series -d {save_path} '{_href}' \necho $?> ./r.txt
+
+        all_count += 1
+        print(f'user:{_user:>30} {all_count:>4}/{need_download:<4}  {_href}')
+        cmd = f"""
+rm -rf r.txt||true
+bilix -fb chrome get_series -d {_save_path} '{_href}' 
+echo $?> ./r.txt
 """
         with open('./cmd.sh', 'w', encoding='utf8') as f:
             f.write(cmd)
         run("bash cmd.sh")
-        with open('./r.txt', 'r', encoding='utf8') as f:
-            res = f.read()
-        if res.strip() == "0":
-            # run("clear")
-            over_data[_href] = True
-            write(1)
+        try:
+            with open('./r.txt', 'r', encoding='utf8') as f:
+                res = f.read()
+            if res.strip() == "0":
+                # run("clear")
+                over_data[_href] = True
+                write(1)
+        except:
+            pass
 
 
 def _fileter(_title):
@@ -89,40 +101,69 @@ def _fileter(_title):
 def download_hj():
     for user, user_detail in all_users_he_ji.items():
         global all_count
-        all_count = 1
+        all_count = 0
+        need_download_set = set()
+
         for hj_name, hj_details in user_detail.items():
-            mk(os.path.join(save_path, user, slugify(hj_name, allow_unicode=True)))
             for title, link in hj_details.items():
                 if link in over_data:
                     continue
-                common(title, link, user, os.path.join(save_path, user, slugify(hj_name, allow_unicode=True)))
+                if _fileter(title):
+                    continue
+                if over_data.get(link, False):
+                    continue
+                need_download_set.add(link)
+
+        for hj_name, hj_details in user_detail.items():
+            for title, link in hj_details.items():
+                if link not in need_download_set:
+                    continue
+                mk(os.path.join(save_path, user, slugify(hj_name, allow_unicode=True)))
+                common(
+                    title, link, user,
+                    os.path.join(save_path, user, slugify(hj_name, allow_unicode=True)),
+                    len(need_download_set)
+                )
     write(1)
 
 
 def download():
     for user, user_detail in all_users_he_ji.items():
+        print(f"handling user:{user}")
+        need_download_set = set()
         for hj_name, hj_details in user_detail.items():
-            global all_count
-            all_count = 1
             for title, link in hj_details.items():
                 if link in over_data:
                     continue
-                mk(os.path.join(save_path, user, ))
+                if _fileter(title):
+                    continue
+                if over_data.get(link, False):
+                    continue
+                need_download_set.add(link)
+        global all_count
+        all_count = 0
+        for hj_name, hj_details in user_detail.items():
+
+            for title, link in hj_details.items():
+                if link not in need_download_set:
+                    continue
+                mk(os.path.join(save_path, user))
                 print(title, link)
-                common(title, link, user, os.path.join(save_path, user))
+                common(title, link, user, os.path.join(save_path, user), len(need_download_set))
     write(1)
 
 
 def clean():
     for _dir in os.listdir(save_path):
+        account_path = os.path.join(save_path, _dir)
         file_count = 0
-        for cd, dirs, files in os.walk(_dir):
+        for cd, dirs, files in os.walk(account_path):
             file_count += len(files)
             if cd != save_path:
                 if len(files) == 0 and len(dirs) == 0:
                     shutil.rmtree(cd)
         if file_count == 0:
-            shutil.rmtree(os.path.join(save_path, _dir))
+            shutil.rmtree(account_path, ignore_errors=True)
 
 
 if __name__ == '__main__':
