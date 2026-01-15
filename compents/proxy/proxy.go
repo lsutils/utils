@@ -18,7 +18,6 @@ var jtthink = proxy.NewReverseProxy("www.jtthink.com",
 )
 
 func main() {
-
 	//http.ListenAndServe()
 	fasthttp.ListenAndServe(":80", ProxyHandler)
 }
