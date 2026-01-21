@@ -154,3 +154,9 @@ func (s *Set) Insert(items ...string) {
 
 var ShaPodsMaps = make(map[string]*Set)
 var ShaImagesMaps = make(map[string]*Set)
+
+//
+//╰─ trans-image-name docker.io/volcanosh/vc-agent-scheduler:latest                                                                                                                               10.230.108.59   M3 ─╯
+//ccr.ccs.tencentyun.com/acejilam/ib-ve34muab2x:2a1d0c719f15efc8f2a180fda57b11ee-latest-scheduler:latest
+//
+//╭─ ~ ·······································································································

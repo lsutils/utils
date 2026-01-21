@@ -83,11 +83,6 @@ func (kc *K8sConfig) K8sRestConfig() *rest.Config {
 	if config != nil {
 		return config
 	}
-	if os.Getenv("release") == "1" { //自定义环境
-		log.Println("run in cluster")
-		return RestConfigInPod()
-	}
-	log.Println("run outside cluster")
 
 	defaultConfig := os.Getenv("KUBECONFIG")
 	if defaultConfig == "" {
@@ -101,11 +96,15 @@ func (kc *K8sConfig) K8sRestConfig() *rest.Config {
 	}
 
 	flag.Parse()
+
 	var err error
 	config, err = clientcmd.BuildConfigFromFlags("", *kubeconfig)
-	//clusterClient(config)
 	if err != nil {
-		panic(err.Error())
+		log.Println("run in cluster")
+		config = RestConfigInPod()
+	} else {
+		log.Println("run outside cluster")
+		log.Printf("get kubernetes --kubeconfig: %s error:%s\n", *kubeconfig, err.Error())
 	}
 	config.WrapTransport = func(rt http.RoundTripper) http.RoundTripper {
 		return &LoggingTransport{rt: rt}
