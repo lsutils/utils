@@ -104,7 +104,7 @@ func (kc *K8sConfig) K8sRestConfig() *rest.Config {
 		config = RestConfigInPod()
 	} else {
 		log.Println("run outside cluster")
-		log.Printf("get kubernetes --kubeconfig: %s error:%s\n", *kubeconfig, err.Error())
+		log.Printf("get kubernetes kubeconfig: %s\n", *kubeconfig)
 	}
 	config.WrapTransport = func(rt http.RoundTripper) http.RoundTripper {
 		return &LoggingTransport{rt: rt}
