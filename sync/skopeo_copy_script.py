@@ -73,7 +73,7 @@ git push
 
 go install ./...   
 trans-image-name {s_img}
-
+trans-image-name check
 '''
         f.write(cmd)
         print(f"""skopeo_copy {s_img} {trans_image(s_img, random_path=sync_path + '.bak')}""")

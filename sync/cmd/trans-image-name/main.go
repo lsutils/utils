@@ -1,13 +1,17 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"github.com/lsutils/utils/sync/utils"
 	"io/fs"
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
+
+	"github.com/lsutils/utils/sync"
+	"github.com/lsutils/utils/sync/utils"
 )
 
 func isDir(path string) bool {
@@ -59,7 +63,12 @@ func replaceImages(fileData string, filepath string) {
 
 func main() {
 	utils.PrepareTransImageName()
-	target := os.Args[1]
+	//target := os.Args[1]
+	target := "check"
+	if target == "check" {
+		check()
+		return
+	}
 	if isDir(target) {
 		filepath.WalkDir(target, func(path string, d fs.DirEntry, err error) error {
 			if !(strings.HasSuffix(path, ".yaml") || strings.HasSuffix(path, ".yml")) {
@@ -84,5 +93,25 @@ func main() {
 		replaceImages(string(fileData), target)
 	} else {
 		replaceImages("image: "+target, "")
+	}
+}
+
+func check() {
+	_random, _ := ioutil.ReadFile(`/Users/acejilam/k8s/utils/sync/random-tasks.json`)
+	_fixed, _ := ioutil.ReadFile(`/Users/acejilam/k8s/utils/sync/fixed-tasks.json`)
+	var fileRandom map[string]interface{}
+	json.Unmarshal(_random, &fileRandom)
+	var fileFix map[string]interface{}
+	json.Unmarshal(_fixed, &fileFix)
+
+	var localRandom map[string]interface{}
+	json.Unmarshal(sync.RandomData, &localRandom)
+	var localFix map[string]interface{}
+	json.Unmarshal(sync.FixData, &localFix)
+
+	if reflect.DeepEqual(fileRandom, localRandom) && reflect.DeepEqual(fileFix, localFix) {
+		fmt.Println("✅")
+	} else {
+		fmt.Println("❌")
 	}
 }
