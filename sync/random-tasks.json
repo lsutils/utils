@@ -15,9 +15,9 @@
         "v1.27.3"
     ],
     "docker.io/burlyluo/vyos": [
-        "1.5.11",
+        "1.4.7",
         "1.4.9",
-        "1.4.7"
+        "1.5.11"
     ],
     "docker.io/kindest/node": [
         "v1.32.0",
