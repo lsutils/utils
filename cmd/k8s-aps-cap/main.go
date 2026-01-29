@@ -1,0 +1,1 @@
+../../k8s/cmd/k8s-aps-cap/main.go

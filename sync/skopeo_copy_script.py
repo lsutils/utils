@@ -71,7 +71,7 @@ git add .
 git commit -m "{s_img}"
 git push
 
-go install ./...   
+go install ./cmd/...   
 trans-image-name {s_img}
 trans-image-name check
 '''

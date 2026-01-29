@@ -1,0 +1,1 @@
+../../k8s/cmd/k8s-mock-resources/main.go

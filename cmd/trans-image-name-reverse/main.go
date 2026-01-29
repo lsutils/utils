@@ -1,0 +1,1 @@
+../../sync/cmd/trans-image-name-reverse/main.go

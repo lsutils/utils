@@ -1,0 +1,1 @@
+../../sync/cmd/trans-image-name/main.go
