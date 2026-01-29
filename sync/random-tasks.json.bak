@@ -36,8 +36,8 @@
         "3.12-slim"
     ],
     "docker.io/library/registry": [
-        "2",
-        "3"
+        "3",
+        "2"
     ],
     "docker.io/library/ubuntu": [
         "24.04"
