@@ -190,8 +190,8 @@
         "1.20.2"
     ],
     "docker.io/istio/examples-bookinfo-reviews-v1": [
-        "1.18.0",
-        "1.20.2"
+        "1.20.2",
+        "1.18.0"
     ],
     "docker.io/istio/examples-bookinfo-reviews-v2": [
         "1.20.2",
