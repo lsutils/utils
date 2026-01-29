@@ -693,6 +693,8 @@ gitee.com/ls-2018/sync v0.0.0-20260129052859-775e4d9b49c7 h1:5jQo79doC6aIowUzdOC
 gitee.com/ls-2018/sync v0.0.0-20260129052859-775e4d9b49c7/go.mod h1:Z31OVzI7ffBmXXUWleMbOrtYchBlCwoeFExTM3ATU64=
 gitee.com/ls-2018/sync v0.0.0-20260129053338-a3d1c8a93e70 h1:wDZV3wKoEUDNxwnC5KSar+O5jpRLb1zMVXCwgj+TCY8=
 gitee.com/ls-2018/sync v0.0.0-20260129053338-a3d1c8a93e70/go.mod h1:Z31OVzI7ffBmXXUWleMbOrtYchBlCwoeFExTM3ATU64=
+gitee.com/ls-2018/sync v0.0.0-20260129053518-b93452ff3b83 h1:AYDeaeIkm3Ee5jWCNHuaHoLSMC60a7fCEnInim9Wzu0=
+gitee.com/ls-2018/sync v0.0.0-20260129053518-b93452ff3b83/go.mod h1:Z31OVzI7ffBmXXUWleMbOrtYchBlCwoeFExTM3ATU64=
 github.com/Azure/azure-sdk-for-go/sdk/azcore v1.0.0/go.mod h1:uGG2W01BaETf0Ozp+QxxKJdMBNRWPdstHG0Fmdwn1/U=
 github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.0.0/go.mod h1:+6sju8gk8FRmSajX3Oz4G5Gm7P+mbqE9FVaXXFYTkCM=
 github.com/Azure/azure-sdk-for-go/sdk/internal v1.0.0/go.mod h1:eWRD7oawr1Mu1sLCawqVc0CUiF43ia3qQMxLscsKQ9w=
