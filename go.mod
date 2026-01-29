@@ -45,6 +45,7 @@ require (
 	k8s.io/cli-runtime v0.29.0
 	k8s.io/client-go v0.34.1
 	k8s.io/klog/v2 v2.130.1
+	k8s.io/kube-openapi v0.0.0-20251125145642-4e65d59e963e
 	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4
 	sigs.k8s.io/controller-runtime v0.22.4
 	sigs.k8s.io/yaml v1.6.0
@@ -52,7 +53,6 @@ require (
 
 require (
 	cloud.google.com/go/functions v1.15.1 // indirect
-	gitee.com/ls-2018/sync v0.0.0-20260129053518-b93452ff3b83 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
@@ -198,7 +198,6 @@ require (
 	gorm.io/driver/sqlserver v1.4.1 // indirect
 	gorm.io/plugin/dbresolver v1.3.0 // indirect
 	k8s.io/component-base v0.34.1 // indirect
-	k8s.io/kube-openapi v0.0.0-20251125145642-4e65d59e963e // indirect
 	modernc.org/libc v1.22.2 // indirect
 	modernc.org/mathutil v1.5.0 // indirect
 	modernc.org/memory v1.5.0 // indirect

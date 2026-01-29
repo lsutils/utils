@@ -53,7 +53,7 @@ func main() {
 	var _ = mgr.Add // 执行start 的时候，也启动相应的服务
 	var _ = mgr.AddHealthzCheck
 	var _ = mgr.AddReadyzCheck
-	var _ = mgr.AddMetricsExtraHandler
+	//var _ = mgr.AddMetricsExtraHandler
 
 	if err = mgr.Start(signals.SetupSignalHandler()); err != nil {
 		mylog.Error(err, "unable to start manager")

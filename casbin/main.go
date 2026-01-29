@@ -1,9 +1,8 @@
 package main
 
 import (
-	"gcasbin/lib"
-
 	"github.com/gin-gonic/gin"
+	"github.com/lsutils/utils/casbin/lib"
 )
 
 func main() {

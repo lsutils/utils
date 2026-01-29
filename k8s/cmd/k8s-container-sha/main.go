@@ -7,8 +7,8 @@ import (
 	"sort"
 	"strings"
 
-	tinr "gitee.com/ls-2018/sync/utils"
 	"github.com/lsutils/utils/k8s/helper"
+	tinr "github.com/lsutils/utils/sync/utils"
 	"github.com/olekukonko/tablewriter"
 	"github.com/olekukonko/tablewriter/renderer"
 	"github.com/olekukonko/tablewriter/tw"
@@ -20,6 +20,7 @@ import (
 )
 
 func addReverseName(name string) string {
+	name = strings.Split(name, "@")[0]
 	before := strings.Trim(tinr.ReverseImage([]string{name}), " \n\r\t")
 	if before == name {
 		return name
