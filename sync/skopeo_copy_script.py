@@ -68,7 +68,7 @@ git add .
 git commit -m "{s_img}"
 git push
 
-GODEBUG=gocacheverify=1 go install ./...   
+go install ./...   
 trans-image-name {s_img}
 
 '''
