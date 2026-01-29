@@ -58,6 +58,7 @@
         "0.7.0"
     ],
     "nvcr.io/nvidia/ai-dynamo/vllm-runtime": [
+        "0.8.1",
         "0.7.0"
     ],
     "quay.io/centos/centos": [
