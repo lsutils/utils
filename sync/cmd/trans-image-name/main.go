@@ -63,8 +63,7 @@ func replaceImages(fileData string, filepath string) {
 
 func main() {
 	utils.PrepareTransImageName()
-	//target := os.Args[1]
-	target := "check"
+	target := os.Args[1]
 	if target == "check" {
 		check()
 		return
