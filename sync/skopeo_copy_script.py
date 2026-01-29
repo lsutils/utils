@@ -63,12 +63,12 @@ rm -rf /tmp/skopeo_copy_success
 eval "$(print_proxy.py)"
 skopeo_copy {s_img} {trans_image(s_img, random_path=sync_path + '.bak', fixed_path=fix_sync_path + '.bak')}
 
-cd ~/k8s/sync
+cd ~/k8s/utils
 git add .
 git commit -m "{s_img}"
 git push
 
-GODEBUG=gocacheverify=1 go install ./k8s/cmd/...   
+GODEBUG=gocacheverify=1 go install ./...   
 trans-image-name {s_img}
 
 '''
