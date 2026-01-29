@@ -52,7 +52,7 @@ require (
 
 require (
 	cloud.google.com/go/functions v1.15.1 // indirect
-	gitee.com/ls-2018/sync v0.0.0-20260129012329-c7004761dec3 // indirect
+	gitee.com/ls-2018/sync v0.0.0-20260129013512-e2424e0474d2 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/StackExchange/wmi v0.0.0-20190523213315-cbe66965904d // indirect
