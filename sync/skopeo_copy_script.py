@@ -5,6 +5,7 @@ import shutil
 import sys
 from tencent import public
 
+
 try:
     fix_sync_path = os.path.join(os.path.dirname(os.readlink(os.path.abspath(__file__))), 'fixed-tasks.json')
 except OSError:
@@ -63,7 +64,7 @@ rm -rf /tmp/skopeo_copy_success
 eval "$(print_proxy.py)"
 skopeo_copy {s_img} {trans_image(s_img, random_path=sync_path + '.bak', fixed_path=fix_sync_path + '.bak')}
 
-cd ~/k8s/utils
+cd /Users/acejilam/k8s/utils
 git add .
 git commit -m "{s_img}"
 git push
