@@ -236,5 +236,8 @@
     ],
     "quay.io/cilium/hubble-ui": [
         "v0.13.2"
+    ],
+    "quay.io/cilium/starwars": [
+        "latest"
     ]
 }
