@@ -245,5 +245,8 @@
         "v2.0",
         "latest",
         "v2.3"
+    ],
+    "docker.io/ollama/ollama": [
+        "0.15.2"
     ]
 }
