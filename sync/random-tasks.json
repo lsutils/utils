@@ -248,5 +248,8 @@
     ],
     "docker.io/ollama/ollama": [
         "0.15.2"
+    ],
+    "ghcr.io/open-webui/open-webui": [
+        "main"
     ]
 }
