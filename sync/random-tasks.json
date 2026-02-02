@@ -252,5 +252,8 @@
     ],
     "ghcr.io/open-webui/open-webui": [
         "main"
+    ],
+    "docker.io/connecteverything/nats-server-config-reloader": [
+        "0.6.0"
     ]
 }
