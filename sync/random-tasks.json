@@ -255,5 +255,8 @@
     ],
     "docker.io/connecteverything/nats-server-config-reloader": [
         "0.6.0"
+    ],
+    "docker.io/meshery/meshsync": [
+        "stable-latest"
     ]
 }
