@@ -258,5 +258,8 @@
     ],
     "docker.io/meshery/meshsync": [
         "stable-latest"
+    ],
+    "docker.io/library/nginx": [
+        "latest"
     ]
 }
