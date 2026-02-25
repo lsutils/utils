@@ -1,0 +1,35 @@
+name: GoNightlyTestsagainstLatestDependencies
+on:
+schedule:
+    # 每天运行
+    -cron:'22 10 * * *'
+
+# ... 省略部分环境配置 ...
+
+jobs:
+test:
+    runs-on:ubuntu-latest
+    strategy:
+      fail-fast:false
+      matrix:
+        go:
+          -{go-version:stable}
+          -{go-version-file:go.mod}
+        deps:
+          -locked# 针对锁定版本的 go.mod 运行测试
+          -latest# 针对最新版本依赖运行测试
+    steps:
+      -uses:actions/checkout@v5
+      -uses:actions/setup-go@v6
+        with:
+          go-version:${{matrix.go.go-version}}
+          
+      -name:RuntestswithsandboxedCIenvironment
+        uses:geomys/sandboxed-step@v1.2.1
+        with:
+          run: |
+            if [ "${{ matrix.deps }}" = "latest" ]; then
+              # 关键指令：将所有依赖临时拉取到最新版本，但不修改 go.mod
+              go get -u -t ./...
+            fi
+            go test -v ./...
