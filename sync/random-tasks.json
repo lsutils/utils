@@ -264,5 +264,8 @@
     ],
     "docker.io/redroid/redroid": [
         "12.0.0-latest"
+    ],
+    "registry.k8s.io/agent-sandbox/agent-sandbox-controller": [
+        "v0.1.1"
     ]
 }
