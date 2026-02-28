@@ -1,1 +1,0 @@
-../../sync/cmd/print-inner-repo/main.go

@@ -3,14 +3,17 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 	"sync"
+	"time"
 
 	"charm.land/bubbles/v2/progress"
 	tea "charm.land/bubbletea/v2"
-	"github.com/lsutils/utils/k8s/cmd/k8s-kind-load-image/pkg"
+	"charm.land/lipgloss/v2"
 	"sigs.k8s.io/kind/pkg/cluster"
 	"sigs.k8s.io/kind/pkg/cluster/nodes"
 )
@@ -18,52 +21,27 @@ import (
 var p *tea.Program
 var tarImage = "/tmp/k8s-kind-load-image.tar"
 
-type progressWriter struct {
-	total      int
-	downloaded int
-	onProgress func(float64)
-	nodeList   []nodes.Node
-}
-type editorFinishedMsg struct{ err error }
-
-func (pw *progressWriter) Start() {
-	wg := sync.WaitGroup{}
-	for _, item := range pw.nodeList {
-		node := item
-		wg.Add(1)
-		go func() {
-			c := exec.Command("docker", []string{
-				"exec",
-				"-i",
-				node.String(),
-				"ctr",
-				"--namespace=k8s.io",
-				"images",
-				"import",
-				"--platform=linux/arm64",
-				"-",
-				"<",
-				tarImage,
-			}...)
-			tea.ExecProcess(c, func(err error) tea.Msg {
-				return editorFinishedMsg{err}
-			})
-			wg.Done()
-			pw.UpdateProcess()
-		}()
-	}
-	wg.Wait()
+func finalPause() tea.Cmd {
+	return tea.Tick(time.Millisecond*750, func(_ time.Time) tea.Msg {
+		return nil
+	})
 }
 
-func (pw *progressWriter) UpdateProcess() {
-	pw.downloaded += 1
-	if pw.total > 0 && pw.onProgress != nil {
-		pw.onProgress(float64(pw.downloaded) / float64(pw.total))
-	}
-}
+const (
+	padding  = 2
+	maxWidth = 80
+)
+
+var (
+	helpStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("#626262")).Render
+	titleStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#F78166")).Bold(true).Render
+)
 
 func Cmd(name string, args []string) {
 	cmd := exec.Command(name, args...)
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 	err := cmd.Run()
 	if err != nil {
 		log.Fatal(err)
@@ -89,22 +67,215 @@ func main() {
 		log.Fatal(err)
 	}
 
-	pw := &progressWriter{
-		total:    len(nodeList),
-		nodeList: nodeList,
+	stat, err := os.Stat(tarImage)
+	if err != nil {
+		log.Fatalf("Error getting file stats: %v", err)
 	}
 
-	pw.onProgress = func(ratio float64) {
-		p.Println("load ", *image, " to cluster ", *name)
-		p.Send(pkg.ProgressMsg(ratio))
+	m := model{
+		progresses: make([]progress.Model, len(nodeList)),
+		nodeList:   nodeList,
+		size:       stat.Size(),
+		image:      *image,
+		completed:  make([]bool, len(nodeList)),
 	}
-	m := pkg.Model{
-		Progress: progress.New(progress.WithDefaultBlend()),
+
+	// Initialize each progress bar
+	for i := range m.progresses {
+		m.progresses[i] = progress.New(progress.WithDefaultBlend())
+		m.progresses[i].SetPercent(0.0)
 	}
-	p = tea.NewProgram(m)
-	go pw.Start()
+
+	p = tea.NewProgram(&m)
 	if _, err := p.Run(); err != nil {
-		fmt.Println("error running program:", err)
+		fmt.Println("Oh no!", err)
 		os.Exit(1)
 	}
+
+}
+
+type model struct {
+	progresses []progress.Model
+	width      int
+	nodeList   []nodes.Node
+	size       int64
+	image      string
+	mu         sync.Mutex
+	completed  []bool
+	started    bool
+}
+
+type Reader struct {
+	download int64
+	total    int64
+	r        io.Reader
+	progress func(float64)
+}
+
+type tickMsg time.Time
+
+func tickCmd() tea.Cmd {
+	return tea.Tick(time.Millisecond*100, func(t time.Time) tea.Msg {
+		return tickMsg(t)
+	})
+}
+
+type processMsg struct {
+	index   int
+	percent float64
+}
+
+func (t *Reader) Read(p []byte) (n int, err error) {
+	n, err = t.r.Read(p)
+	if n > 0 {
+		t.download += int64(n)
+		if t.progress != nil && t.total > 0 {
+			percent := float64(t.download) / float64(t.total)
+			if percent > 1 {
+				percent = 1
+			}
+			t.progress(percent)
+		}
+	}
+	return n, err
+}
+
+var start sync.Once
+
+func (m *model) Once() {
+	for i, item := range m.nodeList {
+		node := item
+		index := i
+		go func() {
+			args := []string{
+				"exec",
+				"-i",
+				node.String(),
+				"ctr",
+				"--namespace=k8s.io",
+				"images",
+				"import",
+				"--platform=linux/arm64",
+				"-",
+			}
+			c := exec.Command("docker", args...)
+
+			tarFile, err := os.Open(tarImage)
+			if err != nil {
+				fmt.Printf("Error opening tar file: %v\n", err)
+				if p != nil {
+					p.Send(processMsg{index: index, percent: 0})
+				}
+				return
+			}
+			defer tarFile.Close()
+			c.Stdin = &Reader{
+				r:        tarFile,
+				download: 0,
+				total:    m.size,
+				progress: func(percent float64) {
+					p.Send(processMsg{index: index, percent: percent})
+				},
+			}
+
+			err = c.Run()
+			if err != nil {
+				fmt.Printf("Error executing command: %v\n", err)
+				p.Send(processMsg{index: index, percent: 0})
+			} else {
+				p.Send(processMsg{index: index, percent: 1})
+			}
+		}()
+	}
+}
+
+func (m *model) Init() tea.Cmd {
+	return tickCmd()
+}
+
+var _ tea.Model = &model{}
+
+func (m *model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch msg := msg.(type) {
+	case tea.KeyPressMsg:
+		return m, tea.Quit
+
+	case tea.WindowSizeMsg:
+		m.width = msg.Width
+		barWidth := msg.Width - padding*2 - 4
+		if barWidth > maxWidth {
+			barWidth = maxWidth
+		}
+		// Update width for all progress bars
+		for i := range m.progresses {
+			m.progresses[i].SetWidth(barWidth)
+		}
+		return m, nil
+	case tickMsg:
+		start.Do(func() {
+			go m.Once()
+		})
+		return m, tickCmd()
+	case processMsg:
+		var cmds []tea.Cmd
+		if msg.index >= 0 && msg.index < len(m.progresses) {
+			cmds = append(cmds, m.progresses[msg.index].SetPercent(msg.percent))
+			if msg.percent >= 1.0 {
+				m.completed[msg.index] = true
+			}
+		}
+		allComplete := true
+		for _, c := range m.completed {
+			if !c {
+				allComplete = false
+				break
+			}
+		}
+
+		if allComplete {
+			cmds = append(cmds, tea.Sequence(finalPause(), tea.Quit))
+		}
+		return m, tea.Batch(cmds...)
+
+	case progress.FrameMsg:
+		cmds := make([]tea.Cmd, 0, len(m.progresses))
+		for i := range m.progresses {
+			var cmd tea.Cmd
+			m.progresses[i], cmd = m.progresses[i].Update(msg)
+			if cmd != nil {
+				cmds = append(cmds, cmd)
+			}
+		}
+		return m, tea.Batch(cmds...)
+
+	default:
+		return m, nil
+	}
+}
+
+func (m *model) View() tea.View {
+	pad := strings.Repeat(" ", padding)
+	var b strings.Builder
+
+	b.WriteString("\n")
+	b.WriteString(pad)
+	b.WriteString(titleStyle(m.image))
+	b.WriteString("\n\n")
+	maxLength := 0
+	for _, node := range m.nodeList {
+		maxLength = max(maxLength, len(node.String()))
+	}
+	for i, p := range m.progresses {
+		name := m.nodeList[i].String()
+		b.WriteString(pad)
+		b.WriteString(name)
+		b.WriteString(strings.Repeat(" ", maxLength+1-len(name)))
+		b.WriteString(p.View())
+		b.WriteString("\n")
+	}
+	b.WriteString("\n")
+	b.WriteString(pad)
+	b.WriteString(helpStyle("Press any key to quit"))
+
+	return tea.NewView(b.String())
 }
