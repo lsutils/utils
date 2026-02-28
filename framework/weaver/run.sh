@@ -6,4 +6,3 @@ weaver generate ./...
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./bin/myapp ./cmd
 
 weaver kube deploy config.yaml
-
