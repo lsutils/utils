@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"sort"
 	"strings"
 	"sync"
 	"time"
@@ -50,6 +51,7 @@ func Cmd(name string, args []string) {
 
 func main() {
 	name := flag.String("name", "koord", "")
+	node := flag.String("node", "", "")
 	image := flag.String("image", "openkruise/kruise-manager:v1.8.3", "")
 	flag.Parse()
 
@@ -67,9 +69,22 @@ func main() {
 		log.Fatal(err)
 	}
 
+	sort.Slice(nodeList, func(i, j int) bool {
+		return nodeList[i].String() < nodeList[j].String()
+	})
+
 	stat, err := os.Stat(tarImage)
 	if err != nil {
 		log.Fatalf("Error getting file stats: %v", err)
+	}
+	if *node != "" {
+		var tmp []nodes.Node
+		for _, n := range nodeList {
+			if n.String() == *node {
+				tmp = append(tmp, n)
+			}
+		}
+		nodeList = tmp
 	}
 
 	m := model{
@@ -142,50 +157,77 @@ func (t *Reader) Read(p []byte) (n int, err error) {
 
 var start sync.Once
 
+type job struct {
+	node  nodes.Node
+	index int
+}
+
 func (m *model) Once() {
-	for i, item := range m.nodeList {
-		node := item
-		index := i
+	// 限制并发数为 3，可以根据需要调整
+	maxWorkers := 3
+	jobs := make(chan job, len(m.nodeList))
+	var wg sync.WaitGroup
+
+	// 启动 worker pool
+	for w := 0; w < maxWorkers; w++ {
+		wg.Add(1)
 		go func() {
-			args := []string{
-				"exec",
-				"-i",
-				node.String(),
-				"ctr",
-				"--namespace=k8s.io",
-				"images",
-				"import",
-				"--platform=linux/arm64",
-				"-",
-			}
-			c := exec.Command("docker", args...)
-
-			tarFile, err := os.Open(tarImage)
-			if err != nil {
-				fmt.Printf("Error opening tar file: %v\n", err)
-				if p != nil {
-					p.Send(processMsg{index: index, percent: 0})
-				}
-				return
-			}
-			defer tarFile.Close()
-			c.Stdin = &Reader{
-				r:        tarFile,
-				download: 0,
-				total:    m.size,
-				progress: func(percent float64) {
-					p.Send(processMsg{index: index, percent: percent})
-				},
-			}
-
-			err = c.Run()
-			if err != nil {
-				fmt.Printf("Error executing command: %v\n", err)
-				p.Send(processMsg{index: index, percent: 0})
-			} else {
-				p.Send(processMsg{index: index, percent: 1})
+			defer wg.Done()
+			for j := range jobs {
+				m.loadImageToNode(j.node, j.index)
 			}
 		}()
+	}
+
+	// 发送任务到队列
+	for i, node := range m.nodeList {
+		jobs <- job{node: node, index: i}
+	}
+	close(jobs)
+
+	// 等待所有任务完成
+	wg.Wait()
+}
+
+func (m *model) loadImageToNode(node nodes.Node, index int) {
+	args := []string{
+		"exec",
+		"-i",
+		node.String(),
+		"ctr",
+		"--namespace=k8s.io",
+		"images",
+		"import",
+		"--platform=linux/arm64",
+		"-",
+	}
+	c := exec.Command("docker", args...)
+
+	tarFile, err := os.Open(tarImage)
+	if err != nil {
+		fmt.Printf("Error opening tar file: %v\n", err)
+		if p != nil {
+			p.Send(processMsg{index: index, percent: 0})
+		}
+		return
+	}
+	defer tarFile.Close()
+
+	c.Stdin = &Reader{
+		r:        tarFile,
+		download: 0,
+		total:    m.size,
+		progress: func(percent float64) {
+			p.Send(processMsg{index: index, percent: percent})
+		},
+	}
+
+	err = c.Run()
+	if err != nil {
+		fmt.Printf("Error executing command: %v\n", err)
+		p.Send(processMsg{index: index, percent: 0})
+	} else {
+		p.Send(processMsg{index: index, percent: 1})
 	}
 }
 
