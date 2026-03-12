@@ -241,11 +241,11 @@
         "v0.13.2"
     ],
     "quay.io/cilium/starwars": [
-        "v2.1",
         "v2.2",
-        "v2.3",
+        "v2.1",
+        "latest",
         "v2.0",
-        "latest"
+        "v2.3"
     ],
     "docker.io/ollama/ollama": [
         "0.15.2"
