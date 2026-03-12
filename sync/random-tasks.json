@@ -20,9 +20,13 @@
         "1.5.11"
     ],
     "docker.io/kindest/node": [
+        "v1.28.0",
+        "v1.30.10",
         "v1.32.0",
+        "v1.35.0",
+        "v1.30.0",
         "v1.34.0",
-        "v1.30.10"
+        "v1.26.0"
     ],
     "docker.io/library/mysql": [
         "8"
@@ -268,5 +272,8 @@
     "docker.io/library/busybox": [
         "latest",
         "1"
+    ],
+    "docker.io/library/golang": [
+        "1.25.7"
     ]
 }
