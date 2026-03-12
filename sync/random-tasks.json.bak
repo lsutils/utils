@@ -231,8 +231,8 @@
         "v1.35.1-1756466197-aecbf661041fc680854fc765e54a283af11db731"
     ],
     "quay.io/cilium/cilium": [
-        "v1.19.0-pre.0",
-        "v1.18.6"
+        "v1.18.6",
+        "v1.19.0-pre.0"
     ],
     "quay.io/cilium/hubble-ui-backend": [
         "v0.13.2"
