@@ -56,9 +56,6 @@
     "gcr.io/knative-releases/knative.dev/net-kourier/cmd/kourier": [
         "v1.17.0"
     ],
-    "gcr.io/kubebuilder/kube-rbac-proxy": [
-        "v0.15.0"
-    ],
     "nvcr.io/nvidia/ai-dynamo/kubernetes-operator": [
         "0.7.0"
     ],

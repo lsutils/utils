@@ -36,9 +36,9 @@
         "2.10.21-alpine"
     ],
     "docker.io/library/python": [
-        "3.13-bookworm",
         "3.12-slim",
-        "3.13-slim"
+        "3.13-slim",
+        "3.13-bookworm"
     ],
     "docker.io/library/registry": [
         "3",
@@ -55,9 +55,6 @@
     ],
     "gcr.io/knative-releases/knative.dev/net-kourier/cmd/kourier": [
         "v1.17.0"
-    ],
-    "gcr.io/kubebuilder/kube-rbac-proxy": [
-        "v0.15.0"
     ],
     "nvcr.io/nvidia/ai-dynamo/kubernetes-operator": [
         "0.7.0"
