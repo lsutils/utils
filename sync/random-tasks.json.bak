@@ -36,9 +36,9 @@
         "2.10.21-alpine"
     ],
     "docker.io/library/python": [
-        "3.13-slim",
         "3.13-bookworm",
-        "3.12-slim"
+        "3.12-slim",
+        "3.13-slim"
     ],
     "docker.io/library/registry": [
         "3",
