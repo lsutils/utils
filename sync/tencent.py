@@ -67,6 +67,7 @@ def delete_repo(name):
         req.from_json_string(json.dumps(params))
         resp = client.DeleteRepositoryPersonal(req)
         print(f"delete repo:{name}", resp.to_json_string())
+        os.system(f"tinr ccr.tencentcloudcr.com/acejilam/{name}:{resp.to_json_string()}")
     except TencentCloudSDKException as err:
         print(err)
 
@@ -81,6 +82,7 @@ def delete_repo_tag(name, tag):
         req.from_json_string(json.dumps(params))
         resp = client.DeleteImagePersonal(req)
         print(f'delete repo:{name} tag:{tag}', resp.to_json_string())
+        os.system(f"tinr ccr.tencentcloudcr.com/acejilam/{name}:{resp.to_json_string()}")
     except TencentCloudSDKException as err:
         print(err)
 
