@@ -59,7 +59,6 @@ func main() {
 		flag.Usage()
 		os.Exit(1)
 	}
-	Cmd("docker", []string{"pull", *image})
 	Cmd("docker", []string{"save", *image, "-o", tarImage})
 
 	provider := cluster.NewProvider()
