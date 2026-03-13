@@ -281,5 +281,8 @@
     ],
     "docker.io/library/debian": [
         "13-slim"
+    ],
+    "docker.io/library/alpine": [
+        "latest"
     ]
 }
