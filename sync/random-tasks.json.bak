@@ -275,5 +275,8 @@
     ],
     "docker.io/library/golang": [
         "1.25.7"
+    ],
+    "gcr.io/distroless/static-debian13": [
+        "nonroot"
     ]
 }
