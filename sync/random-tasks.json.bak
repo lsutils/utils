@@ -278,5 +278,8 @@
     ],
     "gcr.io/distroless/static-debian13": [
         "nonroot"
+    ],
+    "docker.io/library/debian": [
+        "13-slim"
     ]
 }
