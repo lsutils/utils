@@ -40,7 +40,6 @@ for k, tags in res.items():
         with open('/tmp/sl.sh', 'w', encoding='utf8') as f:
             f.write(f'''
     source ~/script/.customer_script.sh
-    eval "$(print_proxy.py)"
     trans-image-to-ls-harbor.py --arch all --source {source_image}
     ''')
         os.system('zsh /tmp/sl.sh')

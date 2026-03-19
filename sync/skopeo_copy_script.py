@@ -62,7 +62,6 @@ if __name__ == '__main__':
         cmd = f'''
 source ~/script/.customer_script.sh
 rm -rf /tmp/skopeo_copy_success
-eval "$(print_proxy.py)"
 skopeo_copy {s_img} {trans_image(s_img, random_path=sync_path + '.bak', fixed_path=fix_sync_path + '.bak')}
 set -v
 
