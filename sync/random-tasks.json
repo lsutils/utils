@@ -261,6 +261,7 @@
         "stable-latest"
     ],
     "docker.io/library/nginx": [
+        "1.15.2",
         "latest"
     ],
     "docker.io/redroid/redroid": [
