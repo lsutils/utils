@@ -287,5 +287,8 @@
     ],
     "docker.io/library/node": [
         "22-alpine"
+    ],
+    "docker.io/alpine/curl": [
+        "8.17.0"
     ]
 }
