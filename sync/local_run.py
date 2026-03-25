@@ -39,6 +39,7 @@ def sync_file(file):
             with open('/tmp/s.json', 'w', encoding='utf8') as f:
                 f.write(json.dumps(success, ensure_ascii=False, indent=4))
 
+abs_path = os.path.dirname(os.path.abspath(__file__))
 
-sync_file('random-tasks.json')
-sync_file('fixed-tasks.json')
+sync_file(os.path.join(abs_path, 'random-tasks.json'))
+sync_file(os.path.join(abs_path, 'fixed-tasks.json'))
