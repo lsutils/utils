@@ -207,8 +207,8 @@
         "1.18.0"
     ],
     "docker.io/istio/examples-helloworld-v1": [
-        "1.0",
-        "latest"
+        "latest",
+        "1.0"
     ],
     "docker.io/istio/examples-helloworld-v2": [
         "1.0"
