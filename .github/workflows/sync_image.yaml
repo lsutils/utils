@@ -17,11 +17,10 @@ jobs:
         run: |
           cd ~
           mkdir k8s
-          cd k8s
-          git clone https://github.com/lsutils/utils.git
-          cd ~
+          git clone https://github.com/lsutils/utils.git k8s/utils
           git clone https://github.com/ls-2018/script.git
           cd script
+          
           rm skopeo_copy_script.py || true
           rm trans_image.py || true
           rm sync_to_ls.com.py || true
