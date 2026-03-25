@@ -4,6 +4,10 @@ on:
     branches:
       - main
   workflow_dispatch:   # 👈 允许手动触发
+
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   push-to-mirror:
     runs-on: ubuntu-latest
