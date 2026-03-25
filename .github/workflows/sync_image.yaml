@@ -16,9 +16,14 @@ jobs:
       - name: git
         run: |
           cd ~
-          git clone https://github.com/ls-2018/script.git
-          chmod +x ./script/*
           git clone https://github.com/lsutils/utils.git
+          git clone https://github.com/ls-2018/script.git
+          cd script
+          ln -s ~/k8s/utils/sync/skopeo_copy_script.py
+          ln -s ~/k8s/utils/sync/trans_image.py
+          ln -s ~/k8s/utils/sync/sync_to_ls.com.py
+          chmod +x ./*
+
       - name: run
         run: |
           set -x
