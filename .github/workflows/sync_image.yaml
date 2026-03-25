@@ -1,0 +1,19 @@
+name: Sync
+on:
+  push:
+    branches:
+      - *
+  workflow_dispatch:   # 👈 允许手动触发
+jobs:
+  push-to-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build the Docker image
+        run: |
+          apt update 
+          apt install skopeo -y
+          cd ~
+          git clone https://github.com/ls-2018/script.git
+          git clone https://github.com/lsutils/utils.git
+          export PATH=`pwd`/script/:$APTH
+          python3 utils/sync/local_run.py
