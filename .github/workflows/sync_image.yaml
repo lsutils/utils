@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Build the Docker image
         run: |
-          apt update 
+          apt update -y
           apt install skopeo -y
           cd ~
           git clone https://github.com/ls-2018/script.git
