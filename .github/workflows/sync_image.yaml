@@ -2,7 +2,7 @@ name: Sync
 on:
   push:
     branches:
-      - *
+      - main
   workflow_dispatch:   # 👈 允许手动触发
 jobs:
   push-to-mirror:
