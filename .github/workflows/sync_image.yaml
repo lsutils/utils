@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Build
         run: |
-          apt update -y
           apt install skopeo -y
           cd ~
           git clone https://github.com/ls-2018/script.git
