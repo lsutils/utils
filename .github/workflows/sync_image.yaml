@@ -12,12 +12,13 @@ jobs:
       - name: env
         run: |
           sudo apt update -y
-          sudo apt-get install skopeo -y
+          sudo apt-get install skopeo go -y
       - name: git
         run: |
           cd ~
           mkdir k8s
           git clone https://github.com/lsutils/utils.git k8s/utils
+          go install k8s/utils/cmd/...
           git clone https://github.com/ls-2018/script.git
           cd script
           
