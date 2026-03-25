@@ -12,7 +12,7 @@ jobs:
       - name: env
         run: |
           sudo apt update -y
-          sudo apt-get install skopeo go -y
+          sudo apt-get install skopeo golang -y
       - name: git
         run: |
           cd ~
