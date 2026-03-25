@@ -4,7 +4,7 @@ import os
 import sys
 from collections import defaultdict
 
-# os.system('pip3 install tencentcloud-sdk-python-tcr')
+os.system('pip3 install tencentcloud-sdk-python-tcr')
 
 from tencentcloud.common import credential
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
