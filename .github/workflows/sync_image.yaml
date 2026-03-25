@@ -18,7 +18,7 @@ jobs:
           cd ~
           mkdir k8s
           git clone https://github.com/lsutils/utils.git k8s/utils
-          go install k8s/utils/cmd/...
+          cd k8s/utils && go install ./cmd/... && cd -
           git clone https://github.com/ls-2018/script.git
           cd script
           
