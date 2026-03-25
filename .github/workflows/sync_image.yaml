@@ -22,5 +22,7 @@ jobs:
       - name: run
         run: |
           cd ~
+          ls 
           export PATH=`pwd`/script/:$PATH
-          python3 utils/sync/local_run.py
+          which skopeo_copy_script.py
+#          python3 utils/sync/local_run.py
