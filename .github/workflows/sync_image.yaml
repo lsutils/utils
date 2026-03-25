@@ -5,18 +5,16 @@ on:
       - main
   workflow_dispatch:   # 👈 允许手动触发
 
-# Declare default permissions as read only.
-permissions: read-all
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Build
         run: |
-          apt install skopeo -y
+          sudo apt update -y
+          sudo apt-get install skopeo -y
           cd ~
           git clone https://github.com/ls-2018/script.git
           git clone https://github.com/lsutils/utils.git
-          export PATH=`pwd`/script/:$APTH
+          export PATH=`pwd`/script/:$PATH
           python3 utils/sync/local_run.py
