@@ -35,5 +35,5 @@ jobs:
           cd ~
           ls 
           export PATH=`pwd`/script/:$PATH
-
+          pip3 install tencentcloud-sdk-python-tcr
           python3 k8s/utils/sync/local_run.py
