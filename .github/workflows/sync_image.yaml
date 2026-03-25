@@ -9,10 +9,10 @@ on:
 permissions: read-all
 
 jobs:
-  push-to-mirror:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build the Docker image
+      - name: Build
         run: |
           apt update -y
           apt install skopeo -y
