@@ -21,8 +21,10 @@ jobs:
           git clone https://github.com/lsutils/utils.git
       - name: run
         run: |
+          set -x
           cd ~
           ls 
           export PATH=`pwd`/script/:$PATH
+          env
           which skopeo_copy_script.py
 #          python3 utils/sync/local_run.py
