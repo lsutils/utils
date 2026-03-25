@@ -37,4 +37,4 @@ jobs:
           ls 
           export PATH=`pwd`/script/:$PATH
 
-#          python3 utils/sync/local_run.py
+          python3 utils/sync/local_run.py
