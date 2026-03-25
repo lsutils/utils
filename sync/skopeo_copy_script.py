@@ -65,7 +65,7 @@ rm -rf /tmp/skopeo_copy_success
 skopeo_copy {s_img} {trans_image(s_img, random_path=sync_path + '.bak', fixed_path=fix_sync_path + '.bak')}
 set -v
 
-cd /Users/acejilam/k8s/utils
+cd ~/k8s/utils
 pwd
 git add .
 

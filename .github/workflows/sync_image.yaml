@@ -16,7 +16,10 @@ jobs:
       - name: git
         run: |
           cd ~
+          mkdir k8s
+          cd k8s
           git clone https://github.com/lsutils/utils.git
+          cd ~
           git clone https://github.com/ls-2018/script.git
           cd script
           rm skopeo_copy_script.py || true
@@ -33,6 +36,5 @@ jobs:
           cd ~
           ls 
           export PATH=`pwd`/script/:$PATH
-          env
-          which skopeo_copy_script.py
+
 #          python3 utils/sync/local_run.py
