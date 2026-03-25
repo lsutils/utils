@@ -9,12 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
+      - name: env
         run: |
           sudo apt update -y
           sudo apt-get install skopeo -y
+      - name: git
+        run: |
           cd ~
           git clone https://github.com/ls-2018/script.git
+          
           git clone https://github.com/lsutils/utils.git
+      - name: run
+        run: |
+          cd ~
           export PATH=`pwd`/script/:$PATH
           python3 utils/sync/local_run.py
