@@ -12,6 +12,6 @@ const (
 )
 
 func TestS(t *testing.T) {
-	MergerPatch()
-	//JsonPatch() // [{add /spec/containers/1 map[image:centos:8 name:t2 resources:map[]]}]
+	//MergerPatch()
+	JsonPatch() // [{add /spec/containers/1 map[image:centos:8 name:t2 resources:map[]]}]
 }
