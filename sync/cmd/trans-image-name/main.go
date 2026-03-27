@@ -96,8 +96,8 @@ func main() {
 }
 
 func check() {
-	_random, _ := ioutil.ReadFile(`/Users/acejilam/k8s/utils/sync/random-tasks.json`)
-	_fixed, _ := ioutil.ReadFile(`/Users/acejilam/k8s/utils/sync/fixed-tasks.json`)
+	_random, _ := ioutil.ReadFile(filepath.Join(os.Getenv("HOME"), `/k8s/utils/sync/random-tasks.json`))
+	_fixed, _ := ioutil.ReadFile(filepath.Join(os.Getenv("HOME"), `/k8s/utils/sync/fixed-tasks.json`))
 	var fileRandom map[string]interface{}
 	json.Unmarshal(_random, &fileRandom)
 	var fileFix map[string]interface{}

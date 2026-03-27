@@ -67,10 +67,6 @@ set -v
 
 cd ~/k8s/utils
 pwd
-git add .
-
-git commit -m "{s_img}"
-git push
 
 go install ./cmd/...   
 trans-image-name {s_img}
