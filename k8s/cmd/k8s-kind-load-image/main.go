@@ -6,7 +6,6 @@ import (
 	"io"
 	"log"
 	"os"
-	"os/exec"
 	"sort"
 	"strings"
 	"sync"
@@ -17,10 +16,13 @@ import (
 	"charm.land/lipgloss/v2"
 	"sigs.k8s.io/kind/pkg/cluster"
 	"sigs.k8s.io/kind/pkg/cluster/nodes"
+	"sigs.k8s.io/kind/pkg/errors"
+	"sigs.k8s.io/kind/pkg/exec"
 )
 
 var p *tea.Program
-var tarImage = "/tmp/k8s-kind-load-image.tar"
+var archs []string
+var archFiles []string
 
 func finalPause() tea.Cmd {
 	return tea.Tick(time.Millisecond*750, func(_ time.Time) tea.Msg {
@@ -40,9 +42,9 @@ var (
 
 func Cmd(name string, args []string) {
 	cmd := exec.Command(name, args...)
-	cmd.Stdin = os.Stdin
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	cmd.SetStdout(os.Stdout)
+	cmd.SetStderr(os.Stderr)
+	cmd.SetStdin(os.Stdin)
 	err := cmd.Run()
 	if err != nil {
 		log.Fatal(err)
@@ -59,7 +61,15 @@ func main() {
 		flag.Usage()
 		os.Exit(1)
 	}
-	Cmd("docker", []string{"save", *image, "-o", tarImage})
+	var err error
+	archs, err = listArch(*image)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for i, arch := range archs {
+		archFiles = append(archFiles, fmt.Sprintf("/tmp/%s.tar.gz", strings.Replace(arch, "/", "_", -1)))
+		Cmd("docker", []string{"save", *image, "-o", archFiles[i]})
+	}
 
 	provider := cluster.NewProvider()
 
@@ -72,9 +82,13 @@ func main() {
 		return nodeList[i].String() < nodeList[j].String()
 	})
 
-	stat, err := os.Stat(tarImage)
-	if err != nil {
-		log.Fatalf("Error getting file stats: %v", err)
+	var allSize int64
+	for _, file := range archFiles {
+		stat, err := os.Stat(file)
+		if err != nil {
+			log.Fatalf("Error getting file stats: %v", err)
+		}
+		allSize += stat.Size()
 	}
 	if *node != "" {
 		var tmp []nodes.Node
@@ -89,7 +103,7 @@ func main() {
 	m := model{
 		progresses: make([]progress.Model, len(nodeList)),
 		nodeList:   nodeList,
-		size:       stat.Size(),
+		size:       allSize,
 		image:      *image,
 		completed:  make([]bool, len(nodeList)),
 	}
@@ -189,45 +203,53 @@ func (m *model) Once() {
 }
 
 func (m *model) loadImageToNode(node nodes.Node, index int) {
-	args := []string{
-		"exec",
-		"-i",
-		node.String(),
-		"ctr",
-		"--namespace=k8s.io",
-		"images",
-		"import",
-		"--platform=linux/arm64",
-		"-",
-	}
-	c := exec.Command("docker", args...)
-
-	tarFile, err := os.Open(tarImage)
-	if err != nil {
-		fmt.Printf("Error opening tar file: %v\n", err)
-		if p != nil {
-			p.Send(processMsg{index: index, percent: 0})
+	var err error
+	downloadSize := int64(0)
+	for i, file := range archFiles {
+		if err != nil {
+			break
 		}
-		return
+		args := []string{
+			"exec",
+			"-i",
+			node.String(),
+			"ctr",
+			"--namespace=k8s.io",
+			"images",
+			"import",
+			"--platform=" + archs[i],
+			"-",
+		}
+		c := exec.Command("docker", args...)
+		var tarFile *os.File
+		tarFile, err = os.Open(file)
+		if err != nil {
+			fmt.Printf("Error opening tar file: %v\n", err)
+			if p != nil {
+				p.Send(processMsg{index: index, percent: 0})
+			}
+			return
+		}
+		reader := &Reader{
+			r:        tarFile,
+			download: downloadSize,
+			total:    m.size,
+			progress: func(percent float64) {
+				p.Send(processMsg{index: index, percent: percent})
+			},
+		}
+		c.SetStdin(reader)
+		err = c.Run()
+		tarFile.Close()
+		downloadSize += reader.download
 	}
-	defer tarFile.Close()
-
-	c.Stdin = &Reader{
-		r:        tarFile,
-		download: 0,
-		total:    m.size,
-		progress: func(percent float64) {
-			p.Send(processMsg{index: index, percent: percent})
-		},
-	}
-
-	err = c.Run()
 	if err != nil {
 		fmt.Printf("Error executing command: %v\n", err)
 		p.Send(processMsg{index: index, percent: 0})
 	} else {
 		p.Send(processMsg{index: index, percent: 1})
 	}
+
 }
 
 func (m *model) Init() tea.Cmd {
@@ -319,4 +341,23 @@ func (m *model) View() tea.View {
 	b.WriteString(helpStyle("Press any key to quit"))
 
 	return tea.NewView(b.String())
+}
+
+func listArch(image string) ([]string, error) {
+	cmd := exec.Command("docker",
+		"inspect",
+		"--format", // show stopped nodes
+		"{{.Os}}/{{.Architecture}}",
+		image,
+	)
+	lines, err := exec.OutputLines(cmd)
+	if err != nil {
+		return nil, errors.Wrap(err, "failed to inspect image")
+	}
+	// convert names to node handles
+	ret := make([]string, 0)
+	for _, arch := range lines {
+		ret = append(ret, arch)
+	}
+	return ret, nil
 }

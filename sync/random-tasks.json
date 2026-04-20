@@ -272,8 +272,8 @@
         "v0.1.1"
     ],
     "docker.io/library/busybox": [
-        "latest",
-        "1"
+        "1",
+        "latest"
     ],
     "docker.io/library/golang": [
         "1.25.7"
