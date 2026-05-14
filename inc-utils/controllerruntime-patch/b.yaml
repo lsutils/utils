@@ -1,0 +1,50 @@
+apiVersion: alibabacloud.com/v1alpha1
+kind: Cluster
+metadata:
+  annotations:
+    changeReason: ToBeDeleted
+    clusterName: koordinatorperf-cluster-schedule-to-classd-unit3
+    etcdallocate.kdm.alibabacloud.com/exclusive: "true"
+    userlabel: '{"profile":"asi"}'
+    vpccidr: 10.0.0.0/8
+  labels:
+    aliyun.com/cluster.hash: 99d6b16c87f90565a2ea665e1512378ddb196a4ec2d3b98cffaa1083
+    cluster.id: cc17653eae42747c696a43f71b927fdab
+    cluster.uid: "1008729901294155"
+  name: kubernetes-cluster
+spec:
+  kubernetes:
+    kcm:
+      name: kubernetes.kdm.kcm
+      options:
+        cpuLimit: "2"
+        cpuRequest: "1"
+        featureGates: EphemeralContainers=true,APIResponseCompression=false,PodLevelResourceQuota=true,ExtendAPIMetrics=true,EtcdCacheNotReady=true,UserAgentQPSLimiter=true,ServerSideApply=false,DisableUpdatePodQOSValidation=true,EnablePVCStorageClassChange=true,EnhancedNodeRestriction=true,GlobalResourceQuota=true,EnhancedPodSpecUpdate=true
+        memoryLimit: 7680Mi
+        memoryRequest: 3584Mi
+      overrides:
+      - path: spec.template.spec.containers[name:kube-controller-manager].resources.limits.cpu
+        resourceName: controlplane-kcm
+        value: "2.5"
+      - path: spec.template.spec.containers[name:kube-controller-manager].resources.requests.cpu
+        resourceName: controlplane-kcm
+        value: "1.5"
+      - path: spec.template.spec.containers[name:kube-controller-manager].command[--controllers=]
+        resourceName: controlplane-kcm
+        value: --controllers=*,bootstrapsigner,tokencleaner
+      - path: spec.template.spec.containers[name:kube-controller-manager].command[--feature-gates=]
+        resourceName: controlplane-kcm
+        value: --feature-gates=TTLAfterFinished=true
+      - path: spec.template.spec.containers[name:kube-controller-manager].resources.limits.memory
+        resourceName: controlplane-kcm
+        value: 4.5Gi
+      - path: spec.template.spec.containers[name:kube-controller-manager].resources.requests.memory
+        resourceName: controlplane-kcm
+        value: 3Gi
+      - path: spec.template.spec.containers[name:kube-controller-manager].command[--attach-detach-reconcile-sync-period=]
+        resourceName: controlplane-kcm
+        value: --attach-detach-reconcile-sync-period=2m
+      replicas: 2
+      templateversion: v1.22.3-alibaba.9
+      version: v1.22.3-alibaba.134-gb3dd2462a
+

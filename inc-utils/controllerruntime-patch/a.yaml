@@ -1,0 +1,70 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: "2021-12-03T02:26:11Z"
+  generation: 1
+  name: clusters.alibabacloud.com
+  resourceVersion: "353158011"
+  uid: aa9f5ee3-2edc-489d-a7df-6a16c98c1b51
+spec:
+  conversion:
+    strategy: None
+  group: alibabacloud.com
+  names:
+    kind: Cluster
+    listKind: ClusterList
+    plural: clusters
+    shortNames:
+    - cls
+    singular: cluster
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.config.type
+      name: TYPE
+      type: string
+    - jsonPath: .spec.config.specification
+      name: SPEC
+      priority: 2
+      type: string
+    - jsonPath: .spec.config.profile
+      name: PROFILE
+      priority: 4
+      type: string
+    - jsonPath: .status.status
+      name: STATUS
+      type: string
+    - jsonPath: .status.currentVersion
+      name: VERSION
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: Cluster
+    listKind: ClusterList
+    plural: clusters
+    shortNames:
+    - cls
+    singular: cluster
+  conditions:
+  - lastTransitionTime: "2021-12-03T02:26:11Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: "2021-12-03T02:26:16Z"
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha1

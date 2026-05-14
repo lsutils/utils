@@ -1,0 +1,15 @@
+	nodePatch := make([]interface{}, 0, 1)
+	labels := node.Labels
+	if labels == nil {
+		labels = make(map[string]string)
+	}
+	labels[machineIsDeletedLabel] = "true"
+
+	nodePatch = append(nodePatch, map[string]interface{}{"op": "replace", "path": "/metadata/labels", "value": labels})
+	patchContent, err := json.Marshal(nodePatch)
+	if err != nil {
+		return err
+	}
+
+	return r.nodeControl.Patch(node.Name, types.JSONPatchType, patchContent)
+
