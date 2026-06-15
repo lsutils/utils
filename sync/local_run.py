@@ -1,5 +1,8 @@
 import json
 import os
+import time
+# import warnings
+# warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 
 try:
     with open('/tmp/s.json', 'r', encoding='utf8') as f:
@@ -13,7 +16,6 @@ def sync(image):
         f.write(f'''
 rm /tmp/sync.txt || true
 skopeo_copy_script.py {image}
-echo $? >/tmp/sync.txt
 ''')
     os.system(f'bash /tmp/sync.sh')
     with open('/tmp/sync.txt', 'r', encoding='utf8') as f:
@@ -35,9 +37,11 @@ def sync_file(file):
             while code != 0:
                 print(f'[{i}/{len(data)}] {image}')
                 code = sync(image)
+                time.sleep(2)
             success[image] = 1
             with open('/tmp/s.json', 'w', encoding='utf8') as f:
                 f.write(json.dumps(success, ensure_ascii=False, indent=4))
+
 
 abs_path = os.path.dirname(os.path.abspath(__file__))
 
