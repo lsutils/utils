@@ -7,7 +7,7 @@
         "1.24.3"
     ],
     "docker.io/istio/install-cni": [
-        "1.24.3-distroless",
-        "1.24.3"
+        "1.24.3",
+        "1.24.3-distroless"
     ]
 }

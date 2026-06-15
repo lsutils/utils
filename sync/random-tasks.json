@@ -20,11 +20,11 @@
         "1.5.11"
     ],
     "docker.io/kindest/node": [
-        "v1.30.10",
-        "v1.32.0",
-        "v1.34.0",
-        "v1.28.3",
         "v1.28.0",
+        "v1.34.0",
+        "v1.32.0",
+        "v1.28.3",
+        "v1.30.10",
         "v1.26.0",
         "v1.30.0"
     ],
@@ -36,10 +36,10 @@
         "2.10.21-alpine"
     ],
     "docker.io/library/python": [
-        "3.13-slim",
+        "3.11-slim",
         "3.13-bookworm",
-        "3.12-slim",
-        "3.11-slim"
+        "3.13-slim",
+        "3.12-slim"
     ],
     "docker.io/library/registry": [
         "2",
@@ -61,8 +61,8 @@
         "0.7.0"
     ],
     "nvcr.io/nvidia/ai-dynamo/vllm-runtime": [
-        "0.7.0",
-        "0.8.1"
+        "0.8.1",
+        "0.7.0"
     ],
     "quay.io/centos/centos": [
         "7"
@@ -170,8 +170,8 @@
         "3.2.0"
     ],
     "docker.io/istio/examples-bookinfo-details-v1": [
-        "1.18.0",
-        "1.20.2"
+        "1.20.2",
+        "1.18.0"
     ],
     "docker.io/istio/examples-bookinfo-details-v2": [
         "1.20.2"
@@ -183,8 +183,8 @@
         "1.20.2"
     ],
     "docker.io/istio/examples-bookinfo-productpage-v1": [
-        "1.20.2",
-        "1.18.0"
+        "1.18.0",
+        "1.20.2"
     ],
     "docker.io/istio/examples-bookinfo-ratings-v1": [
         "1.20.2",
@@ -194,20 +194,20 @@
         "1.20.2"
     ],
     "docker.io/istio/examples-bookinfo-reviews-v1": [
-        "1.20.2",
-        "1.18.0"
+        "1.18.0",
+        "1.20.2"
     ],
     "docker.io/istio/examples-bookinfo-reviews-v2": [
         "1.18.0",
         "1.20.2"
     ],
     "docker.io/istio/examples-bookinfo-reviews-v3": [
-        "1.20.2",
-        "1.18.0"
+        "1.18.0",
+        "1.20.2"
     ],
     "docker.io/istio/examples-helloworld-v1": [
-        "latest",
-        "1.0"
+        "1.0",
+        "latest"
     ],
     "docker.io/istio/examples-helloworld-v2": [
         "1.0"
@@ -242,11 +242,11 @@
         "v0.13.2"
     ],
     "quay.io/cilium/starwars": [
-        "v2.2",
-        "v2.1",
-        "latest",
         "v2.0",
-        "v2.3"
+        "v2.2",
+        "latest",
+        "v2.3",
+        "v2.1"
     ],
     "docker.io/ollama/ollama": [
         "0.15.2"
@@ -261,8 +261,8 @@
         "stable-latest"
     ],
     "docker.io/library/nginx": [
-        "latest",
-        "1.15.2"
+        "1.15.2",
+        "latest"
     ],
     "docker.io/redroid/redroid": [
         "12.0.0-latest"
